@@ -1,0 +1,647 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LoneWolf Fang AI Trading Prompt Lab Comparison Report</title>
+<style>
+body{font-family:Arial,sans-serif;line-height:1.55;margin:0;color:#1f2933;background:#f6f8fb;}
+main{max-width:1120px;margin:0 auto;padding:30px 18px 48px;}
+h1,h2{line-height:1.2;}
+.banner{background:#101820;color:#fff;padding:18px 20px;margin:0 0 18px 0;}
+.labels{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;}
+.label{border:1px solid #adc0d1;padding:5px 8px;font-size:12px;font-weight:700;}
+.notice{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:8px;margin:14px 0;}
+.notice strong{background:#fff;border:2px solid #101820;padding:10px;text-align:center;}
+section{border-top:1px solid #d8e0e8;padding:22px 0;}
+.table-wrap{overflow:auto;background:#fff;border:1px solid #d8e0e8;}
+table{border-collapse:collapse;width:100%;min-width:940px;}
+th,td{border-bottom:1px solid #e4e9ee;padding:9px 10px;text-align:left;vertical-align:top;}
+th{background:#edf2f7;font-size:13px;}
+td{font-size:13px;}
+pre{white-space:pre-wrap;background:#fff;border:1px solid #d8e0e8;padding:12px;overflow:auto;}
+</style>
+</head>
+<body>
+<main>
+<h1>LoneWolf Fang AI Trading Prompt Lab Comparison Report</h1>
+<div class="banner"><strong>Research Safety Boundary</strong><div class="labels"><span class="label">RESEARCH ONLY</span><span class="label">NO FINANCIAL ADVICE</span><span class="label">NO ORDER EXECUTION</span><span class="label">LOCAL CSV ONLY</span><span class="label">NOT A PROFIT GUARANTEE</span></div></div>
+<div class="notice"><strong>NO FINANCIAL ADVICE</strong><strong>NO ORDER EXECUTION</strong></div>
+<p>This report is limited to observation comparison, risk context, data quality, and research questions.</p>
+<section>
+<h2>Metadata</h2>
+<pre>{
+  &quot;tool_name&quot;: &quot;LoneWolf Fang AI Trading Prompt Lab&quot;,
+  &quot;report_type&quot;: &quot;local_csv_comparison&quot;,
+  &quot;report_version&quot;: &quot;0.2.0&quot;,
+  &quot;generated_at_utc&quot;: &quot;2026-05-12T00:00:00+00:00&quot;,
+  &quot;safety_labels&quot;: [
+    &quot;RESEARCH ONLY&quot;,
+    &quot;NO FINANCIAL ADVICE&quot;,
+    &quot;NO ORDER EXECUTION&quot;,
+    &quot;LOCAL CSV ONLY&quot;,
+    &quot;NOT A PROFIT GUARANTEE&quot;
+  ]
+}</pre>
+</section>
+<section>
+<h2>Manifest Summary</h2>
+<pre>{
+  &quot;schema_version&quot;: &quot;lwf_ai_trading_prompt_lab.compare_manifest.v1&quot;,
+  &quot;source_manifest&quot;: &quot;samples/compare_manifest.json&quot;,
+  &quot;item_count&quot;: 3,
+  &quot;symbols&quot;: [
+    &quot;BTC/USDT&quot;,
+    &quot;ETH/USDT&quot;
+  ],
+  &quot;timeframes&quot;: [
+    &quot;1h&quot;,
+    &quot;5m&quot;
+  ],
+  &quot;expected_start&quot;: null,
+  &quot;expected_end&quot;: null,
+  &quot;items&quot;: [
+    {
+      &quot;symbol&quot;: &quot;BTC/USDT&quot;,
+      &quot;timeframe&quot;: &quot;5m&quot;,
+      &quot;csv&quot;: &quot;samples/sample_btc_5m.csv&quot;
+    },
+    {
+      &quot;symbol&quot;: &quot;ETH/USDT&quot;,
+      &quot;timeframe&quot;: &quot;5m&quot;,
+      &quot;csv&quot;: &quot;samples/sample_eth_5m.csv&quot;
+    },
+    {
+      &quot;symbol&quot;: &quot;BTC/USDT&quot;,
+      &quot;timeframe&quot;: &quot;1h&quot;,
+      &quot;csv&quot;: &quot;samples/sample_btc_1h.csv&quot;
+    }
+  ]
+}</pre>
+</section>
+<section>
+<h2>Item Summaries</h2>
+<div class="table-wrap"><table><thead><tr><th>Symbol</th><th>Timeframe</th><th>Row Count</th><th>Accepted Rows</th><th>Rejected Rows</th><th>Warning Count</th><th>Last Close</th><th>Total Return Pct</th><th>Recent Return Pct</th><th>Volatility Level</th><th>Rolling Volatility Latest</th><th>Atr Like Latest</th><th>Max Drawdown Pct</th><th>Trend Label</th><th>Volume Regime</th><th>Data Quality Label</th><th>Timestamp Quality Label</th><th>Coverage Quality Label</th><th>Coverage Ratio</th><th>Missing Bar Estimate</th><th>Missing Days Count</th><th>Sparse Days Count</th><th>Missing Months Count</th><th>Largest Missing Window Days</th><th>Requested Range Source</th><th>Gap Count</th><th>Duplicate Timestamp Count</th><th>Irregular Interval Count</th><th>Inferred Interval Label</th><th>Matches Expected Timeframe</th><th>Largest Gap Label</th><th>Indicator Family Summary</th></tr></thead><tbody><tr><td>BTC/USDT</td><td>5m</td><td>72</td><td>72</td><td>0</td><td>0</td><td>43229</td><td>2.9262</td><td>0.7011</td><td>low</td><td>0.000201</td><td>28.476</td><td>0</td><td>mixed_or_rangebound</td><td>normal_volume</td><td>complete_for_supplied_file</td><td>clean</td><td>missing_sections</td><td>0.000685</td><td>105048</td><td>364</td><td>1</td><td>11</td><td>333</td><td>cli</td><td>0</td><td>0</td><td>0</td><td>5m</td><td>True</td><td>n/a</td><td>{&#x27;momentum_label&#x27;: &#x27;strong_positive_momentum&#x27;, &#x27;range_position_label&#x27;: &#x27;near_recent_high&#x27;, &#x27;drawdown_recovery_label&#x27;: &#x27;at_or_near_peak&#x27;, &#x27;volume_context_label&#x27;: &#x27;elevated_volume&#x27;, &#x27;realized_volatility_label&#x27;: &#x27;normal_volatility_context&#x27;, &#x27;candle_structure_label&#x27;: &#x27;wick_dominant&#x27;, &#x27;trend_consistency_label&#x27;: &#x27;consistent_up_context&#x27;, &#x27;trend_consistency_score&#x27;: 100.0}</td></tr><tr><td>ETH/USDT</td><td>5m</td><td>72</td><td>72</td><td>0</td><td>0</td><td>2956.16</td><td>-4.64</td><td>-1.8373</td><td>low</td><td>0.000942</td><td>10.814</td><td>-4.8879</td><td>downward_bias</td><td>normal_volume</td><td>complete_for_supplied_file</td><td>clean</td><td>missing_sections</td><td>0.000685</td><td>105048</td><td>364</td><td>1</td><td>11</td><td>333</td><td>cli</td><td>0</td><td>0</td><td>0</td><td>5m</td><td>True</td><td>n/a</td><td>{&#x27;momentum_label&#x27;: &#x27;strong_negative_momentum&#x27;, &#x27;range_position_label&#x27;: &#x27;near_recent_low&#x27;, &#x27;drawdown_recovery_label&#x27;: &#x27;in_drawdown&#x27;, &#x27;volume_context_label&#x27;: &#x27;elevated_volume&#x27;, &#x27;realized_volatility_label&#x27;: &#x27;normal_volatility_context&#x27;, &#x27;candle_structure_label&#x27;: &#x27;wick_dominant&#x27;, &#x27;trend_consistency_label&#x27;: &#x27;consistent_down_context&#x27;, &#x27;trend_consistency_score&#x27;: 6.6667}</td></tr><tr><td>BTC/USDT</td><td>1h</td><td>72</td><td>72</td><td>0</td><td>0</td><td>44160.3</td><td>5.6466</td><td>1.2605</td><td>low</td><td>0.000501</td><td>63.612</td><td>0</td><td>upward_bias</td><td>normal_volume</td><td>complete_for_supplied_file</td><td>clean</td><td>missing_sections</td><td>0.008219</td><td>8688</td><td>362</td><td>0</td><td>11</td><td>331</td><td>cli</td><td>0</td><td>0</td><td>0</td><td>1h</td><td>True</td><td>n/a</td><td>{&#x27;momentum_label&#x27;: &#x27;strong_positive_momentum&#x27;, &#x27;range_position_label&#x27;: &#x27;near_recent_high&#x27;, &#x27;drawdown_recovery_label&#x27;: &#x27;at_or_near_peak&#x27;, &#x27;volume_context_label&#x27;: &#x27;elevated_volume&#x27;, &#x27;realized_volatility_label&#x27;: &#x27;low_volatility_context&#x27;, &#x27;candle_structure_label&#x27;: &#x27;wick_dominant&#x27;, &#x27;trend_consistency_label&#x27;: &#x27;consistent_up_context&#x27;, &#x27;trend_consistency_score&#x27;: 100.0}</td></tr></tbody></table></div>
+</section>
+<section>
+<h2>Data Quality Comparison</h2>
+<pre>{
+  &quot;comparison_type&quot;: &quot;data quality comparison&quot;,
+  &quot;label_counts&quot;: {
+    &quot;complete_for_supplied_file&quot;: 3
+  },
+  &quot;data_completeness_ranking&quot;: [
+    {
+      &quot;position&quot;: 1,
+      &quot;symbol&quot;: &quot;BTC/USDT&quot;,
+      &quot;timeframe&quot;: &quot;5m&quot;,
+      &quot;accepted_rows&quot;: 72
+    },
+    {
+      &quot;position&quot;: 2,
+      &quot;symbol&quot;: &quot;ETH/USDT&quot;,
+      &quot;timeframe&quot;: &quot;5m&quot;,
+      &quot;accepted_rows&quot;: 72
+    },
+    {
+      &quot;position&quot;: 3,
+      &quot;symbol&quot;: &quot;BTC/USDT&quot;,
+      &quot;timeframe&quot;: &quot;1h&quot;,
+      &quot;accepted_rows&quot;: 72
+    }
+  ],
+  &quot;notes&quot;: [
+    &quot;This compares completeness and validation results inside the supplied local CSV files.&quot;,
+    &quot;A stronger completeness label does not imply a market outcome.&quot;
+  ]
+}</pre>
+</section>
+<section>
+<h2>Timestamp Quality Comparison</h2>
+<pre>{
+  &quot;comparison_type&quot;: &quot;timestamp quality comparison&quot;,
+  &quot;timestamp_quality_label_counts&quot;: {
+    &quot;clean&quot;: 3
+  },
+  &quot;items_with_gaps&quot;: [],
+  &quot;items_with_duplicates&quot;: [],
+  &quot;items_with_irregular_intervals&quot;: [],
+  &quot;items_with_timeframe_mismatch&quot;: [],
+  &quot;notes&quot;: [
+    &quot;Timestamp quality comparison is limited to local CSV input structure.&quot;,
+    &quot;Timestamp labels are data quality observations, not outcome rankings.&quot;
+  ]
+}</pre>
+</section>
+<section>
+<h2>Calendar Coverage Comparison</h2>
+<pre>{
+  &quot;comparison_type&quot;: &quot;calendar coverage comparison&quot;,
+  &quot;coverage_quality_label_counts&quot;: {
+    &quot;missing_sections&quot;: 3
+  },
+  &quot;items_with_partial_coverage&quot;: [],
+  &quot;items_with_sparse_coverage&quot;: [
+    {
+      &quot;symbol&quot;: &quot;BTC/USDT&quot;,
+      &quot;timeframe&quot;: &quot;5m&quot;,
+      &quot;coverage_quality_label&quot;: &quot;missing_sections&quot;,
+      &quot;coverage_ratio&quot;: 0.000685,
+      &quot;missing_bar_estimate&quot;: 105048,
+      &quot;missing_days_count&quot;: 364,
+      &quot;sparse_days_count&quot;: 1,
+      &quot;missing_months_count&quot;: 11,
+      &quot;largest_missing_window_days&quot;: 333,
+      &quot;requested_range_source&quot;: &quot;cli&quot;
+    },
+    {
+      &quot;symbol&quot;: &quot;ETH/USDT&quot;,
+      &quot;timeframe&quot;: &quot;5m&quot;,
+      &quot;coverage_quality_label&quot;: &quot;missing_sections&quot;,
+      &quot;coverage_ratio&quot;: 0.000685,
+      &quot;missing_bar_estimate&quot;: 105048,
+      &quot;missing_days_count&quot;: 364,
+      &quot;sparse_days_count&quot;: 1,
+      &quot;missing_months_count&quot;: 11,
+      &quot;largest_missing_window_days&quot;: 333,
+      &quot;requested_range_source&quot;: &quot;cli&quot;
+    }
+  ],
+  &quot;items_with_missing_sections&quot;: [
+    {
+      &quot;symbol&quot;: &quot;BTC/USDT&quot;,
+      &quot;timeframe&quot;: &quot;5m&quot;,
+      &quot;coverage_quality_label&quot;: &quot;missing_sections&quot;,
+      &quot;coverage_ratio&quot;: 0.000685,
+      &quot;missing_bar_estimate&quot;: 105048,
+      &quot;missing_days_count&quot;: 364,
+      &quot;sparse_days_count&quot;: 1,
+      &quot;missing_months_count&quot;: 11,
+      &quot;largest_missing_window_days&quot;: 333,
+      &quot;requested_range_source&quot;: &quot;cli&quot;
+    },
+    {
+      &quot;symbol&quot;: &quot;ETH/USDT&quot;,
+      &quot;timeframe&quot;: &quot;5m&quot;,
+      &quot;coverage_quality_label&quot;: &quot;missing_sections&quot;,
+      &quot;coverage_ratio&quot;: 0.000685,
+      &quot;missing_bar_estimate&quot;: 105048,
+      &quot;missing_days_count&quot;: 364,
+      &quot;sparse_days_count&quot;: 1,
+      &quot;missing_months_count&quot;: 11,
+      &quot;largest_missing_window_days&quot;: 333,
+      &quot;requested_range_source&quot;: &quot;cli&quot;
+    },
+    {
+      &quot;symbol&quot;: &quot;BTC/USDT&quot;,
+      &quot;timeframe&quot;: &quot;1h&quot;,
+      &quot;coverage_quality_label&quot;: &quot;missing_sections&quot;,
+      &quot;coverage_ratio&quot;: 0.008219,
+      &quot;missing_bar_estimate&quot;: 8688,
+      &quot;missing_days_count&quot;: 362,
+      &quot;sparse_days_count&quot;: 0,
+      &quot;missing_months_count&quot;: 11,
+      &quot;largest_missing_window_days&quot;: 331,
+      &quot;requested_range_source&quot;: &quot;cli&quot;
+    }
+  ],
+  &quot;items_with_out_of_range_rows&quot;: [],
+  &quot;by_item&quot;: [
+    {
+      &quot;symbol&quot;: &quot;BTC/USDT&quot;,
+      &quot;timeframe&quot;: &quot;5m&quot;,
+      &quot;coverage_quality_label&quot;: &quot;missing_sections&quot;,
+      &quot;coverage_ratio&quot;: 0.000685,
+      &quot;missing_bar_estimate&quot;: 105048,
+      &quot;missing_days_count&quot;: 364,
+      &quot;sparse_days_count&quot;: 1,
+      &quot;missing_months_count&quot;: 11,
+      &quot;largest_missing_window_days&quot;: 333,
+      &quot;requested_range_source&quot;: &quot;cli&quot;
+    },
+    {
+      &quot;symbol&quot;: &quot;ETH/USDT&quot;,
+      &quot;timeframe&quot;: &quot;5m&quot;,
+      &quot;coverage_quality_label&quot;: &quot;missing_sections&quot;,
+      &quot;coverage_ratio&quot;: 0.000685,
+      &quot;missing_bar_estimate&quot;: 105048,
+      &quot;missing_days_count&quot;: 364,
+      &quot;sparse_days_count&quot;: 1,
+      &quot;missing_months_count&quot;: 11,
+      &quot;largest_missing_window_days&quot;: 333,
+      &quot;requested_range_source&quot;: &quot;cli&quot;
+    },
+    {
+      &quot;symbol&quot;: &quot;BTC/USDT&quot;,
+      &quot;timeframe&quot;: &quot;1h&quot;,
+      &quot;coverage_quality_label&quot;: &quot;missing_sections&quot;,
+      &quot;coverage_ratio&quot;: 0.008219,
+      &quot;missing_bar_estimate&quot;: 8688,
+      &quot;missing_days_count&quot;: 362,
+      &quot;sparse_days_count&quot;: 0,
+      &quot;missing_months_count&quot;: 11,
+      &quot;largest_missing_window_days&quot;: 331,
+      &quot;requested_range_source&quot;: &quot;cli&quot;
+    }
+  ],
+  &quot;notes&quot;: [
+    &quot;Calendar coverage comparison is limited to local CSV input date coverage.&quot;,
+    &quot;Coverage labels describe data quality and period balance only.&quot;
+  ]
+}</pre>
+</section>
+<section>
+<h2>Items With Partial Coverage</h2>
+<pre>[]</pre>
+</section>
+<section>
+<h2>Items With Sparse Coverage</h2>
+<pre>[
+  {
+    &quot;symbol&quot;: &quot;BTC/USDT&quot;,
+    &quot;timeframe&quot;: &quot;5m&quot;,
+    &quot;coverage_quality_label&quot;: &quot;missing_sections&quot;,
+    &quot;coverage_ratio&quot;: 0.000685,
+    &quot;missing_bar_estimate&quot;: 105048,
+    &quot;missing_days_count&quot;: 364,
+    &quot;sparse_days_count&quot;: 1,
+    &quot;missing_months_count&quot;: 11,
+    &quot;largest_missing_window_days&quot;: 333,
+    &quot;requested_range_source&quot;: &quot;cli&quot;
+  },
+  {
+    &quot;symbol&quot;: &quot;ETH/USDT&quot;,
+    &quot;timeframe&quot;: &quot;5m&quot;,
+    &quot;coverage_quality_label&quot;: &quot;missing_sections&quot;,
+    &quot;coverage_ratio&quot;: 0.000685,
+    &quot;missing_bar_estimate&quot;: 105048,
+    &quot;missing_days_count&quot;: 364,
+    &quot;sparse_days_count&quot;: 1,
+    &quot;missing_months_count&quot;: 11,
+    &quot;largest_missing_window_days&quot;: 333,
+    &quot;requested_range_source&quot;: &quot;cli&quot;
+  }
+]</pre>
+</section>
+<section>
+<h2>Items With Missing Sections</h2>
+<pre>[
+  {
+    &quot;symbol&quot;: &quot;BTC/USDT&quot;,
+    &quot;timeframe&quot;: &quot;5m&quot;,
+    &quot;coverage_quality_label&quot;: &quot;missing_sections&quot;,
+    &quot;coverage_ratio&quot;: 0.000685,
+    &quot;missing_bar_estimate&quot;: 105048,
+    &quot;missing_days_count&quot;: 364,
+    &quot;sparse_days_count&quot;: 1,
+    &quot;missing_months_count&quot;: 11,
+    &quot;largest_missing_window_days&quot;: 333,
+    &quot;requested_range_source&quot;: &quot;cli&quot;
+  },
+  {
+    &quot;symbol&quot;: &quot;ETH/USDT&quot;,
+    &quot;timeframe&quot;: &quot;5m&quot;,
+    &quot;coverage_quality_label&quot;: &quot;missing_sections&quot;,
+    &quot;coverage_ratio&quot;: 0.000685,
+    &quot;missing_bar_estimate&quot;: 105048,
+    &quot;missing_days_count&quot;: 364,
+    &quot;sparse_days_count&quot;: 1,
+    &quot;missing_months_count&quot;: 11,
+    &quot;largest_missing_window_days&quot;: 333,
+    &quot;requested_range_source&quot;: &quot;cli&quot;
+  },
+  {
+    &quot;symbol&quot;: &quot;BTC/USDT&quot;,
+    &quot;timeframe&quot;: &quot;1h&quot;,
+    &quot;coverage_quality_label&quot;: &quot;missing_sections&quot;,
+    &quot;coverage_ratio&quot;: 0.008219,
+    &quot;missing_bar_estimate&quot;: 8688,
+    &quot;missing_days_count&quot;: 362,
+    &quot;sparse_days_count&quot;: 0,
+    &quot;missing_months_count&quot;: 11,
+    &quot;largest_missing_window_days&quot;: 331,
+    &quot;requested_range_source&quot;: &quot;cli&quot;
+  }
+]</pre>
+</section>
+<section>
+<h2>Items With Out Of Range Rows</h2>
+<pre>[]</pre>
+</section>
+<section>
+<h2>Trend Context Comparison</h2>
+<pre>{
+  &quot;comparison_type&quot;: &quot;trend context comparison&quot;,
+  &quot;trend_label_counts&quot;: {
+    &quot;mixed_or_rangebound&quot;: 1,
+    &quot;downward_bias&quot;: 1,
+    &quot;upward_bias&quot;: 1
+  },
+  &quot;by_item&quot;: [
+    {
+      &quot;symbol&quot;: &quot;BTC/USDT&quot;,
+      &quot;timeframe&quot;: &quot;5m&quot;,
+      &quot;trend_label&quot;: &quot;mixed_or_rangebound&quot;,
+      &quot;recent_return_pct&quot;: 0.7011
+    },
+    {
+      &quot;symbol&quot;: &quot;ETH/USDT&quot;,
+      &quot;timeframe&quot;: &quot;5m&quot;,
+      &quot;trend_label&quot;: &quot;downward_bias&quot;,
+      &quot;recent_return_pct&quot;: -1.8373
+    },
+    {
+      &quot;symbol&quot;: &quot;BTC/USDT&quot;,
+      &quot;timeframe&quot;: &quot;1h&quot;,
+      &quot;trend_label&quot;: &quot;upward_bias&quot;,
+      &quot;recent_return_pct&quot;: 1.2605
+    }
+  ],
+  &quot;notes&quot;: [
+    &quot;Trend labels come from deterministic moving-average and recent-return inputs.&quot;,
+    &quot;Mixed labels are prompts for chart inspection, not instructions.&quot;
+  ]
+}</pre>
+</section>
+<section>
+<h2>Volatility Context Comparison</h2>
+<pre>{
+  &quot;comparison_type&quot;: &quot;volatility context comparison&quot;,
+  &quot;volatility_level_counts&quot;: {
+    &quot;low&quot;: 3
+  },
+  &quot;risk_context_ranking&quot;: [
+    {
+      &quot;position&quot;: 1,
+      &quot;symbol&quot;: &quot;ETH/USDT&quot;,
+      &quot;timeframe&quot;: &quot;5m&quot;,
+      &quot;rolling_volatility_latest&quot;: 0.000942
+    },
+    {
+      &quot;position&quot;: 2,
+      &quot;symbol&quot;: &quot;BTC/USDT&quot;,
+      &quot;timeframe&quot;: &quot;1h&quot;,
+      &quot;rolling_volatility_latest&quot;: 0.000501
+    },
+    {
+      &quot;position&quot;: 3,
+      &quot;symbol&quot;: &quot;BTC/USDT&quot;,
+      &quot;timeframe&quot;: &quot;5m&quot;,
+      &quot;rolling_volatility_latest&quot;: 0.000201
+    }
+  ],
+  &quot;notes&quot;: [
+    &quot;Rolling volatility is calculated from recent close-to-close returns.&quot;,
+    &quot;Higher volatility is a context flag for research review only.&quot;
+  ]
+}</pre>
+</section>
+<section>
+<h2>Drawdown Context Comparison</h2>
+<pre>{
+  &quot;comparison_type&quot;: &quot;drawdown context comparison&quot;,
+  &quot;risk_context_ranking&quot;: [
+    {
+      &quot;position&quot;: 1,
+      &quot;symbol&quot;: &quot;ETH/USDT&quot;,
+      &quot;timeframe&quot;: &quot;5m&quot;,
+      &quot;max_drawdown_pct&quot;: -4.8879
+    },
+    {
+      &quot;position&quot;: 2,
+      &quot;symbol&quot;: &quot;BTC/USDT&quot;,
+      &quot;timeframe&quot;: &quot;5m&quot;,
+      &quot;max_drawdown_pct&quot;: 0.0
+    },
+    {
+      &quot;position&quot;: 3,
+      &quot;symbol&quot;: &quot;BTC/USDT&quot;,
+      &quot;timeframe&quot;: &quot;1h&quot;,
+      &quot;max_drawdown_pct&quot;: 0.0
+    }
+  ],
+  &quot;notes&quot;: [
+    &quot;Drawdown uses close-only history from each supplied CSV window.&quot;,
+    &quot;The ranking highlights observation context and does not rank assets for allocation.&quot;
+  ]
+}</pre>
+</section>
+<section>
+<h2>Indicator Context Comparison</h2>
+<pre>{
+  &quot;comparison_type&quot;: &quot;indicator context comparison&quot;,
+  &quot;item_labels_matrix&quot;: [
+    {
+      &quot;symbol&quot;: &quot;BTC/USDT&quot;,
+      &quot;timeframe&quot;: &quot;5m&quot;,
+      &quot;momentum_label&quot;: &quot;strong_positive_momentum&quot;,
+      &quot;range_position_label&quot;: &quot;near_recent_high&quot;,
+      &quot;drawdown_recovery_label&quot;: &quot;at_or_near_peak&quot;,
+      &quot;volume_context_label&quot;: &quot;elevated_volume&quot;,
+      &quot;realized_volatility_label&quot;: &quot;normal_volatility_context&quot;,
+      &quot;candle_structure_label&quot;: &quot;wick_dominant&quot;,
+      &quot;trend_consistency_label&quot;: &quot;consistent_up_context&quot;,
+      &quot;trend_consistency_score&quot;: 100.0
+    },
+    {
+      &quot;symbol&quot;: &quot;ETH/USDT&quot;,
+      &quot;timeframe&quot;: &quot;5m&quot;,
+      &quot;momentum_label&quot;: &quot;strong_negative_momentum&quot;,
+      &quot;range_position_label&quot;: &quot;near_recent_low&quot;,
+      &quot;drawdown_recovery_label&quot;: &quot;in_drawdown&quot;,
+      &quot;volume_context_label&quot;: &quot;elevated_volume&quot;,
+      &quot;realized_volatility_label&quot;: &quot;normal_volatility_context&quot;,
+      &quot;candle_structure_label&quot;: &quot;wick_dominant&quot;,
+      &quot;trend_consistency_label&quot;: &quot;consistent_down_context&quot;,
+      &quot;trend_consistency_score&quot;: 6.6667
+    },
+    {
+      &quot;symbol&quot;: &quot;BTC/USDT&quot;,
+      &quot;timeframe&quot;: &quot;1h&quot;,
+      &quot;momentum_label&quot;: &quot;strong_positive_momentum&quot;,
+      &quot;range_position_label&quot;: &quot;near_recent_high&quot;,
+      &quot;drawdown_recovery_label&quot;: &quot;at_or_near_peak&quot;,
+      &quot;volume_context_label&quot;: &quot;elevated_volume&quot;,
+      &quot;realized_volatility_label&quot;: &quot;low_volatility_context&quot;,
+      &quot;candle_structure_label&quot;: &quot;wick_dominant&quot;,
+      &quot;trend_consistency_label&quot;: &quot;consistent_up_context&quot;,
+      &quot;trend_consistency_score&quot;: 100.0
+    }
+  ],
+  &quot;items_with_high_volatility_context&quot;: [],
+  &quot;items_with_unusually_high_volume&quot;: [],
+  &quot;items_near_recent_high&quot;: [
+    {
+      &quot;symbol&quot;: &quot;BTC/USDT&quot;,
+      &quot;timeframe&quot;: &quot;5m&quot;,
+      &quot;indicator_family_summary&quot;: {
+        &quot;momentum_label&quot;: &quot;strong_positive_momentum&quot;,
+        &quot;range_position_label&quot;: &quot;near_recent_high&quot;,
+        &quot;drawdown_recovery_label&quot;: &quot;at_or_near_peak&quot;,
+        &quot;volume_context_label&quot;: &quot;elevated_volume&quot;,
+        &quot;realized_volatility_label&quot;: &quot;normal_volatility_context&quot;,
+        &quot;candle_structure_label&quot;: &quot;wick_dominant&quot;,
+        &quot;trend_consistency_label&quot;: &quot;consistent_up_context&quot;,
+        &quot;trend_consistency_score&quot;: 100.0
+      }
+    },
+    {
+      &quot;symbol&quot;: &quot;BTC/USDT&quot;,
+      &quot;timeframe&quot;: &quot;1h&quot;,
+      &quot;indicator_family_summary&quot;: {
+        &quot;momentum_label&quot;: &quot;strong_positive_momentum&quot;,
+        &quot;range_position_label&quot;: &quot;near_recent_high&quot;,
+        &quot;drawdown_recovery_label&quot;: &quot;at_or_near_peak&quot;,
+        &quot;volume_context_label&quot;: &quot;elevated_volume&quot;,
+        &quot;realized_volatility_label&quot;: &quot;low_volatility_context&quot;,
+        &quot;candle_structure_label&quot;: &quot;wick_dominant&quot;,
+        &quot;trend_consistency_label&quot;: &quot;consistent_up_context&quot;,
+        &quot;trend_consistency_score&quot;: 100.0
+      }
+    }
+  ],
+  &quot;items_near_recent_low&quot;: [
+    {
+      &quot;symbol&quot;: &quot;ETH/USDT&quot;,
+      &quot;timeframe&quot;: &quot;5m&quot;,
+      &quot;indicator_family_summary&quot;: {
+        &quot;momentum_label&quot;: &quot;strong_negative_momentum&quot;,
+        &quot;range_position_label&quot;: &quot;near_recent_low&quot;,
+        &quot;drawdown_recovery_label&quot;: &quot;in_drawdown&quot;,
+        &quot;volume_context_label&quot;: &quot;elevated_volume&quot;,
+        &quot;realized_volatility_label&quot;: &quot;normal_volatility_context&quot;,
+        &quot;candle_structure_label&quot;: &quot;wick_dominant&quot;,
+        &quot;trend_consistency_label&quot;: &quot;consistent_down_context&quot;,
+        &quot;trend_consistency_score&quot;: 6.6667
+      }
+    }
+  ],
+  &quot;items_with_mixed_context&quot;: [],
+  &quot;limitations&quot;: [
+    &quot;Indicator context comparison uses local CSV-derived labels only.&quot;,
+    &quot;The comparison highlights observation differences and does not order items by expected outcome.&quot;,
+    &quot;Context labels can be sensitive to deterministic period choices and sparse input history.&quot;
+  ],
+  &quot;research_questions&quot;: [
+    &quot;Which raw candles explain differences in indicator labels across compared items?&quot;,
+    &quot;Do range, volatility, volume, and trend consistency contexts agree for each item?&quot;,
+    &quot;Are any label differences caused by missing coverage or timestamp quality issues?&quot;
+  ]
+}</pre>
+</section>
+<section>
+<h2>Observation Ranking</h2>
+<pre>[
+  {
+    &quot;ranking_type&quot;: &quot;observation ranking&quot;,
+    &quot;dimension&quot;: &quot;highest_total_return_pct_in_input_window&quot;,
+    &quot;items&quot;: [
+      {
+        &quot;position&quot;: 1,
+        &quot;symbol&quot;: &quot;BTC/USDT&quot;,
+        &quot;timeframe&quot;: &quot;1h&quot;,
+        &quot;total_return_pct&quot;: 5.6466
+      },
+      {
+        &quot;position&quot;: 2,
+        &quot;symbol&quot;: &quot;BTC/USDT&quot;,
+        &quot;timeframe&quot;: &quot;5m&quot;,
+        &quot;total_return_pct&quot;: 2.9262
+      },
+      {
+        &quot;position&quot;: 3,
+        &quot;symbol&quot;: &quot;ETH/USDT&quot;,
+        &quot;timeframe&quot;: &quot;5m&quot;,
+        &quot;total_return_pct&quot;: -4.64
+      }
+    ],
+    &quot;interpretation&quot;: &quot;Historical return inside the supplied CSV window only.&quot;
+  },
+  {
+    &quot;ranking_type&quot;: &quot;risk context ranking&quot;,
+    &quot;dimension&quot;: &quot;largest_close_only_drawdown_magnitude&quot;,
+    &quot;items&quot;: [
+      {
+        &quot;position&quot;: 1,
+        &quot;symbol&quot;: &quot;ETH/USDT&quot;,
+        &quot;timeframe&quot;: &quot;5m&quot;,
+        &quot;max_drawdown_pct&quot;: -4.8879
+      },
+      {
+        &quot;position&quot;: 2,
+        &quot;symbol&quot;: &quot;BTC/USDT&quot;,
+        &quot;timeframe&quot;: &quot;5m&quot;,
+        &quot;max_drawdown_pct&quot;: 0.0
+      },
+      {
+        &quot;position&quot;: 3,
+        &quot;symbol&quot;: &quot;BTC/USDT&quot;,
+        &quot;timeframe&quot;: &quot;1h&quot;,
+        &quot;max_drawdown_pct&quot;: 0.0
+      }
+    ],
+    &quot;interpretation&quot;: &quot;Larger magnitude marks a risk context to inspect.&quot;
+  },
+  {
+    &quot;ranking_type&quot;: &quot;data completeness ranking&quot;,
+    &quot;dimension&quot;: &quot;accepted_rows_after_validation&quot;,
+    &quot;items&quot;: [
+      {
+        &quot;position&quot;: 1,
+        &quot;symbol&quot;: &quot;BTC/USDT&quot;,
+        &quot;timeframe&quot;: &quot;5m&quot;,
+        &quot;accepted_rows&quot;: 72
+      },
+      {
+        &quot;position&quot;: 2,
+        &quot;symbol&quot;: &quot;ETH/USDT&quot;,
+        &quot;timeframe&quot;: &quot;5m&quot;,
+        &quot;accepted_rows&quot;: 72
+      },
+      {
+        &quot;position&quot;: 3,
+        &quot;symbol&quot;: &quot;BTC/USDT&quot;,
+        &quot;timeframe&quot;: &quot;1h&quot;,
+        &quot;accepted_rows&quot;: 72
+      }
+    ],
+    &quot;interpretation&quot;: &quot;More accepted rows support a broader deterministic sample.&quot;
+  }
+]</pre>
+</section>
+<section>
+<h2>Cross Symbol Questions</h2>
+<pre>[
+  &quot;Do trend labels stay similar when the same symbol is checked on another timeframe?&quot;,
+  &quot;Are volatility differences caused by one large candle or by persistent variation?&quot;,
+  &quot;Do rejected rows or warnings cluster around one symbol or one timeframe?&quot;,
+  &quot;Does volume regime context agree or conflict across the compared files?&quot;,
+  &quot;Which raw candles would a human researcher inspect before forming a hypothesis?&quot;
+]</pre>
+</section>
+<section>
+<h2>Limitations</h2>
+<pre>[
+  &quot;This comparison uses historical OHLCV rows from local CSV files only.&quot;,
+  &quot;It cannot forecast future market behavior.&quot;,
+  &quot;It does not evaluate fees, slippage, liquidity, funding, news, or portfolio constraints.&quot;,
+  &quot;Ranking sections are observation, risk context, or data completeness rankings only.&quot;,
+  &quot;It is designed for research review, not execution decisions.&quot;
+]</pre>
+</section>
+<section>
+<h2>No Advice Disclaimer</h2>
+<pre>{
+  &quot;labels&quot;: [
+    &quot;RESEARCH ONLY&quot;,
+    &quot;NO FINANCIAL ADVICE&quot;,
+    &quot;NO ORDER EXECUTION&quot;,
+    &quot;LOCAL CSV ONLY&quot;,
+    &quot;NOT A PROFIT GUARANTEE&quot;
+  ],
+  &quot;text&quot;: &quot;This comparison is research only. It is not financial advice. It uses local CSV data only, performs no order execution, and is not a profit guarantee.&quot;
+}</pre>
+</section>
+</main>
+</body>
+</html>

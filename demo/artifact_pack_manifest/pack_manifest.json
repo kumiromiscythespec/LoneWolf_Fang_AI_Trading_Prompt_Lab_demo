@@ -1,0 +1,581 @@
+{
+  "schema_version": "lwf_ai_trading_prompt_lab.artifact_pack.v1",
+  "metadata": {
+    "generated_at": "2026-05-12T00:00:00+00:00",
+    "pack_name": "demo_artifact_pack",
+    "source_mode": "direct_include",
+    "base_dir": "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed",
+    "output_zip": "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/demo_artifact_pack.zip",
+    "file_count": 54,
+    "total_bytes": 1292509
+  },
+  "safety_boundary": {
+    "labels": [
+      "RESEARCH ONLY",
+      "NO FINANCIAL ADVICE",
+      "NO ORDER EXECUTION",
+      "LOCAL CSV ONLY",
+      "NOT A PROFIT GUARANTEE"
+    ],
+    "scope": [
+      "Selected local report artifact storage and sharing support only.",
+      "Safe path collection, hash recording, and deterministic zip export only.",
+      "No network service, account workflow, custody workflow, or execution workflow is included."
+    ]
+  },
+  "inputs": {
+    "dashboard": null,
+    "manifest": null,
+    "include": [
+      "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/dashboard/dashboard.html",
+      "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/dashboard/dashboard.md",
+      "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/dashboard/dashboard_index.json",
+      "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/reports/analyze_sample/report.html",
+      "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/reports/analyze_sample/report.json",
+      "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/reports/analyze_sample/report.md",
+      "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/reports/compare_sample/comparison.html",
+      "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/reports/compare_sample/comparison.json",
+      "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/reports/compare_sample/comparison.md",
+      "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/reports/diagnostics_sample/diagnostics.html",
+      "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/reports/diagnostics_sample/diagnostics.json",
+      "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/reports/diagnostics_sample/diagnostics.md",
+      "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/reports/diff_sample/diff.html",
+      "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/reports/diff_sample/diff.json",
+      "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/reports/diff_sample/diff.md",
+      "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/schema_checks/analyze_report/schema_check.html",
+      "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/schema_checks/analyze_report/schema_check.json",
+      "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/schema_checks/analyze_report/schema_check.md",
+      "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/schema_checks/analyze_summary/schema_check.html",
+      "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/schema_checks/analyze_summary/schema_check.json",
+      "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/schema_checks/analyze_summary/schema_check.md",
+      "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/schema_checks/compare_report/schema_check.html",
+      "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/schema_checks/compare_report/schema_check.json",
+      "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/schema_checks/compare_report/schema_check.md",
+      "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/schema_checks/compare_summary/schema_check.html",
+      "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/schema_checks/compare_summary/schema_check.json",
+      "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/schema_checks/compare_summary/schema_check.md",
+      "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/schema_checks/dashboard/schema_check.html",
+      "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/schema_checks/dashboard/schema_check.json",
+      "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/schema_checks/dashboard/schema_check.md",
+      "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/schema_checks/dashboard_summary/schema_check.html",
+      "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/schema_checks/dashboard_summary/schema_check.json",
+      "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/schema_checks/dashboard_summary/schema_check.md",
+      "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/schema_checks/diagnostics_report/schema_check.html",
+      "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/schema_checks/diagnostics_report/schema_check.json",
+      "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/schema_checks/diagnostics_report/schema_check.md",
+      "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/schema_checks/diff_report/schema_check.html",
+      "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/schema_checks/diff_report/schema_check.json",
+      "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/schema_checks/diff_report/schema_check.md",
+      "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/schema_checks/diff_summary/schema_check.html",
+      "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/schema_checks/diff_summary/schema_check.json",
+      "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/schema_checks/diff_summary/schema_check.md",
+      "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/summaries/analyze_summary/summary.html",
+      "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/summaries/analyze_summary/summary.json",
+      "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/summaries/analyze_summary/summary.md",
+      "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/summaries/compare_summary/summary.html",
+      "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/summaries/compare_summary/summary.json",
+      "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/summaries/compare_summary/summary.md",
+      "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/summaries/dashboard_summary/summary.html",
+      "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/summaries/dashboard_summary/summary.json",
+      "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/summaries/dashboard_summary/summary.md",
+      "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/summaries/diff_summary/summary.html",
+      "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/summaries/diff_summary/summary.json",
+      "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/summaries/diff_summary/summary.md"
+    ],
+    "selection_flags": {
+      "include_html": false,
+      "include_markdown": false,
+      "include_json": false
+    }
+  },
+  "included_files": [
+    {
+      "source_path": "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/dashboard/dashboard.html",
+      "archive_path": "dashboard/dashboard.html",
+      "size_bytes": 10647,
+      "sha256": "4f660e9d4269547c3a077c532c5cec4fad47092c4a10f7d84b20bca7673f0158",
+      "detected_report_type": null,
+      "schema_version": null
+    },
+    {
+      "source_path": "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/dashboard/dashboard.md",
+      "archive_path": "dashboard/dashboard.md",
+      "size_bytes": 3143,
+      "sha256": "35c3004397a65877c9254c585ce820bb6763b603a51101ab674f6f526e996432",
+      "detected_report_type": null,
+      "schema_version": null
+    },
+    {
+      "source_path": "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/dashboard/dashboard_index.json",
+      "archive_path": "dashboard/dashboard_index.json",
+      "size_bytes": 9661,
+      "sha256": "4d7acabf4508f720f902908dbaad5b6edaea1c9a4a63c25ba7f088f2a79893a1",
+      "detected_report_type": "dashboard_index",
+      "schema_version": "lwf_ai_trading_prompt_lab.dashboard_index.v1"
+    },
+    {
+      "source_path": "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/reports/analyze_sample/report.html",
+      "archive_path": "reports/analyze_sample/report.html",
+      "size_bytes": 118536,
+      "sha256": "f5a28764dc6e73c8c66794b50e7e9cd58f5ab0f760157dddfdbbd92c77a1513e",
+      "detected_report_type": null,
+      "schema_version": null
+    },
+    {
+      "source_path": "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/reports/analyze_sample/report.json",
+      "archive_path": "reports/analyze_sample/report.json",
+      "size_bytes": 91064,
+      "sha256": "5cad9e5f48427e6f4d07f491f6ab2cc95cf26df1516e69aa9bc106bc1e028585",
+      "detected_report_type": "single_report",
+      "schema_version": "lwf_ai_trading_prompt_lab.report.v1"
+    },
+    {
+      "source_path": "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/reports/analyze_sample/report.md",
+      "archive_path": "reports/analyze_sample/report.md",
+      "size_bytes": 77888,
+      "sha256": "01287e8465232cf4773c9b6456db720f77cdb3418e035ccf146abbef573f2f47",
+      "detected_report_type": null,
+      "schema_version": null
+    },
+    {
+      "source_path": "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/reports/compare_sample/comparison.html",
+      "archive_path": "reports/compare_sample/comparison.html",
+      "size_bytes": 29415,
+      "sha256": "a9bed9a01eb015095265ba58534af55f0eea28dc873596442444d49116768e81",
+      "detected_report_type": null,
+      "schema_version": null
+    },
+    {
+      "source_path": "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/reports/compare_sample/comparison.json",
+      "archive_path": "reports/compare_sample/comparison.json",
+      "size_bytes": 28171,
+      "sha256": "188eba92e476bba93679ccd0a61a78f9fcdd9a035a6205c065a574b918bde9c5",
+      "detected_report_type": "comparison_report",
+      "schema_version": "lwf_ai_trading_prompt_lab.comparison_report.v1"
+    },
+    {
+      "source_path": "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/reports/compare_sample/comparison.md",
+      "archive_path": "reports/compare_sample/comparison.md",
+      "size_bytes": 19013,
+      "sha256": "770a7ae5cbf393d70e08f60cb57b014d2e980748703a34515a0bf5803519e5de",
+      "detected_report_type": null,
+      "schema_version": null
+    },
+    {
+      "source_path": "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/reports/diagnostics_sample/diagnostics.html",
+      "archive_path": "reports/diagnostics_sample/diagnostics.html",
+      "size_bytes": 13069,
+      "sha256": "baec9ae9187a7ae7ba1968b625307dbcebfa12ef2585e01b6b56b65ea7c4dc36",
+      "detected_report_type": null,
+      "schema_version": null
+    },
+    {
+      "source_path": "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/reports/diagnostics_sample/diagnostics.json",
+      "archive_path": "reports/diagnostics_sample/diagnostics.json",
+      "size_bytes": 88270,
+      "sha256": "d48dabc486937d6b89a7630f6aa223b9569ea1bfa224c8387cfae9647afde064",
+      "detected_report_type": "timestamp_diagnostics_report",
+      "schema_version": "lwf_ai_trading_prompt_lab.timestamp_diagnostics.v1"
+    },
+    {
+      "source_path": "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/reports/diagnostics_sample/diagnostics.md",
+      "archive_path": "reports/diagnostics_sample/diagnostics.md",
+      "size_bytes": 6693,
+      "sha256": "637d98652b2d8e8d58c57455d1e6cd0ce657e5665562ed46adc604a01daa54d8",
+      "detected_report_type": null,
+      "schema_version": null
+    },
+    {
+      "source_path": "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/reports/diff_sample/diff.html",
+      "archive_path": "reports/diff_sample/diff.html",
+      "size_bytes": 195089,
+      "sha256": "b2973bfa3177553e35fe927873b7fb4c416d4b1b88052d47a67382bd568022cb",
+      "detected_report_type": null,
+      "schema_version": null
+    },
+    {
+      "source_path": "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/reports/diff_sample/diff.json",
+      "archive_path": "reports/diff_sample/diff.json",
+      "size_bytes": 319642,
+      "sha256": "dfa3e80a5b325c87887355a983673f01ff34a6f90dcfab48f874dc724509aa91",
+      "detected_report_type": "diff_report",
+      "schema_version": "lwf_ai_trading_prompt_lab.diff_report.v1"
+    },
+    {
+      "source_path": "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/reports/diff_sample/diff.md",
+      "archive_path": "reports/diff_sample/diff.md",
+      "size_bytes": 138998,
+      "sha256": "19d8ec097bd18a2e223e204b0d662ed6eaf49d393d4bb73e9d5c11ff03166bd0",
+      "detected_report_type": null,
+      "schema_version": null
+    },
+    {
+      "source_path": "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/schema_checks/analyze_report/schema_check.html",
+      "archive_path": "schema_checks/analyze_report/schema_check.html",
+      "size_bytes": 4367,
+      "sha256": "0982edb758748b3ae6312d81094dc450031ac43d744ad78b51dcab08f208fb21",
+      "detected_report_type": null,
+      "schema_version": null
+    },
+    {
+      "source_path": "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/schema_checks/analyze_report/schema_check.json",
+      "archive_path": "schema_checks/analyze_report/schema_check.json",
+      "size_bytes": 3740,
+      "sha256": "03fde31f9047b2a988a58438242661f0928e4ef39648d42d4a20265cecfa17b7",
+      "detected_report_type": "schema_check_report",
+      "schema_version": "lwf_ai_trading_prompt_lab.schema_check.v1"
+    },
+    {
+      "source_path": "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/schema_checks/analyze_report/schema_check.md",
+      "archive_path": "schema_checks/analyze_report/schema_check.md",
+      "size_bytes": 2164,
+      "sha256": "7c3c658911580a1086657cd2752925e864895c702e7db92ac2fb422071f0cf8b",
+      "detected_report_type": null,
+      "schema_version": null
+    },
+    {
+      "source_path": "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/schema_checks/analyze_summary/schema_check.html",
+      "archive_path": "schema_checks/analyze_summary/schema_check.html",
+      "size_bytes": 4857,
+      "sha256": "1a8f4169ffe4a5eb701ed2a16a1e68d283013a53c4a9d8f4b5b353611f2d0f4f",
+      "detected_report_type": null,
+      "schema_version": null
+    },
+    {
+      "source_path": "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/schema_checks/analyze_summary/schema_check.json",
+      "archive_path": "schema_checks/analyze_summary/schema_check.json",
+      "size_bytes": 4152,
+      "sha256": "e1ec3f30930f2d23e57276223d767a0809a088d872815e83eb1b01456fb81413",
+      "detected_report_type": "schema_check_report",
+      "schema_version": "lwf_ai_trading_prompt_lab.schema_check.v1"
+    },
+    {
+      "source_path": "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/schema_checks/analyze_summary/schema_check.md",
+      "archive_path": "schema_checks/analyze_summary/schema_check.md",
+      "size_bytes": 2524,
+      "sha256": "171957b02148308afff511ab03ddccda39d18dc91d36cb2d1aaff2e90a77b669",
+      "detected_report_type": null,
+      "schema_version": null
+    },
+    {
+      "source_path": "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/schema_checks/compare_report/schema_check.html",
+      "archive_path": "schema_checks/compare_report/schema_check.html",
+      "size_bytes": 4687,
+      "sha256": "402b7ddacc27cb5a8119778e15d9fa42285492788e1485028d3c520ebcf73ff9",
+      "detected_report_type": null,
+      "schema_version": null
+    },
+    {
+      "source_path": "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/schema_checks/compare_report/schema_check.json",
+      "archive_path": "schema_checks/compare_report/schema_check.json",
+      "size_bytes": 4035,
+      "sha256": "3a3c742ef4a87487acaee264b0a16bf1075e84eeb80f44823dbb0f14bd79ebb8",
+      "detected_report_type": "schema_check_report",
+      "schema_version": "lwf_ai_trading_prompt_lab.schema_check.v1"
+    },
+    {
+      "source_path": "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/schema_checks/compare_report/schema_check.md",
+      "archive_path": "schema_checks/compare_report/schema_check.md",
+      "size_bytes": 2419,
+      "sha256": "4bb3660b85af7bd31210865f38167893625ce171fd820bc29c115679ea61f869",
+      "detected_report_type": null,
+      "schema_version": null
+    },
+    {
+      "source_path": "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/schema_checks/compare_summary/schema_check.html",
+      "archive_path": "schema_checks/compare_summary/schema_check.html",
+      "size_bytes": 4857,
+      "sha256": "0978977d405b4f37342ab02c4bc6f738375574c3d2c9111e9b85371b7fb1b423",
+      "detected_report_type": null,
+      "schema_version": null
+    },
+    {
+      "source_path": "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/schema_checks/compare_summary/schema_check.json",
+      "archive_path": "schema_checks/compare_summary/schema_check.json",
+      "size_bytes": 4152,
+      "sha256": "11ef73042b8998f730fe39e379c482e4bac8ff82e69eca5521b40d926e38b6d3",
+      "detected_report_type": "schema_check_report",
+      "schema_version": "lwf_ai_trading_prompt_lab.schema_check.v1"
+    },
+    {
+      "source_path": "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/schema_checks/compare_summary/schema_check.md",
+      "archive_path": "schema_checks/compare_summary/schema_check.md",
+      "size_bytes": 2524,
+      "sha256": "39881c1fc23d45470f36a58072f600c0a23c60bc5f0cb46ebc8d0c5b67973950",
+      "detected_report_type": null,
+      "schema_version": null
+    },
+    {
+      "source_path": "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/schema_checks/dashboard/schema_check.html",
+      "archive_path": "schema_checks/dashboard/schema_check.html",
+      "size_bytes": 4596,
+      "sha256": "4d46d4ee406a4af8ae201197aa60270b3689bf7e1232065b38bcd2a129e20eac",
+      "detected_report_type": null,
+      "schema_version": null
+    },
+    {
+      "source_path": "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/schema_checks/dashboard/schema_check.json",
+      "archive_path": "schema_checks/dashboard/schema_check.json",
+      "size_bytes": 3948,
+      "sha256": "a304d08beb934fb800aebf08c032c0c2473378b15f57f59426d6c7b42df3d49d",
+      "detected_report_type": "schema_check_report",
+      "schema_version": "lwf_ai_trading_prompt_lab.schema_check.v1"
+    },
+    {
+      "source_path": "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/schema_checks/dashboard/schema_check.md",
+      "archive_path": "schema_checks/dashboard/schema_check.md",
+      "size_bytes": 2341,
+      "sha256": "803c256c5d099892d0b88331889c38b37ebe37a8a65eb7eed2c2caa27bc26020",
+      "detected_report_type": null,
+      "schema_version": null
+    },
+    {
+      "source_path": "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/schema_checks/dashboard_summary/schema_check.html",
+      "archive_path": "schema_checks/dashboard_summary/schema_check.html",
+      "size_bytes": 4859,
+      "sha256": "0fd1f709df1f94cc79c7d6bfeb2e5d0325596e6fe69d8f0f8fffb5dfcafd5f8b",
+      "detected_report_type": null,
+      "schema_version": null
+    },
+    {
+      "source_path": "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/schema_checks/dashboard_summary/schema_check.json",
+      "archive_path": "schema_checks/dashboard_summary/schema_check.json",
+      "size_bytes": 4154,
+      "sha256": "cfe5c231fb939f82ba94f54b3aae5c8f766141a7d9e40214efed745093ecbc1c",
+      "detected_report_type": "schema_check_report",
+      "schema_version": "lwf_ai_trading_prompt_lab.schema_check.v1"
+    },
+    {
+      "source_path": "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/schema_checks/dashboard_summary/schema_check.md",
+      "archive_path": "schema_checks/dashboard_summary/schema_check.md",
+      "size_bytes": 2526,
+      "sha256": "fbca7b13387670c1b9a3b7b3769ed30e0111bdd9efb94500b1381b9d1c0aef2f",
+      "detected_report_type": null,
+      "schema_version": null
+    },
+    {
+      "source_path": "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/schema_checks/diagnostics_report/schema_check.html",
+      "archive_path": "schema_checks/diagnostics_report/schema_check.html",
+      "size_bytes": 4308,
+      "sha256": "26b131188416bf3310d17db48ac2d0adcdc9e2b5494b0ff0814d7bb8e78de680",
+      "detected_report_type": null,
+      "schema_version": null
+    },
+    {
+      "source_path": "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/schema_checks/diagnostics_report/schema_check.json",
+      "archive_path": "schema_checks/diagnostics_report/schema_check.json",
+      "size_bytes": 3727,
+      "sha256": "93bf8389c53438180ffe7383a816005697167ffc2bc795dc3209f2a418070226",
+      "detected_report_type": "schema_check_report",
+      "schema_version": "lwf_ai_trading_prompt_lab.schema_check.v1"
+    },
+    {
+      "source_path": "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/schema_checks/diagnostics_report/schema_check.md",
+      "archive_path": "schema_checks/diagnostics_report/schema_check.md",
+      "size_bytes": 2131,
+      "sha256": "77f5a5aaa720e008ed6f4dcd39b33c104068edf3a65aa1e04ad23aca6cc35e3c",
+      "detected_report_type": null,
+      "schema_version": null
+    },
+    {
+      "source_path": "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/schema_checks/diff_report/schema_check.html",
+      "archive_path": "schema_checks/diff_report/schema_check.html",
+      "size_bytes": 4379,
+      "sha256": "784b00f31d8f1b40758a4ac439b8e4509dbef7e0b288d1cf2fbf243d023df468",
+      "detected_report_type": null,
+      "schema_version": null
+    },
+    {
+      "source_path": "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/schema_checks/diff_report/schema_check.json",
+      "archive_path": "schema_checks/diff_report/schema_check.json",
+      "size_bytes": 3739,
+      "sha256": "fb55d4b3ca427117e2c54adb0a06dc4c52f4d34644c80e1b0bf04dc896bd7387",
+      "detected_report_type": "schema_check_report",
+      "schema_version": "lwf_ai_trading_prompt_lab.schema_check.v1"
+    },
+    {
+      "source_path": "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/schema_checks/diff_report/schema_check.md",
+      "archive_path": "schema_checks/diff_report/schema_check.md",
+      "size_bytes": 2150,
+      "sha256": "1b9eedd6942a88f1b8b7546aff3e10a56355a5ae49b675333ab03653e0173a66",
+      "detected_report_type": null,
+      "schema_version": null
+    },
+    {
+      "source_path": "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/schema_checks/diff_summary/schema_check.html",
+      "archive_path": "schema_checks/diff_summary/schema_check.html",
+      "size_bytes": 4854,
+      "sha256": "6c16759358fd053e6bcc1b80c53fd06f7b98a14345d40a7d551b7a1a3ac2d08a",
+      "detected_report_type": null,
+      "schema_version": null
+    },
+    {
+      "source_path": "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/schema_checks/diff_summary/schema_check.json",
+      "archive_path": "schema_checks/diff_summary/schema_check.json",
+      "size_bytes": 4149,
+      "sha256": "8e8d6e1bc04ad33893bed88a96720b967295c82c33dca5c6859a590fd278dc4b",
+      "detected_report_type": "schema_check_report",
+      "schema_version": "lwf_ai_trading_prompt_lab.schema_check.v1"
+    },
+    {
+      "source_path": "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/schema_checks/diff_summary/schema_check.md",
+      "archive_path": "schema_checks/diff_summary/schema_check.md",
+      "size_bytes": 2521,
+      "sha256": "0a6f554f7628a4aed454b4f0cd93a46eac5ad4e5b5d6817a5b67863609245f9e",
+      "detected_report_type": null,
+      "schema_version": null
+    },
+    {
+      "source_path": "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/summaries/analyze_summary/summary.html",
+      "archive_path": "summaries/analyze_summary/summary.html",
+      "size_bytes": 4634,
+      "sha256": "049114c001fc32ff55ee6428b5fee785c2e96abd71a4af7ba2fb87bd9b4f0599",
+      "detected_report_type": null,
+      "schema_version": null
+    },
+    {
+      "source_path": "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/summaries/analyze_summary/summary.json",
+      "archive_path": "summaries/analyze_summary/summary.json",
+      "size_bytes": 3855,
+      "sha256": "8e318eb40fef0002a6df0dfe957b356ebd761432788967231234ad3d5df91ba6",
+      "detected_report_type": "summary_report",
+      "schema_version": "lwf_ai_trading_prompt_lab.summary.v1"
+    },
+    {
+      "source_path": "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/summaries/analyze_summary/summary.md",
+      "archive_path": "summaries/analyze_summary/summary.md",
+      "size_bytes": 2354,
+      "sha256": "39f41fdbdc1d5f894e72332c5e063f6d53bf7e5df6a2571d65fb2e936d30d170",
+      "detected_report_type": null,
+      "schema_version": null
+    },
+    {
+      "source_path": "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/summaries/compare_summary/summary.html",
+      "archive_path": "summaries/compare_summary/summary.html",
+      "size_bytes": 4688,
+      "sha256": "340619517683bb0ac4bd36e9a17362a3f397670c5fd1d73928f0a0f61c72aa71",
+      "detected_report_type": null,
+      "schema_version": null
+    },
+    {
+      "source_path": "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/summaries/compare_summary/summary.json",
+      "archive_path": "summaries/compare_summary/summary.json",
+      "size_bytes": 4203,
+      "sha256": "cee8c92f70edac8783d4797d87e63616eaf9f1bde31fc52a9f066b773f891195",
+      "detected_report_type": "summary_report",
+      "schema_version": "lwf_ai_trading_prompt_lab.summary.v1"
+    },
+    {
+      "source_path": "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/summaries/compare_summary/summary.md",
+      "archive_path": "summaries/compare_summary/summary.md",
+      "size_bytes": 2408,
+      "sha256": "1ce24b7ed0611e41cdf11e98112cce04859f5c143f770cab01b600c203711133",
+      "detected_report_type": null,
+      "schema_version": null
+    },
+    {
+      "source_path": "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/summaries/dashboard_summary/summary.html",
+      "archive_path": "summaries/dashboard_summary/summary.html",
+      "size_bytes": 4720,
+      "sha256": "d58e33d430ae354feddca28bb96e9ce312ef8572dee72b264cdce38c78bb5e9c",
+      "detected_report_type": null,
+      "schema_version": null
+    },
+    {
+      "source_path": "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/summaries/dashboard_summary/summary.json",
+      "archive_path": "summaries/dashboard_summary/summary.json",
+      "size_bytes": 4167,
+      "sha256": "2dc56be7433871fc133c2ef1a44b9d671460591cd83a593445d9dc773ab08fe7",
+      "detected_report_type": "summary_report",
+      "schema_version": "lwf_ai_trading_prompt_lab.summary.v1"
+    },
+    {
+      "source_path": "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/summaries/dashboard_summary/summary.md",
+      "archive_path": "summaries/dashboard_summary/summary.md",
+      "size_bytes": 2420,
+      "sha256": "dd261899a57ed78a0f59970648c5f87fe9fde17e2abc06ddf318a87646d312c7",
+      "detected_report_type": null,
+      "schema_version": null
+    },
+    {
+      "source_path": "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/summaries/diff_summary/summary.html",
+      "archive_path": "summaries/diff_summary/summary.html",
+      "size_bytes": 4633,
+      "sha256": "0ec0a0ea1d512fd0c582dda5a1ed5edbf35c586c957864852f44f2957a7dd903",
+      "detected_report_type": null,
+      "schema_version": null
+    },
+    {
+      "source_path": "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/summaries/diff_summary/summary.json",
+      "archive_path": "summaries/diff_summary/summary.json",
+      "size_bytes": 3935,
+      "sha256": "df9d15cdec05c73108b03743e9b98577bde70d877581cf3a98fb1ee2f2c7d303",
+      "detected_report_type": "summary_report",
+      "schema_version": "lwf_ai_trading_prompt_lab.summary.v1"
+    },
+    {
+      "source_path": "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/summaries/diff_summary/summary.md",
+      "archive_path": "summaries/diff_summary/summary.md",
+      "size_bytes": 2333,
+      "sha256": "239ae2cfe5b123d79594dacc4d9d17848a97c64d016b3c215f8d9db2625fc42c",
+      "detected_report_type": null,
+      "schema_version": null
+    }
+  ],
+  "skipped_files": [],
+  "warnings": [],
+  "errors": [],
+  "forbidden_scan": {
+    "scanned_files": 54,
+    "hit_count": 0,
+    "hits": []
+  },
+  "limitations": [
+    "The pack preserves selected local artifacts and hashes only.",
+    "The pack does not rank symbols, reports, timeframes, or expected outcomes.",
+    "The pack is not for investment decisions.",
+    "Only files that pass local path and size policy are included."
+  ],
+  "no_advice_disclaimer": {
+    "labels": [
+      "RESEARCH ONLY",
+      "NO FINANCIAL ADVICE",
+      "NO ORDER EXECUTION",
+      "LOCAL CSV ONLY",
+      "NOT A PROFIT GUARANTEE"
+    ],
+    "text": "This artifact pack is research only. It is not financial advice. It uses local CSV report files only, has no execution workflow, and is not a profit guarantee."
+  },
+  "deterministic_summary": {
+    "schema_version": "lwf_ai_trading_prompt_lab.summary.v1",
+    "summary_scope": "embedded_safe_digest",
+    "detected_report_type": "artifact_pack",
+    "input_schema_version": "lwf_ai_trading_prompt_lab.artifact_pack.v1",
+    "headline": "Local deterministic summary for an artifact pack manifest.",
+    "source_digest": {
+      "detected_report_type": "artifact_pack",
+      "schema_version": "lwf_ai_trading_prompt_lab.artifact_pack.v1",
+      "file_count": 54,
+      "total_bytes": 1292509,
+      "source_mode": "direct_include",
+      "forbidden_scan_hit_count": 0,
+      "forbidden_scan_scanned_files": 54,
+      "warning_count": 0,
+      "error_count": 0,
+      "manifest_present": true,
+      "coverage_quality_label": "not_available",
+      "coverage_ratio": "not_available",
+      "missing_days_count": "not_available",
+      "sparse_days_count": "not_available",
+      "indicator_context_present": false
+    },
+    "safety_labels": [
+      "RESEARCH ONLY",
+      "NO FINANCIAL ADVICE",
+      "NO ORDER EXECUTION",
+      "LOCAL CSV ONLY",
+      "NOT A PROFIT GUARANTEE"
+    ],
+    "template_policy": "deterministic_local_templates_only"
+  }
+}

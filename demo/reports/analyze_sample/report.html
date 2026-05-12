@@ -1,0 +1,3433 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LoneWolf Fang AI Trading Prompt Lab Report</title>
+<style>
+body{font-family:Arial,sans-serif;line-height:1.55;margin:0;color:#1d252c;background:#f7f8fa;}
+main{max-width:980px;margin:0 auto;padding:32px 20px 48px;}
+section{border-top:1px solid #d9dee4;padding:22px 0;}
+.banner{background:#111820;color:#fff;padding:18px 20px;margin:0 0 18px 0;}
+.labels{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;}
+.label{border:1px solid #9fb0c0;padding:4px 8px;font-size:12px;font-weight:700;}
+pre{white-space:pre-wrap;background:#fff;border:1px solid #d9dee4;padding:12px;overflow:auto;}
+h1,h2{line-height:1.2;}
+</style>
+</head>
+<body>
+<main>
+<h1>LoneWolf Fang AI Trading Prompt Lab Report</h1>
+<div class="banner"><strong>Research Safety Boundary</strong><div class="labels"><span class="label">RESEARCH ONLY</span><span class="label">NO FINANCIAL ADVICE</span><span class="label">NO ORDER EXECUTION</span><span class="label">LOCAL CSV ONLY</span><span class="label">NOT A PROFIT GUARANTEE</span></div></div>
+<section>
+<h2>Metadata</h2>
+<pre>{
+  &quot;tool_name&quot;: &quot;LoneWolf Fang AI Trading Prompt Lab&quot;,
+  &quot;report_version&quot;: &quot;0.1.0&quot;,
+  &quot;generated_at_utc&quot;: &quot;2026-05-12T00:00:00+00:00&quot;,
+  &quot;symbol&quot;: &quot;BTC/USDT&quot;,
+  &quot;source_csv&quot;: &quot;C:\\LoneWolf_Fang_AI_Trading_Prompt_Lab\\samples\\sample_ohlcv.csv&quot;,
+  &quot;safety_labels&quot;: [
+    &quot;RESEARCH ONLY&quot;,
+    &quot;NO FINANCIAL ADVICE&quot;,
+    &quot;NO ORDER EXECUTION&quot;,
+    &quot;LOCAL CSV ONLY&quot;,
+    &quot;NOT A PROFIT GUARANTEE&quot;
+  ]
+}</pre>
+</section>
+<section>
+<h2>Input Summary</h2>
+<pre>{
+  &quot;accepted_rows&quot;: 130,
+  &quot;first_timestamp&quot;: &quot;2025-01-01&quot;,
+  &quot;last_timestamp&quot;: &quot;2025-05-10&quot;,
+  &quot;latest_close&quot;: 12576.0,
+  &quot;total_return_pct&quot;: 27.1202,
+  &quot;recent_return20_pct&quot;: 5.9656
+}</pre>
+</section>
+<section>
+<h2>Validation Summary</h2>
+<pre>{
+  &quot;input_rows&quot;: 130,
+  &quot;accepted_rows&quot;: 130,
+  &quot;rejected_rows&quot;: 0,
+  &quot;warnings&quot;: []
+}</pre>
+</section>
+<section>
+<h2>Timestamp Diagnostics</h2>
+<pre>{
+  &quot;input_csv&quot;: &quot;C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/samples/sample_ohlcv.csv&quot;,
+  &quot;symbol&quot;: &quot;BTC/USDT&quot;,
+  &quot;timeframe&quot;: null,
+  &quot;timestamp_normalization_summary&quot;: {
+    &quot;raw_first_timestamp&quot;: &quot;2025-01-01&quot;,
+    &quot;raw_last_timestamp&quot;: &quot;2025-05-10&quot;,
+    &quot;normalized_first_timestamp&quot;: 1735689600000,
+    &quot;normalized_last_timestamp&quot;: 1746835200000,
+    &quot;normalized_first_iso&quot;: &quot;2025-01-01T00:00:00+00:00&quot;,
+    &quot;normalized_last_iso&quot;: &quot;2025-05-10T00:00:00+00:00&quot;,
+    &quot;timestamp_unit&quot;: &quot;unknown&quot;,
+    &quot;rows_seen&quot;: 130,
+    &quot;rows_with_invalid_timestamp&quot;: 0,
+    &quot;rows_with_non_positive_timestamp&quot;: 0
+  },
+  &quot;ordering_diagnostics&quot;: {
+    &quot;original_out_of_order_count&quot;: 0,
+    &quot;original_out_of_order_examples&quot;: [],
+    &quot;sorted_applied&quot;: false,
+    &quot;duplicate_timestamp_count&quot;: 0,
+    &quot;duplicate_timestamp_examples&quot;: [],
+    &quot;duplicate_policy&quot;: &quot;duplicate timestamps are retained in sorted rows; diagnostics report repeated timestamp rows.&quot;
+  },
+  &quot;interval_diagnostics&quot;: {
+    &quot;inferred_interval_ms&quot;: 86400000,
+    &quot;inferred_interval_label&quot;: &quot;1d&quot;,
+    &quot;interval_inference_method&quot;: &quot;mode_of_positive_intervals&quot;,
+    &quot;interval_counts_top&quot;: [
+      {
+        &quot;interval_ms&quot;: 86400000,
+        &quot;interval_label&quot;: &quot;1d&quot;,
+        &quot;count&quot;: 129
+      }
+    ],
+    &quot;gap_count&quot;: 0,
+    &quot;gap_examples&quot;: [],
+    &quot;largest_gap_ms&quot;: null,
+    &quot;largest_gap_label&quot;: null,
+    &quot;largest_gap_start_ts&quot;: null,
+    &quot;largest_gap_end_ts&quot;: null,
+    &quot;largest_gap_start_iso&quot;: null,
+    &quot;largest_gap_end_iso&quot;: null,
+    &quot;irregular_interval_count&quot;: 0,
+    &quot;irregular_interval_examples&quot;: [],
+    &quot;short_interval_count&quot;: 0,
+    &quot;long_interval_count&quot;: 0
+  },
+  &quot;timeframe_consistency&quot;: {
+    &quot;expected_timeframe&quot;: null,
+    &quot;expected_interval_ms&quot;: null,
+    &quot;matches_expected_timeframe&quot;: null,
+    &quot;expected_interval_mismatch_count&quot;: 0,
+    &quot;expected_interval_mismatch_examples&quot;: [],
+    &quot;timeframe_warning&quot;: &quot;No expected timeframe was supplied; consistency uses inferred intervals only.&quot;
+  },
+  &quot;timestamp_quality_label&quot;: &quot;minor_warnings&quot;,
+  &quot;calendar_coverage_summary&quot;: {
+    &quot;coverage_quality_label&quot;: &quot;missing_sections&quot;,
+    &quot;coverage_ratio&quot;: 0.356164,
+    &quot;missing_bar_estimate&quot;: 235,
+    &quot;missing_days_count&quot;: 235,
+    &quot;sparse_days_count&quot;: 0,
+    &quot;missing_months_count&quot;: 7,
+    &quot;largest_missing_window_days&quot;: 235
+  },
+  &quot;research_notes&quot;: [
+    &quot;Timestamp diagnostics are input data quality observations for local CSV review only.&quot;,
+    &quot;No expected timeframe was supplied; consistency uses inferred intervals only.&quot;,
+    &quot;These diagnostics do not rank symbols, timeframes, reports, or expected market outcomes.&quot;
+  ]
+}</pre>
+</section>
+<section>
+<h2>Calendar Coverage</h2>
+<pre>{
+  &quot;coverage_range_summary&quot;: {
+    &quot;coverage_timezone&quot;: &quot;UTC&quot;,
+    &quot;expected_start_date&quot;: &quot;2025-01-01&quot;,
+    &quot;expected_end_date&quot;: &quot;2025-12-31&quot;,
+    &quot;expected_start_ts&quot;: 1735689600000,
+    &quot;expected_end_ts&quot;: 1767225600000,
+    &quot;expected_start_iso&quot;: &quot;2025-01-01T00:00:00+00:00&quot;,
+    &quot;expected_end_exclusive_iso&quot;: &quot;2026-01-01T00:00:00+00:00&quot;,
+    &quot;expected_end_policy&quot;: &quot;inclusive date converted to next-day exclusive UTC boundary&quot;,
+    &quot;actual_first_ts&quot;: 1735689600000,
+    &quot;actual_last_ts&quot;: 1746835200000,
+    &quot;actual_first_iso&quot;: &quot;2025-01-01T00:00:00+00:00&quot;,
+    &quot;actual_last_iso&quot;: &quot;2025-05-10T00:00:00+00:00&quot;,
+    &quot;requested_range_source&quot;: &quot;cli&quot;
+  },
+  &quot;expected_vs_actual_bar_count&quot;: {
+    &quot;expected_interval_ms&quot;: 86400000,
+    &quot;expected_interval_label&quot;: &quot;1d&quot;,
+    &quot;expected_interval_source&quot;: &quot;inferred&quot;,
+    &quot;expected_bar_count&quot;: 365,
+    &quot;actual_unique_timestamp_count&quot;: 130,
+    &quot;coverage_ratio&quot;: 0.356164,
+    &quot;missing_bar_estimate&quot;: 235,
+    &quot;extra_out_of_range_count&quot;: 0,
+    &quot;before_expected_count&quot;: 0,
+    &quot;after_expected_count&quot;: 0
+  },
+  &quot;daily_coverage_summary&quot;: {
+    &quot;daily_expected_bar_count&quot;: 1,
+    &quot;daily_coverage&quot;: [
+      {
+        &quot;date&quot;: &quot;2025-01-01&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-01-02&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-01-03&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-01-04&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-01-05&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-01-06&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-01-07&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-01-08&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-01-09&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-01-10&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-01-11&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-01-12&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-01-13&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-01-14&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-01-15&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-01-16&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-01-17&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-01-18&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-01-19&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-01-20&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-01-21&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-01-22&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-01-23&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-01-24&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-01-25&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-01-26&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-01-27&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-01-28&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-01-29&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-01-30&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-01-31&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-02-01&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-02-02&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-02-03&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-02-04&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-02-05&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-02-06&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-02-07&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-02-08&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-02-09&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-02-10&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-02-11&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-02-12&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-02-13&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-02-14&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-02-15&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-02-16&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-02-17&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-02-18&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-02-19&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-02-20&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-02-21&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-02-22&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-02-23&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-02-24&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-02-25&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-02-26&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-02-27&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-02-28&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-03-01&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-03-02&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-03-03&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-03-04&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-03-05&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-03-06&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-03-07&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-03-08&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-03-09&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-03-10&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-03-11&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-03-12&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-03-13&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-03-14&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-03-15&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-03-16&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-03-17&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-03-18&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-03-19&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-03-20&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-03-21&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-03-22&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-03-23&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-03-24&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-03-25&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-03-26&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-03-27&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-03-28&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-03-29&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-03-30&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-03-31&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-04-01&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-04-02&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-04-03&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-04-04&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-04-05&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-04-06&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-04-07&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-04-08&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-04-09&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-04-10&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-04-11&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-04-12&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-04-13&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-04-14&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-04-15&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-04-16&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-04-17&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-04-18&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-04-19&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-04-20&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-04-21&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-04-22&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-04-23&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-04-24&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-04-25&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-04-26&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-04-27&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-04-28&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-04-29&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-04-30&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-05-01&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-05-02&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-05-03&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-05-04&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-05-05&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-05-06&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-05-07&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-05-08&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-05-09&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-05-10&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 1,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-05-11&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-05-12&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-05-13&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-05-14&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-05-15&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-05-16&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-05-17&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-05-18&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-05-19&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-05-20&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-05-21&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-05-22&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-05-23&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-05-24&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-05-25&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-05-26&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-05-27&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-05-28&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-05-29&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-05-30&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-05-31&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-06-01&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-06-02&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-06-03&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-06-04&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-06-05&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-06-06&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-06-07&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-06-08&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-06-09&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-06-10&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-06-11&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-06-12&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-06-13&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-06-14&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-06-15&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-06-16&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-06-17&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-06-18&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-06-19&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-06-20&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-06-21&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-06-22&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-06-23&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-06-24&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-06-25&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-06-26&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-06-27&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-06-28&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-06-29&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-06-30&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-07-01&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-07-02&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-07-03&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-07-04&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-07-05&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-07-06&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-07-07&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-07-08&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-07-09&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-07-10&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-07-11&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-07-12&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-07-13&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-07-14&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-07-15&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-07-16&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-07-17&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-07-18&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-07-19&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-07-20&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-07-21&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-07-22&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-07-23&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-07-24&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-07-25&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-07-26&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-07-27&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-07-28&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-07-29&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-07-30&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-07-31&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-08-01&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-08-02&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-08-03&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-08-04&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-08-05&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-08-06&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-08-07&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-08-08&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-08-09&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-08-10&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-08-11&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-08-12&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-08-13&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-08-14&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-08-15&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-08-16&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-08-17&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-08-18&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-08-19&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-08-20&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-08-21&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-08-22&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-08-23&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-08-24&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-08-25&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-08-26&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-08-27&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-08-28&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-08-29&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-08-30&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-08-31&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-09-01&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-09-02&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-09-03&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-09-04&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-09-05&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-09-06&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-09-07&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-09-08&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-09-09&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-09-10&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-09-11&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-09-12&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-09-13&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-09-14&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-09-15&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-09-16&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-09-17&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-09-18&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-09-19&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-09-20&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-09-21&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-09-22&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-09-23&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-09-24&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-09-25&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-09-26&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-09-27&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-09-28&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-09-29&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-09-30&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-10-01&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-10-02&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-10-03&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-10-04&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-10-05&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-10-06&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-10-07&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-10-08&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-10-09&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-10-10&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-10-11&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-10-12&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-10-13&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-10-14&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-10-15&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-10-16&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-10-17&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-10-18&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-10-19&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-10-20&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-10-21&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-10-22&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-10-23&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-10-24&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-10-25&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-10-26&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-10-27&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-10-28&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-10-29&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-10-30&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-10-31&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-11-01&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-11-02&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-11-03&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-11-04&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-11-05&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-11-06&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-11-07&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-11-08&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-11-09&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-11-10&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-11-11&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-11-12&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-11-13&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-11-14&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-11-15&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-11-16&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-11-17&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-11-18&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-11-19&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-11-20&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-11-21&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-11-22&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-11-23&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-11-24&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-11-25&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-11-26&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-11-27&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-11-28&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-11-29&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-11-30&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-12-01&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-12-02&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-12-03&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-12-04&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-12-05&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-12-06&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-12-07&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-12-08&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-12-09&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-12-10&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-12-11&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-12-12&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-12-13&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-12-14&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-12-15&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-12-16&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-12-17&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-12-18&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-12-19&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-12-20&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-12-21&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-12-22&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-12-23&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-12-24&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-12-25&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-12-26&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-12-27&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-12-28&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-12-29&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-12-30&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;date&quot;: &quot;2025-12-31&quot;,
+        &quot;expected_bars&quot;: 1,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      }
+    ],
+    &quot;missing_days&quot;: [
+      &quot;2025-05-11&quot;,
+      &quot;2025-05-12&quot;,
+      &quot;2025-05-13&quot;,
+      &quot;2025-05-14&quot;,
+      &quot;2025-05-15&quot;,
+      &quot;2025-05-16&quot;,
+      &quot;2025-05-17&quot;,
+      &quot;2025-05-18&quot;,
+      &quot;2025-05-19&quot;,
+      &quot;2025-05-20&quot;,
+      &quot;2025-05-21&quot;,
+      &quot;2025-05-22&quot;,
+      &quot;2025-05-23&quot;,
+      &quot;2025-05-24&quot;,
+      &quot;2025-05-25&quot;,
+      &quot;2025-05-26&quot;,
+      &quot;2025-05-27&quot;,
+      &quot;2025-05-28&quot;,
+      &quot;2025-05-29&quot;,
+      &quot;2025-05-30&quot;,
+      &quot;2025-05-31&quot;,
+      &quot;2025-06-01&quot;,
+      &quot;2025-06-02&quot;,
+      &quot;2025-06-03&quot;,
+      &quot;2025-06-04&quot;,
+      &quot;2025-06-05&quot;,
+      &quot;2025-06-06&quot;,
+      &quot;2025-06-07&quot;,
+      &quot;2025-06-08&quot;,
+      &quot;2025-06-09&quot;,
+      &quot;2025-06-10&quot;,
+      &quot;2025-06-11&quot;,
+      &quot;2025-06-12&quot;,
+      &quot;2025-06-13&quot;,
+      &quot;2025-06-14&quot;,
+      &quot;2025-06-15&quot;,
+      &quot;2025-06-16&quot;,
+      &quot;2025-06-17&quot;,
+      &quot;2025-06-18&quot;,
+      &quot;2025-06-19&quot;,
+      &quot;2025-06-20&quot;,
+      &quot;2025-06-21&quot;,
+      &quot;2025-06-22&quot;,
+      &quot;2025-06-23&quot;,
+      &quot;2025-06-24&quot;,
+      &quot;2025-06-25&quot;,
+      &quot;2025-06-26&quot;,
+      &quot;2025-06-27&quot;,
+      &quot;2025-06-28&quot;,
+      &quot;2025-06-29&quot;,
+      &quot;2025-06-30&quot;,
+      &quot;2025-07-01&quot;,
+      &quot;2025-07-02&quot;,
+      &quot;2025-07-03&quot;,
+      &quot;2025-07-04&quot;,
+      &quot;2025-07-05&quot;,
+      &quot;2025-07-06&quot;,
+      &quot;2025-07-07&quot;,
+      &quot;2025-07-08&quot;,
+      &quot;2025-07-09&quot;,
+      &quot;2025-07-10&quot;,
+      &quot;2025-07-11&quot;,
+      &quot;2025-07-12&quot;,
+      &quot;2025-07-13&quot;,
+      &quot;2025-07-14&quot;,
+      &quot;2025-07-15&quot;,
+      &quot;2025-07-16&quot;,
+      &quot;2025-07-17&quot;,
+      &quot;2025-07-18&quot;,
+      &quot;2025-07-19&quot;,
+      &quot;2025-07-20&quot;,
+      &quot;2025-07-21&quot;,
+      &quot;2025-07-22&quot;,
+      &quot;2025-07-23&quot;,
+      &quot;2025-07-24&quot;,
+      &quot;2025-07-25&quot;,
+      &quot;2025-07-26&quot;,
+      &quot;2025-07-27&quot;,
+      &quot;2025-07-28&quot;,
+      &quot;2025-07-29&quot;,
+      &quot;2025-07-30&quot;,
+      &quot;2025-07-31&quot;,
+      &quot;2025-08-01&quot;,
+      &quot;2025-08-02&quot;,
+      &quot;2025-08-03&quot;,
+      &quot;2025-08-04&quot;,
+      &quot;2025-08-05&quot;,
+      &quot;2025-08-06&quot;,
+      &quot;2025-08-07&quot;,
+      &quot;2025-08-08&quot;,
+      &quot;2025-08-09&quot;,
+      &quot;2025-08-10&quot;,
+      &quot;2025-08-11&quot;,
+      &quot;2025-08-12&quot;,
+      &quot;2025-08-13&quot;,
+      &quot;2025-08-14&quot;,
+      &quot;2025-08-15&quot;,
+      &quot;2025-08-16&quot;,
+      &quot;2025-08-17&quot;,
+      &quot;2025-08-18&quot;,
+      &quot;2025-08-19&quot;,
+      &quot;2025-08-20&quot;,
+      &quot;2025-08-21&quot;,
+      &quot;2025-08-22&quot;,
+      &quot;2025-08-23&quot;,
+      &quot;2025-08-24&quot;,
+      &quot;2025-08-25&quot;,
+      &quot;2025-08-26&quot;,
+      &quot;2025-08-27&quot;,
+      &quot;2025-08-28&quot;,
+      &quot;2025-08-29&quot;,
+      &quot;2025-08-30&quot;,
+      &quot;2025-08-31&quot;,
+      &quot;2025-09-01&quot;,
+      &quot;2025-09-02&quot;,
+      &quot;2025-09-03&quot;,
+      &quot;2025-09-04&quot;,
+      &quot;2025-09-05&quot;,
+      &quot;2025-09-06&quot;,
+      &quot;2025-09-07&quot;,
+      &quot;2025-09-08&quot;,
+      &quot;2025-09-09&quot;,
+      &quot;2025-09-10&quot;,
+      &quot;2025-09-11&quot;,
+      &quot;2025-09-12&quot;,
+      &quot;2025-09-13&quot;,
+      &quot;2025-09-14&quot;,
+      &quot;2025-09-15&quot;,
+      &quot;2025-09-16&quot;,
+      &quot;2025-09-17&quot;,
+      &quot;2025-09-18&quot;,
+      &quot;2025-09-19&quot;,
+      &quot;2025-09-20&quot;,
+      &quot;2025-09-21&quot;,
+      &quot;2025-09-22&quot;,
+      &quot;2025-09-23&quot;,
+      &quot;2025-09-24&quot;,
+      &quot;2025-09-25&quot;,
+      &quot;2025-09-26&quot;,
+      &quot;2025-09-27&quot;,
+      &quot;2025-09-28&quot;,
+      &quot;2025-09-29&quot;,
+      &quot;2025-09-30&quot;,
+      &quot;2025-10-01&quot;,
+      &quot;2025-10-02&quot;,
+      &quot;2025-10-03&quot;,
+      &quot;2025-10-04&quot;,
+      &quot;2025-10-05&quot;,
+      &quot;2025-10-06&quot;,
+      &quot;2025-10-07&quot;,
+      &quot;2025-10-08&quot;,
+      &quot;2025-10-09&quot;,
+      &quot;2025-10-10&quot;,
+      &quot;2025-10-11&quot;,
+      &quot;2025-10-12&quot;,
+      &quot;2025-10-13&quot;,
+      &quot;2025-10-14&quot;,
+      &quot;2025-10-15&quot;,
+      &quot;2025-10-16&quot;,
+      &quot;2025-10-17&quot;,
+      &quot;2025-10-18&quot;,
+      &quot;2025-10-19&quot;,
+      &quot;2025-10-20&quot;,
+      &quot;2025-10-21&quot;,
+      &quot;2025-10-22&quot;,
+      &quot;2025-10-23&quot;,
+      &quot;2025-10-24&quot;,
+      &quot;2025-10-25&quot;,
+      &quot;2025-10-26&quot;,
+      &quot;2025-10-27&quot;,
+      &quot;2025-10-28&quot;,
+      &quot;2025-10-29&quot;,
+      &quot;2025-10-30&quot;,
+      &quot;2025-10-31&quot;,
+      &quot;2025-11-01&quot;,
+      &quot;2025-11-02&quot;,
+      &quot;2025-11-03&quot;,
+      &quot;2025-11-04&quot;,
+      &quot;2025-11-05&quot;,
+      &quot;2025-11-06&quot;,
+      &quot;2025-11-07&quot;,
+      &quot;2025-11-08&quot;,
+      &quot;2025-11-09&quot;,
+      &quot;2025-11-10&quot;,
+      &quot;2025-11-11&quot;,
+      &quot;2025-11-12&quot;,
+      &quot;2025-11-13&quot;,
+      &quot;2025-11-14&quot;,
+      &quot;2025-11-15&quot;,
+      &quot;2025-11-16&quot;,
+      &quot;2025-11-17&quot;,
+      &quot;2025-11-18&quot;,
+      &quot;2025-11-19&quot;,
+      &quot;2025-11-20&quot;,
+      &quot;2025-11-21&quot;,
+      &quot;2025-11-22&quot;,
+      &quot;2025-11-23&quot;,
+      &quot;2025-11-24&quot;,
+      &quot;2025-11-25&quot;,
+      &quot;2025-11-26&quot;,
+      &quot;2025-11-27&quot;,
+      &quot;2025-11-28&quot;,
+      &quot;2025-11-29&quot;,
+      &quot;2025-11-30&quot;,
+      &quot;2025-12-01&quot;,
+      &quot;2025-12-02&quot;,
+      &quot;2025-12-03&quot;,
+      &quot;2025-12-04&quot;,
+      &quot;2025-12-05&quot;,
+      &quot;2025-12-06&quot;,
+      &quot;2025-12-07&quot;,
+      &quot;2025-12-08&quot;,
+      &quot;2025-12-09&quot;,
+      &quot;2025-12-10&quot;,
+      &quot;2025-12-11&quot;,
+      &quot;2025-12-12&quot;,
+      &quot;2025-12-13&quot;,
+      &quot;2025-12-14&quot;,
+      &quot;2025-12-15&quot;,
+      &quot;2025-12-16&quot;,
+      &quot;2025-12-17&quot;,
+      &quot;2025-12-18&quot;,
+      &quot;2025-12-19&quot;,
+      &quot;2025-12-20&quot;,
+      &quot;2025-12-21&quot;,
+      &quot;2025-12-22&quot;,
+      &quot;2025-12-23&quot;,
+      &quot;2025-12-24&quot;,
+      &quot;2025-12-25&quot;,
+      &quot;2025-12-26&quot;,
+      &quot;2025-12-27&quot;,
+      &quot;2025-12-28&quot;,
+      &quot;2025-12-29&quot;,
+      &quot;2025-12-30&quot;,
+      &quot;2025-12-31&quot;
+    ],
+    &quot;sparse_days&quot;: [],
+    &quot;partial_days&quot;: [],
+    &quot;full_days&quot;: [
+      &quot;2025-01-01&quot;,
+      &quot;2025-01-02&quot;,
+      &quot;2025-01-03&quot;,
+      &quot;2025-01-04&quot;,
+      &quot;2025-01-05&quot;,
+      &quot;2025-01-06&quot;,
+      &quot;2025-01-07&quot;,
+      &quot;2025-01-08&quot;,
+      &quot;2025-01-09&quot;,
+      &quot;2025-01-10&quot;,
+      &quot;2025-01-11&quot;,
+      &quot;2025-01-12&quot;,
+      &quot;2025-01-13&quot;,
+      &quot;2025-01-14&quot;,
+      &quot;2025-01-15&quot;,
+      &quot;2025-01-16&quot;,
+      &quot;2025-01-17&quot;,
+      &quot;2025-01-18&quot;,
+      &quot;2025-01-19&quot;,
+      &quot;2025-01-20&quot;,
+      &quot;2025-01-21&quot;,
+      &quot;2025-01-22&quot;,
+      &quot;2025-01-23&quot;,
+      &quot;2025-01-24&quot;,
+      &quot;2025-01-25&quot;,
+      &quot;2025-01-26&quot;,
+      &quot;2025-01-27&quot;,
+      &quot;2025-01-28&quot;,
+      &quot;2025-01-29&quot;,
+      &quot;2025-01-30&quot;,
+      &quot;2025-01-31&quot;,
+      &quot;2025-02-01&quot;,
+      &quot;2025-02-02&quot;,
+      &quot;2025-02-03&quot;,
+      &quot;2025-02-04&quot;,
+      &quot;2025-02-05&quot;,
+      &quot;2025-02-06&quot;,
+      &quot;2025-02-07&quot;,
+      &quot;2025-02-08&quot;,
+      &quot;2025-02-09&quot;,
+      &quot;2025-02-10&quot;,
+      &quot;2025-02-11&quot;,
+      &quot;2025-02-12&quot;,
+      &quot;2025-02-13&quot;,
+      &quot;2025-02-14&quot;,
+      &quot;2025-02-15&quot;,
+      &quot;2025-02-16&quot;,
+      &quot;2025-02-17&quot;,
+      &quot;2025-02-18&quot;,
+      &quot;2025-02-19&quot;,
+      &quot;2025-02-20&quot;,
+      &quot;2025-02-21&quot;,
+      &quot;2025-02-22&quot;,
+      &quot;2025-02-23&quot;,
+      &quot;2025-02-24&quot;,
+      &quot;2025-02-25&quot;,
+      &quot;2025-02-26&quot;,
+      &quot;2025-02-27&quot;,
+      &quot;2025-02-28&quot;,
+      &quot;2025-03-01&quot;,
+      &quot;2025-03-02&quot;,
+      &quot;2025-03-03&quot;,
+      &quot;2025-03-04&quot;,
+      &quot;2025-03-05&quot;,
+      &quot;2025-03-06&quot;,
+      &quot;2025-03-07&quot;,
+      &quot;2025-03-08&quot;,
+      &quot;2025-03-09&quot;,
+      &quot;2025-03-10&quot;,
+      &quot;2025-03-11&quot;,
+      &quot;2025-03-12&quot;,
+      &quot;2025-03-13&quot;,
+      &quot;2025-03-14&quot;,
+      &quot;2025-03-15&quot;,
+      &quot;2025-03-16&quot;,
+      &quot;2025-03-17&quot;,
+      &quot;2025-03-18&quot;,
+      &quot;2025-03-19&quot;,
+      &quot;2025-03-20&quot;,
+      &quot;2025-03-21&quot;,
+      &quot;2025-03-22&quot;,
+      &quot;2025-03-23&quot;,
+      &quot;2025-03-24&quot;,
+      &quot;2025-03-25&quot;,
+      &quot;2025-03-26&quot;,
+      &quot;2025-03-27&quot;,
+      &quot;2025-03-28&quot;,
+      &quot;2025-03-29&quot;,
+      &quot;2025-03-30&quot;,
+      &quot;2025-03-31&quot;,
+      &quot;2025-04-01&quot;,
+      &quot;2025-04-02&quot;,
+      &quot;2025-04-03&quot;,
+      &quot;2025-04-04&quot;,
+      &quot;2025-04-05&quot;,
+      &quot;2025-04-06&quot;,
+      &quot;2025-04-07&quot;,
+      &quot;2025-04-08&quot;,
+      &quot;2025-04-09&quot;,
+      &quot;2025-04-10&quot;,
+      &quot;2025-04-11&quot;,
+      &quot;2025-04-12&quot;,
+      &quot;2025-04-13&quot;,
+      &quot;2025-04-14&quot;,
+      &quot;2025-04-15&quot;,
+      &quot;2025-04-16&quot;,
+      &quot;2025-04-17&quot;,
+      &quot;2025-04-18&quot;,
+      &quot;2025-04-19&quot;,
+      &quot;2025-04-20&quot;,
+      &quot;2025-04-21&quot;,
+      &quot;2025-04-22&quot;,
+      &quot;2025-04-23&quot;,
+      &quot;2025-04-24&quot;,
+      &quot;2025-04-25&quot;,
+      &quot;2025-04-26&quot;,
+      &quot;2025-04-27&quot;,
+      &quot;2025-04-28&quot;,
+      &quot;2025-04-29&quot;,
+      &quot;2025-04-30&quot;,
+      &quot;2025-05-01&quot;,
+      &quot;2025-05-02&quot;,
+      &quot;2025-05-03&quot;,
+      &quot;2025-05-04&quot;,
+      &quot;2025-05-05&quot;,
+      &quot;2025-05-06&quot;,
+      &quot;2025-05-07&quot;,
+      &quot;2025-05-08&quot;,
+      &quot;2025-05-09&quot;,
+      &quot;2025-05-10&quot;
+    ],
+    &quot;missing_days_count&quot;: 235,
+    &quot;sparse_days_count&quot;: 0,
+    &quot;partial_days_count&quot;: 0,
+    &quot;full_days_count&quot;: 130
+  },
+  &quot;monthly_coverage_summary&quot;: {
+    &quot;monthly_coverage&quot;: [
+      {
+        &quot;month&quot;: &quot;2025-01&quot;,
+        &quot;expected_bars&quot;: 31,
+        &quot;actual_bars&quot;: 31,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;month&quot;: &quot;2025-02&quot;,
+        &quot;expected_bars&quot;: 28,
+        &quot;actual_bars&quot;: 28,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;month&quot;: &quot;2025-03&quot;,
+        &quot;expected_bars&quot;: 31,
+        &quot;actual_bars&quot;: 31,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;month&quot;: &quot;2025-04&quot;,
+        &quot;expected_bars&quot;: 30,
+        &quot;actual_bars&quot;: 30,
+        &quot;coverage_ratio&quot;: 1.0,
+        &quot;status&quot;: &quot;full&quot;
+      },
+      {
+        &quot;month&quot;: &quot;2025-05&quot;,
+        &quot;expected_bars&quot;: 31,
+        &quot;actual_bars&quot;: 10,
+        &quot;coverage_ratio&quot;: 0.322581,
+        &quot;status&quot;: &quot;sparse&quot;
+      },
+      {
+        &quot;month&quot;: &quot;2025-06&quot;,
+        &quot;expected_bars&quot;: 30,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;month&quot;: &quot;2025-07&quot;,
+        &quot;expected_bars&quot;: 31,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;month&quot;: &quot;2025-08&quot;,
+        &quot;expected_bars&quot;: 31,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;month&quot;: &quot;2025-09&quot;,
+        &quot;expected_bars&quot;: 30,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;month&quot;: &quot;2025-10&quot;,
+        &quot;expected_bars&quot;: 31,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;month&quot;: &quot;2025-11&quot;,
+        &quot;expected_bars&quot;: 30,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      },
+      {
+        &quot;month&quot;: &quot;2025-12&quot;,
+        &quot;expected_bars&quot;: 31,
+        &quot;actual_bars&quot;: 0,
+        &quot;coverage_ratio&quot;: 0.0,
+        &quot;status&quot;: &quot;missing&quot;
+      }
+    ],
+    &quot;missing_months&quot;: [
+      &quot;2025-06&quot;,
+      &quot;2025-07&quot;,
+      &quot;2025-08&quot;,
+      &quot;2025-09&quot;,
+      &quot;2025-10&quot;,
+      &quot;2025-11&quot;,
+      &quot;2025-12&quot;
+    ],
+    &quot;sparse_months&quot;: [
+      &quot;2025-05&quot;
+    ],
+    &quot;partial_months&quot;: [],
+    &quot;full_months&quot;: [
+      &quot;2025-01&quot;,
+      &quot;2025-02&quot;,
+      &quot;2025-03&quot;,
+      &quot;2025-04&quot;
+    ],
+    &quot;missing_months_count&quot;: 7,
+    &quot;sparse_months_count&quot;: 1,
+    &quot;partial_months_count&quot;: 0,
+    &quot;full_months_count&quot;: 4
+  },
+  &quot;longest_missing_calendar_window&quot;: {
+    &quot;longest_missing_window_start_date&quot;: &quot;2025-05-11&quot;,
+    &quot;longest_missing_window_end_date&quot;: &quot;2025-12-31&quot;,
+    &quot;longest_missing_window_days&quot;: 235,
+    &quot;missing_windows&quot;: [
+      {
+        &quot;start_date&quot;: &quot;2025-05-11&quot;,
+        &quot;end_date&quot;: &quot;2025-12-31&quot;,
+        &quot;days&quot;: 235
+      }
+    ]
+  },
+  &quot;coverage_quality_label&quot;: &quot;missing_sections&quot;,
+  &quot;warnings&quot;: [
+    &quot;No expected timeframe was supplied; calendar coverage uses inferred interval when available.&quot;
+  ],
+  &quot;threshold_policy&quot;: {
+    &quot;day_or_month_status&quot;: {
+      &quot;full&quot;: &quot;coverage_ratio &gt;= 0.98&quot;,
+      &quot;partial&quot;: &quot;coverage_ratio &gt;= 0.8 and &lt; 0.98&quot;,
+      &quot;sparse&quot;: &quot;coverage_ratio &gt; 0 and &lt; 0.8&quot;,
+      &quot;missing&quot;: &quot;coverage_ratio == 0&quot;
+    },
+    &quot;quality_label&quot;: {
+      &quot;complete&quot;: &quot;overall coverage_ratio &gt;= 0.98 and no missing day/month and no out-of-range rows&quot;,
+      &quot;mostly_complete&quot;: &quot;overall coverage_ratio &gt;= 0.95&quot;,
+      &quot;partial&quot;: &quot;overall coverage_ratio &gt;= 0.8&quot;,
+      &quot;sparse&quot;: &quot;overall coverage_ratio &gt; 0 and &lt; 0.8&quot;,
+      &quot;missing_sections&quot;: &quot;one or more expected days or months have zero in-range bars&quot;,
+      &quot;out_of_range&quot;: &quot;one or more valid timestamps are outside the expected range&quot;,
+      &quot;insufficient_data&quot;: &quot;too few valid unique timestamps or no expected interval is available&quot;,
+      &quot;unknown_expected_range&quot;: &quot;neither explicit dates nor valid timestamps can define an expected range&quot;
+    }
+  },
+  &quot;research_notes&quot;: [
+    &quot;Calendar coverage diagnostics are input data quality observations for local CSV review only.&quot;,
+    &quot;Low calendar coverage can make deterministic analysis sensitive to the supplied date subset.&quot;,
+    &quot;Missing daily or monthly sections can create period imbalance in local CSV analysis.&quot;,
+    &quot;These diagnostics do not rank symbols, timeframes, reports, or expected market outcomes.&quot;
+  ]
+}</pre>
+</section>
+<section>
+<h2>Indicator Family Context</h2>
+<pre>{
+  &quot;schema_version&quot;: &quot;lwf_ai_trading_prompt_lab.indicator_family.v1&quot;,
+  &quot;metadata&quot;: {
+    &quot;periods&quot;: {
+      &quot;rsi_like&quot;: 14,
+      &quot;rolling_range&quot;: 20,
+      &quot;volume_z&quot;: 20,
+      &quot;realized_volatility&quot;: 20,
+      &quot;body_range&quot;: 20,
+      &quot;trend_consistency_returns&quot;: 20,
+      &quot;trend_consistency_sma_short&quot;: 20,
+      &quot;trend_consistency_sma_long&quot;: 50
+    },
+    &quot;calculation_scope&quot;: &quot;local_csv_ohlcv_only&quot;,
+    &quot;interpretation_scope&quot;: &quot;deterministic_observation_context&quot;
+  },
+  &quot;momentum_context&quot;: {
+    &quot;latest_value&quot;: 87.2796,
+    &quot;recent_average&quot;: 95.1552,
+    &quot;label&quot;: &quot;strong_positive_momentum&quot;
+  },
+  &quot;range_position_context&quot;: {
+    &quot;rolling_high&quot;: 12613.0,
+    &quot;rolling_low&quot;: 11822.0,
+    &quot;close_position_in_range&quot;: 0.953224,
+    &quot;distance_to_high_pct&quot;: 0.2942,
+    &quot;distance_to_low_pct&quot;: 5.9955,
+    &quot;label&quot;: &quot;near_recent_high&quot;
+  },
+  &quot;drawdown_recovery_context&quot;: {
+    &quot;current_drawdown_pct&quot;: 0.0,
+    &quot;max_drawdown_pct&quot;: -2.6951,
+    &quot;recovery_from_trough_pct&quot;: 0.0,
+    &quot;distance_to_peak_pct&quot;: 0.0,
+    &quot;label&quot;: &quot;at_or_near_peak&quot;
+  },
+  &quot;volume_context&quot;: {
+    &quot;latest_volume&quot;: 1250.0,
+    &quot;rolling_mean&quot;: 1254.2,
+    &quot;rolling_std&quot;: 101.435497,
+    &quot;latest_z_score&quot;: -0.0414,
+    &quot;label&quot;: &quot;normal_volume&quot;
+  },
+  &quot;realized_volatility_context&quot;: {
+    &quot;latest_realized_volatility&quot;: 0.00401354,
+    &quot;median_realized_volatility&quot;: 0.00484741,
+    &quot;volatility_percentile_like&quot;: 13.1818,
+    &quot;label&quot;: &quot;low_volatility_context&quot;
+  },
+  &quot;candle_structure_context&quot;: {
+    &quot;latest_body_range_ratio&quot;: 0.1625,
+    &quot;average_body_range_ratio&quot;: 0.355501,
+    &quot;wick_dominance_ratio&quot;: 0.8375,
+    &quot;label&quot;: &quot;wick_dominant&quot;
+  },
+  &quot;trend_consistency_context&quot;: {
+    &quot;positive_return_ratio&quot;: 0.9,
+    &quot;sma_alignment&quot;: &quot;up_context&quot;,
+    &quot;consistency_score&quot;: 96.6667,
+    &quot;label&quot;: &quot;consistent_up_context&quot;
+  },
+  &quot;limitations&quot;: [
+    &quot;Indicator family values are calculated from historical OHLCV rows in the supplied local CSV only.&quot;,
+    &quot;Labels describe deterministic observation context and can miss broader market structure.&quot;,
+    &quot;Thresholds are simple research heuristics and should be checked against raw candles.&quot;,
+    &quot;The model does not forecast future market behavior or expected outcomes.&quot;
+  ],
+  &quot;research_questions&quot;: [
+    &quot;Which raw candles explain the latest indicator context labels?&quot;,
+    &quot;Do the labels stay stable when nearby deterministic periods are tested?&quot;,
+    &quot;Do volume, range, volatility, and candle-structure contexts agree or conflict?&quot;,
+    &quot;Are any labels driven by a small number of unusually large candles?&quot;
+  ],
+  &quot;safety_boundary&quot;: {
+    &quot;labels&quot;: [
+      &quot;RESEARCH ONLY&quot;,
+      &quot;NO FINANCIAL ADVICE&quot;,
+      &quot;NO ORDER EXECUTION&quot;,
+      &quot;LOCAL CSV ONLY&quot;,
+      &quot;NOT A PROFIT GUARANTEE&quot;
+    ],
+    &quot;scope&quot;: [
+      &quot;local CSV observation context&quot;,
+      &quot;market-state review questions&quot;,
+      &quot;limitations for human research review&quot;
+    ]
+  }
+}</pre>
+</section>
+<section>
+<h2>Market Structure</h2>
+<pre>{
+  &quot;latest_close&quot;: 12576.0,
+  &quot;sma20&quot;: 12235.7,
+  &quot;sma50&quot;: 11685.78,
+  &quot;price_vs_sma20&quot;: &quot;above&quot;,
+  &quot;price_vs_sma50&quot;: &quot;above&quot;,
+  &quot;range20&quot;: 111.2,
+  &quot;range_pct20&quot;: 0.9077,
+  &quot;narrative&quot;: &quot;Latest close is above the 20-period average and above the 50-period average.&quot;
+}</pre>
+</section>
+<section>
+<h2>Trend Assessment</h2>
+<pre>{
+  &quot;classification&quot;: &quot;upward_bias&quot;,
+  &quot;recent_return20_pct&quot;: 5.9656,
+  &quot;narrative&quot;: &quot;Recent closes are above the 20-period and 50-period averages, with positive 20-period return.&quot;
+}</pre>
+</section>
+<section>
+<h2>Volatility Assessment</h2>
+<pre>{
+  &quot;rolling_volatility20&quot;: 0.4014,
+  &quot;recent_tail_average_pct&quot;: 0.3886,
+  &quot;classification&quot;: &quot;stable&quot;,
+  &quot;narrative&quot;: &quot;Recent rolling volatility is close to the recent tail average.&quot;
+}</pre>
+</section>
+<section>
+<h2>Risk Assessment</h2>
+<pre>{
+  &quot;max_drawdown_pct&quot;: -2.6951,
+  &quot;drawdown_state&quot;: &quot;contained_or_moderate&quot;,
+  &quot;narrative&quot;: &quot;Close-only drawdown is not elevated by this simple threshold, but it remains an incomplete risk view.&quot;
+}</pre>
+</section>
+<section>
+<h2>Scenario Notes</h2>
+<pre>[
+  {
+    &quot;name&quot;: &quot;constructive_context_to_inspect&quot;,
+    &quot;note&quot;: &quot;If higher closes persist above major moving averages, inspect whether the pattern appears across other timeframes and whether volume confirms participation.&quot;
+  },
+  {
+    &quot;name&quot;: &quot;caution_context_to_inspect&quot;,
+    &quot;note&quot;: &quot;If price loses moving-average support or drawdown expands, inspect whether the prior structure is weakening.&quot;
+  },
+  {
+    &quot;name&quot;: &quot;range_context_to_inspect&quot;,
+    &quot;note&quot;: &quot;The current deterministic trend label is upward_bias; compare this against raw candles.&quot;
+  }
+]</pre>
+</section>
+<section>
+<h2>Research Questions</h2>
+<pre>[
+  &quot;Does the moving-average structure persist on a different timeframe?&quot;,
+  &quot;Does volume remain in the normal_volume regime over the next research window?&quot;,
+  &quot;Are volatility changes caused by a small number of large candles?&quot;,
+  &quot;How sensitive are the conclusions to the SMA and volatility windows?&quot;,
+  &quot;What raw chart features contradict the deterministic summary?&quot;
+]</pre>
+</section>
+<section>
+<h2>Limitations</h2>
+<pre>[
+  &quot;This report analyzes historical OHLCV rows only.&quot;,
+  &quot;It cannot forecast future market behavior.&quot;,
+  &quot;It does not evaluate fees, slippage, liquidity, funding, news, or portfolio constraints.&quot;,
+  &quot;It uses simple deterministic thresholds that may miss important context.&quot;,
+  &quot;It is designed for human research review, not execution decisions.&quot;
+]</pre>
+</section>
+<section>
+<h2>No Advice Disclaimer</h2>
+<pre>{
+  &quot;labels&quot;: [
+    &quot;RESEARCH ONLY&quot;,
+    &quot;NO FINANCIAL ADVICE&quot;,
+    &quot;NO ORDER EXECUTION&quot;,
+    &quot;LOCAL CSV ONLY&quot;,
+    &quot;NOT A PROFIT GUARANTEE&quot;
+  ],
+  &quot;text&quot;: &quot;This report is research only. It is not financial advice. It uses local CSV data only, performs no order execution, and is not a profit guarantee.&quot;
+}</pre>
+</section>
+</main>
+</body>
+</html>

@@ -1,0 +1,120 @@
+{
+  "schema_version": "lwf_ai_trading_prompt_lab.schema_check.v1",
+  "metadata": {
+    "tool_name": "LoneWolf Fang AI Trading Prompt Lab",
+    "check_type": "schema compatibility check",
+    "generated_at_utc": "2026-05-12T00:00:00+00:00",
+    "safety_labels": [
+      "RESEARCH ONLY",
+      "NO FINANCIAL ADVICE",
+      "NO ORDER EXECUTION",
+      "LOCAL CSV ONLY",
+      "NOT A PROFIT GUARANTEE"
+    ]
+  },
+  "input_file": "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/summaries/analyze_summary/summary.json",
+  "detected_report_type": "summary_report",
+  "detected_schema_version": "lwf_ai_trading_prompt_lab.summary.v1",
+  "legacy_detected": false,
+  "compatibility_status": "compatible",
+  "required_fields": {
+    "present": [
+      "schema_version",
+      "metadata",
+      "safety_boundary",
+      "summary",
+      "safety_review",
+      "source_digest",
+      "no_advice_disclaimer"
+    ],
+    "missing": []
+  },
+  "optional_fields": {
+    "present": [
+      "metadata.generated_at",
+      "metadata.input_path",
+      "metadata.detected_report_type",
+      "metadata.input_schema_version",
+      "metadata.style",
+      "metadata.max_bullets",
+      "safety_boundary.labels",
+      "summary.headline",
+      "summary.brief_bullets",
+      "summary.data_quality_notes",
+      "summary.schema_status_notes",
+      "summary.safety_status_notes",
+      "summary.indicator_context_notes",
+      "summary.coverage_notes",
+      "summary.drift_notes",
+      "summary.artifact_notes",
+      "summary.research_questions",
+      "summary.limitations",
+      "safety_review.allowed_template_only",
+      "safety_review.required_disclaimers_present",
+      "safety_review.forbidden_phrase_hits",
+      "safety_review.advice_like_wording_hits",
+      "safety_review.status"
+    ],
+    "missing": []
+  },
+  "deprecated_fields": {
+    "present": []
+  },
+  "unknown_fields": [],
+  "warnings": [],
+  "errors": [],
+  "safety_summary": {
+    "required_disclaimers_present": true,
+    "missing_required_disclaimers": [],
+    "forbidden_phrase_hits": [],
+    "safe_to_review": true
+  },
+  "limitations": [
+    "This schema check validates local JSON structure only.",
+    "It does not evaluate market outcomes.",
+    "It does not decide which report is better.",
+    "It is limited to format compatibility, input differences, safety display differences, and verification questions."
+  ],
+  "no_advice_disclaimer": {
+    "labels": [
+      "RESEARCH ONLY",
+      "NO FINANCIAL ADVICE",
+      "NO ORDER EXECUTION",
+      "LOCAL CSV ONLY",
+      "NOT A PROFIT GUARANTEE"
+    ],
+    "text": "This schema check is research only. It is not financial advice. It uses local JSON files only, performs no order execution, and is not a profit guarantee."
+  },
+  "deterministic_summary": {
+    "schema_version": "lwf_ai_trading_prompt_lab.summary.v1",
+    "summary_scope": "embedded_safe_digest",
+    "detected_report_type": "schema_check_report",
+    "input_schema_version": "lwf_ai_trading_prompt_lab.schema_check.v1",
+    "headline": "Local deterministic summary for a schema check report.",
+    "source_digest": {
+      "detected_report_type": "schema_check_report",
+      "schema_version": "lwf_ai_trading_prompt_lab.schema_check.v1",
+      "checked_report_type": "summary_report",
+      "checked_schema_version": "lwf_ai_trading_prompt_lab.summary.v1",
+      "compatibility_status": "compatible",
+      "warning_count": 0,
+      "error_count": 0,
+      "required_missing_count": 0,
+      "safety_required_disclaimers_present": true,
+      "safety_blocked_hit_count": 0,
+      "coverage_quality_label": "not_available",
+      "coverage_ratio": "not_available",
+      "missing_days_count": "not_available",
+      "sparse_days_count": "not_available",
+      "indicator_context_present": false
+    },
+    "safety_labels": [
+      "RESEARCH ONLY",
+      "NO FINANCIAL ADVICE",
+      "NO ORDER EXECUTION",
+      "LOCAL CSV ONLY",
+      "NOT A PROFIT GUARANTEE"
+    ],
+    "template_policy": "deterministic_local_templates_only"
+  }
+}

@@ -1,0 +1,235 @@
+{
+  "schema_version": "lwf_ai_trading_prompt_lab.dashboard_index.v1",
+  "metadata": {
+    "generated_at": "2026-05-12T00:00:00+00:00",
+    "input_dir": "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/reports",
+    "report_count": 4,
+    "skipped_count": 0,
+    "max_files": 100,
+    "recursive": true
+  },
+  "safety_boundary": {
+    "labels": [
+      "RESEARCH ONLY",
+      "NO FINANCIAL ADVICE",
+      "NO ORDER EXECUTION",
+      "LOCAL CSV ONLY",
+      "NOT A PROFIT GUARANTEE"
+    ],
+    "scope": [
+      "Local static file export only.",
+      "Inventory, schema status, data quality status, safety status, and relative local links only.",
+      "No network service, account workflow, custody workflow, or execution workflow is included."
+    ]
+  },
+  "summary": {
+    "count_by_report_type": {
+      "comparison_report": 1,
+      "diagnostics_report": 1,
+      "diff_report": 1,
+      "single_report": 1
+    },
+    "count_by_schema_status": {
+      "compatible": 4
+    },
+    "count_by_safety_status": {
+      "passed": 4
+    },
+    "count_by_coverage_quality_label": {
+      "missing_sections": 3,
+      "unknown": 1
+    },
+    "count_by_timestamp_quality_label": {
+      "clean": 1,
+      "minor_warnings": 2,
+      "unknown": 1
+    },
+    "count_by_indicator_context_presence": {
+      "absent": 1,
+      "present": 3
+    },
+    "reports_with_warnings": 0,
+    "reports_with_errors": 0
+  },
+  "reports": [
+    {
+      "path": "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/reports/analyze_sample/report.json",
+      "relative_path": "analyze_sample/report.json",
+      "report_dir": "analyze_sample",
+      "report_type": "single_report",
+      "schema_version": "lwf_ai_trading_prompt_lab.report.v1",
+      "schema_status": "compatible",
+      "safety_status": "passed",
+      "generated_at": "2026-05-12T00:00:00+00:00",
+      "symbol": "BTC/USDT",
+      "timeframe": null,
+      "item_count": null,
+      "row_count": 130,
+      "coverage_quality_label": "missing_sections",
+      "timestamp_quality_label": "minor_warnings",
+      "coverage_drift_severity": null,
+      "indicator_drift_severity": null,
+      "indicator_family_present": true,
+      "html_report_relative_path": "../reports/analyze_sample/report.html",
+      "markdown_report_relative_path": "../reports/analyze_sample/report.md",
+      "json_report_relative_path": "../reports/analyze_sample/report.json",
+      "warnings": [],
+      "errors": [],
+      "research_notes": [
+        "Timestamp diagnostics are input data quality observations for local CSV review only.",
+        "No expected timeframe was supplied; consistency uses inferred intervals only.",
+        "These diagnostics do not rank symbols, timeframes, reports, or expected market outcomes."
+      ]
+    },
+    {
+      "path": "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/reports/compare_sample/comparison.json",
+      "relative_path": "compare_sample/comparison.json",
+      "report_dir": "compare_sample",
+      "report_type": "comparison_report",
+      "schema_version": "lwf_ai_trading_prompt_lab.comparison_report.v1",
+      "schema_status": "compatible",
+      "safety_status": "passed",
+      "generated_at": "2026-05-12T00:00:00+00:00",
+      "symbol": null,
+      "timeframe": null,
+      "item_count": 3,
+      "row_count": 216,
+      "coverage_quality_label": "missing_sections",
+      "timestamp_quality_label": "clean",
+      "coverage_drift_severity": null,
+      "indicator_drift_severity": null,
+      "indicator_family_present": true,
+      "html_report_relative_path": "../reports/compare_sample/comparison.html",
+      "markdown_report_relative_path": "../reports/compare_sample/comparison.md",
+      "json_report_relative_path": "../reports/compare_sample/comparison.json",
+      "warnings": [],
+      "errors": [],
+      "research_notes": [
+        "Do trend labels stay similar when the same symbol is checked on another timeframe?",
+        "Are volatility differences caused by one large candle or by persistent variation?",
+        "Do rejected rows or warnings cluster around one symbol or one timeframe?",
+        "Does volume regime context agree or conflict across the compared files?",
+        "Which raw candles would a human researcher inspect before forming a hypothesis?"
+      ]
+    },
+    {
+      "path": "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/reports/diff_sample/diff.json",
+      "relative_path": "diff_sample/diff.json",
+      "report_dir": "diff_sample",
+      "report_type": "diff_report",
+      "schema_version": "lwf_ai_trading_prompt_lab.diff_report.v1",
+      "schema_status": "compatible",
+      "safety_status": "passed",
+      "generated_at": null,
+      "symbol": null,
+      "timeframe": null,
+      "item_count": null,
+      "row_count": null,
+      "coverage_quality_label": null,
+      "timestamp_quality_label": null,
+      "coverage_drift_severity": "none",
+      "indicator_drift_severity": "none",
+      "indicator_family_present": true,
+      "html_report_relative_path": "../reports/diff_sample/diff.html",
+      "markdown_report_relative_path": "../reports/diff_sample/diff.md",
+      "json_report_relative_path": "../reports/diff_sample/diff.json",
+      "warnings": [],
+      "errors": [],
+      "research_notes": [
+        "Which input rows or validation warnings explain the changed fields?",
+        "Do changed labels come from changed data, changed report generation, or a different input file?",
+        "Are safety disclaimers unchanged and visible in all exported formats?",
+        "Do timestamp or calendar coverage drift fields point to changed local CSV quality?",
+        "Do indicator context drift fields point to changed deterministic observation labels?"
+      ]
+    },
+    {
+      "path": "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/reports/diagnostics_sample/diagnostics.json",
+      "relative_path": "diagnostics_sample/diagnostics.json",
+      "report_dir": "diagnostics_sample",
+      "report_type": "diagnostics_report",
+      "schema_version": "lwf_ai_trading_prompt_lab.timestamp_diagnostics.v1",
+      "schema_status": "compatible",
+      "safety_status": "passed",
+      "generated_at": "2026-05-12T00:00:00+00:00",
+      "symbol": "BTC/USDT",
+      "timeframe": "5m",
+      "item_count": null,
+      "row_count": 130,
+      "coverage_quality_label": "missing_sections",
+      "timestamp_quality_label": "minor_warnings",
+      "coverage_drift_severity": null,
+      "indicator_drift_severity": null,
+      "indicator_family_present": false,
+      "html_report_relative_path": "../reports/diagnostics_sample/diagnostics.html",
+      "markdown_report_relative_path": "../reports/diagnostics_sample/diagnostics.md",
+      "json_report_relative_path": "../reports/diagnostics_sample/diagnostics.json",
+      "warnings": [],
+      "errors": [],
+      "research_notes": [
+        "Timestamp diagnostics are input data quality observations for local CSV review only.",
+        "Observed timestamp spacing differs from the supplied timeframe.",
+        "These diagnostics do not rank symbols, timeframes, reports, or expected market outcomes."
+      ]
+    }
+  ],
+  "skipped_files": [],
+  "limitations": [
+    "The dashboard scans local JSON files and summarizes known report shapes.",
+    "Unknown JSON files are listed with unknown schema status when they are valid objects.",
+    "Invalid JSON files and oversized JSON files are recorded under skipped files.",
+    "The dashboard does not rank symbols, reports, timeframes, or expected outcomes.",
+    "The dashboard is a static local export and does not run a local server."
+  ],
+  "no_advice_disclaimer": {
+    "labels": [
+      "RESEARCH ONLY",
+      "NO FINANCIAL ADVICE",
+      "NO ORDER EXECUTION",
+      "LOCAL CSV ONLY",
+      "NOT A PROFIT GUARANTEE"
+    ],
+    "text": "This dashboard is research only. It is not financial advice. It uses local CSV report files only, performs no order execution, and is not a profit guarantee."
+  },
+  "deterministic_summary": {
+    "schema_version": "lwf_ai_trading_prompt_lab.summary.v1",
+    "summary_scope": "embedded_safe_digest",
+    "detected_report_type": "dashboard_index",
+    "input_schema_version": "lwf_ai_trading_prompt_lab.dashboard_index.v1",
+    "headline": "Local deterministic summary for a static dashboard index.",
+    "source_digest": {
+      "detected_report_type": "dashboard_index",
+      "schema_version": "lwf_ai_trading_prompt_lab.dashboard_index.v1",
+      "report_count": 4,
+      "skipped_count": 0,
+      "count_by_report_type": {
+        "comparison_report": 1,
+        "diagnostics_report": 1,
+        "diff_report": 1,
+        "single_report": 1
+      },
+      "count_by_schema_status": {
+        "compatible": 4
+      },
+      "count_by_safety_status": {
+        "passed": 4
+      },
+      "reports_with_warnings": 0,
+      "reports_with_errors": 0,
+      "coverage_quality_label": "mixed",
+      "timestamp_quality_label": "mixed",
+      "coverage_ratio": "not_available",
+      "missing_days_count": "not_available",
+      "sparse_days_count": "not_available",
+      "indicator_context_present": true
+    },
+    "safety_labels": [
+      "RESEARCH ONLY",
+      "NO FINANCIAL ADVICE",
+      "NO ORDER EXECUTION",
+      "LOCAL CSV ONLY",
+      "NOT A PROFIT GUARANTEE"
+    ],
+    "template_policy": "deterministic_local_templates_only"
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "schema_version": "lwf_ai_trading_prompt_lab.schema_check.v1",
+  "metadata": {
+    "tool_name": "LoneWolf Fang AI Trading Prompt Lab",
+    "check_type": "schema compatibility check",
+    "generated_at_utc": "2026-05-12T00:00:00+00:00",
+    "safety_labels": [
+      "RESEARCH ONLY",
+      "NO FINANCIAL ADVICE",
+      "NO ORDER EXECUTION",
+      "LOCAL CSV ONLY",
+      "NOT A PROFIT GUARANTEE"
+    ]
+  },
+  "input_file": "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/artifact_pack_manifest/pack_manifest.json",
+  "detected_report_type": "artifact_pack",
+  "detected_schema_version": "lwf_ai_trading_prompt_lab.artifact_pack.v1",
+  "legacy_detected": false,
+  "compatibility_status": "compatible",
+  "required_fields": {
+    "present": [
+      "schema_version",
+      "metadata",
+      "safety_boundary",
+      "inputs",
+      "included_files",
+      "skipped_files",
+      "warnings",
+      "errors",
+      "forbidden_scan",
+      "limitations",
+      "no_advice_disclaimer"
+    ],
+    "missing": []
+  },
+  "optional_fields": {
+    "present": [
+      "metadata.generated_at",
+      "metadata.pack_name",
+      "metadata.source_mode",
+      "metadata.base_dir",
+      "metadata.output_zip",
+      "metadata.file_count",
+      "metadata.total_bytes",
+      "included_files[].source_path",
+      "included_files[].archive_path",
+      "included_files[].size_bytes",
+      "included_files[].sha256",
+      "included_files[].detected_report_type",
+      "included_files[].schema_version",
+      "forbidden_scan.scanned_files",
+      "forbidden_scan.hit_count",
+      "forbidden_scan.hits",
+      "safety_boundary.labels",
+      "deterministic_summary"
+    ],
+    "missing": []
+  },
+  "deprecated_fields": {
+    "present": []
+  },
+  "unknown_fields": [],
+  "warnings": [],
+  "errors": [],
+  "safety_summary": {
+    "required_disclaimers_present": true,
+    "missing_required_disclaimers": [],
+    "forbidden_phrase_hits": [],
+    "safe_to_review": true
+  },
+  "limitations": [
+    "This schema check validates local JSON structure only.",
+    "It does not evaluate market outcomes.",
+    "It does not decide which report is better.",
+    "It is limited to format compatibility, input differences, safety display differences, and verification questions."
+  ],
+  "no_advice_disclaimer": {
+    "labels": [
+      "RESEARCH ONLY",
+      "NO FINANCIAL ADVICE",
+      "NO ORDER EXECUTION",
+      "LOCAL CSV ONLY",
+      "NOT A PROFIT GUARANTEE"
+    ],
+    "text": "This schema check is research only. It is not financial advice. It uses local JSON files only, performs no order execution, and is not a profit guarantee."
+  },
+  "deterministic_summary": {
+    "schema_version": "lwf_ai_trading_prompt_lab.summary.v1",
+    "summary_scope": "embedded_safe_digest",
+    "detected_report_type": "schema_check_report",
+    "input_schema_version": "lwf_ai_trading_prompt_lab.schema_check.v1",
+    "headline": "Local deterministic summary for a schema check report.",
+    "source_digest": {
+      "detected_report_type": "schema_check_report",
+      "schema_version": "lwf_ai_trading_prompt_lab.schema_check.v1",
+      "checked_report_type": "artifact_pack",
+      "checked_schema_version": "lwf_ai_trading_prompt_lab.artifact_pack.v1",
+      "compatibility_status": "compatible",
+      "warning_count": 0,
+      "error_count": 0,
+      "required_missing_count": 0,
+      "safety_required_disclaimers_present": true,
+      "safety_blocked_hit_count": 0,
+      "coverage_quality_label": "not_available",
+      "coverage_ratio": "not_available",
+      "missing_days_count": "not_available",
+      "sparse_days_count": "not_available",
+      "indicator_context_present": false
+    },
+    "safety_labels": [
+      "RESEARCH ONLY",
+      "NO FINANCIAL ADVICE",
+      "NO ORDER EXECUTION",
+      "LOCAL CSV ONLY",
+      "NOT A PROFIT GUARANTEE"
+    ],
+    "template_policy": "deterministic_local_templates_only"
+  }
+}

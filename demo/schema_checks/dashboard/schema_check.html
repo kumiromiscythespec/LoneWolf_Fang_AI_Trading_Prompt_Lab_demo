@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LoneWolf Fang AI Trading Prompt Lab Schema Check</title>
+<style>
+body{font-family:Arial,sans-serif;line-height:1.55;margin:0;color:#1e2933;background:#f7f9fb;}
+main{max-width:1040px;margin:0 auto;padding:30px 18px 48px;}
+h1,h2{line-height:1.2;}
+.banner{background:#101820;color:#fff;padding:18px 20px;margin:0 0 18px 0;}
+.labels{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;}
+.label{border:1px solid #adc0d1;padding:5px 8px;font-size:12px;font-weight:700;}
+.notice{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:8px;margin:14px 0;}
+.notice strong{background:#fff;border:2px solid #101820;padding:10px;text-align:center;}
+section{border-top:1px solid #d8e0e8;padding:22px 0;}
+pre{white-space:pre-wrap;background:#fff;border:1px solid #d8e0e8;padding:12px;overflow:auto;}
+</style>
+</head>
+<body>
+<main>
+<h1>LoneWolf Fang AI Trading Prompt Lab Schema Check</h1>
+<div class="banner"><strong>Research Safety Boundary</strong><div class="labels"><span class="label">RESEARCH ONLY</span><span class="label">NO FINANCIAL ADVICE</span><span class="label">NO ORDER EXECUTION</span><span class="label">LOCAL CSV ONLY</span><span class="label">NOT A PROFIT GUARANTEE</span></div></div>
+<div class="notice"><strong>NO FINANCIAL ADVICE</strong><strong>NO ORDER EXECUTION</strong></div>
+<p>This check is limited to format compatibility, input differences, safety display differences, and verification questions.</p>
+<section><h2>Input File</h2><p>C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/dashboard/dashboard_index.json</p></section>
+<section><h2>Detected Schema</h2><pre>{
+  &quot;detected_report_type&quot;: &quot;dashboard_index&quot;,
+  &quot;detected_schema_version&quot;: &quot;lwf_ai_trading_prompt_lab.dashboard_index.v1&quot;,
+  &quot;legacy_detected&quot;: false,
+  &quot;compatibility_status&quot;: &quot;compatible&quot;
+}</pre></section>
+<section><h2>Required Fields</h2><pre>{
+  &quot;present&quot;: [
+    &quot;schema_version&quot;,
+    &quot;metadata&quot;,
+    &quot;safety_boundary&quot;,
+    &quot;summary&quot;,
+    &quot;reports&quot;,
+    &quot;skipped_files&quot;,
+    &quot;limitations&quot;,
+    &quot;no_advice_disclaimer&quot;
+  ],
+  &quot;missing&quot;: []
+}</pre></section>
+<section><h2>Optional Fields</h2><pre>{
+  &quot;present&quot;: [
+    &quot;metadata.generated_at&quot;,
+    &quot;metadata.input_dir&quot;,
+    &quot;metadata.report_count&quot;,
+    &quot;metadata.skipped_count&quot;,
+    &quot;metadata.max_files&quot;,
+    &quot;metadata.recursive&quot;,
+    &quot;summary.count_by_report_type&quot;,
+    &quot;summary.count_by_schema_status&quot;,
+    &quot;summary.count_by_safety_status&quot;,
+    &quot;summary.count_by_coverage_quality_label&quot;,
+    &quot;summary.count_by_timestamp_quality_label&quot;,
+    &quot;summary.count_by_indicator_context_presence&quot;,
+    &quot;summary.reports_with_warnings&quot;,
+    &quot;summary.reports_with_errors&quot;,
+    &quot;safety_boundary.labels&quot;,
+    &quot;deterministic_summary&quot;
+  ],
+  &quot;missing&quot;: []
+}</pre></section>
+<section><h2>Deprecated Fields</h2><pre>{
+  &quot;present&quot;: []
+}</pre></section>
+<section><h2>Unknown Fields</h2><pre>[]</pre></section>
+<section><h2>Warnings</h2><p>No entries.</p></section>
+<section><h2>Errors</h2><p>No entries.</p></section>
+<section><h2>Safety Summary</h2><pre>{
+  &quot;required_disclaimers_present&quot;: true,
+  &quot;missing_required_disclaimers&quot;: [],
+  &quot;forbidden_phrase_hits&quot;: [],
+  &quot;safe_to_review&quot;: true
+}</pre></section>
+<section><h2>Limitations</h2><ul><li>This schema check validates local JSON structure only.</li><li>It does not evaluate market outcomes.</li><li>It does not decide which report is better.</li><li>It is limited to format compatibility, input differences, safety display differences, and verification questions.</li></ul></section>
+<section><h2>No Advice Disclaimer</h2><pre>{
+  &quot;labels&quot;: [
+    &quot;RESEARCH ONLY&quot;,
+    &quot;NO FINANCIAL ADVICE&quot;,
+    &quot;NO ORDER EXECUTION&quot;,
+    &quot;LOCAL CSV ONLY&quot;,
+    &quot;NOT A PROFIT GUARANTEE&quot;
+  ],
+  &quot;text&quot;: &quot;This schema check is research only. It is not financial advice. It uses local JSON files only, performs no order execution, and is not a profit guarantee.&quot;
+}</pre></section>
+</main>
+</body>
+</html>

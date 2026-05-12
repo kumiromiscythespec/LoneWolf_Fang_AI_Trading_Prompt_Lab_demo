@@ -1,0 +1,8 @@
+Copyright (c) 2026 LoneWolf Fang.
+
+All rights reserved.
+
+This repository is published for public inspection of selected sample-only,
+research-only demo artifacts and public documentation. No license is granted to
+copy, modify, redistribute, sublicense, or use the private development repo or
+any omitted source code.

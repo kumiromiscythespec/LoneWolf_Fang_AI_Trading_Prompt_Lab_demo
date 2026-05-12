@@ -1,0 +1,818 @@
+{
+  "schema_version": "lwf_ai_trading_prompt_lab.comparison_report.v1",
+  "metadata": {
+    "tool_name": "LoneWolf Fang AI Trading Prompt Lab",
+    "report_type": "local_csv_comparison",
+    "report_version": "0.2.0",
+    "generated_at_utc": "2026-05-12T00:00:00+00:00",
+    "safety_labels": [
+      "RESEARCH ONLY",
+      "NO FINANCIAL ADVICE",
+      "NO ORDER EXECUTION",
+      "LOCAL CSV ONLY",
+      "NOT A PROFIT GUARANTEE"
+    ]
+  },
+  "manifest_summary": {
+    "schema_version": "lwf_ai_trading_prompt_lab.compare_manifest.v1",
+    "source_manifest": "samples/compare_manifest.json",
+    "item_count": 3,
+    "symbols": [
+      "BTC/USDT",
+      "ETH/USDT"
+    ],
+    "timeframes": [
+      "1h",
+      "5m"
+    ],
+    "expected_start": null,
+    "expected_end": null,
+    "items": [
+      {
+        "symbol": "BTC/USDT",
+        "timeframe": "5m",
+        "csv": "samples/sample_btc_5m.csv"
+      },
+      {
+        "symbol": "ETH/USDT",
+        "timeframe": "5m",
+        "csv": "samples/sample_eth_5m.csv"
+      },
+      {
+        "symbol": "BTC/USDT",
+        "timeframe": "1h",
+        "csv": "samples/sample_btc_1h.csv"
+      }
+    ]
+  },
+  "item_summaries": [
+    {
+      "symbol": "BTC/USDT",
+      "timeframe": "5m",
+      "csv": "samples/sample_btc_5m.csv",
+      "row_count": 72,
+      "accepted_rows": 72,
+      "rejected_rows": 0,
+      "warning_count": 0,
+      "first_timestamp": "2025-02-01T00:00:00Z",
+      "last_timestamp": "2025-02-01T05:55:00Z",
+      "last_close": 43228.99,
+      "total_return_pct": 2.9262,
+      "recent_return_pct": 0.7011,
+      "volatility_level": "low",
+      "rolling_volatility_latest": 0.000201,
+      "atr_like_latest": 28.476,
+      "max_drawdown_pct": 0.0,
+      "trend_label": "mixed_or_rangebound",
+      "volume_regime": "normal_volume",
+      "data_quality_label": "complete_for_supplied_file",
+      "timestamp_quality_label": "clean",
+      "coverage_quality_label": "missing_sections",
+      "coverage_ratio": 0.000685,
+      "missing_bar_estimate": 105048,
+      "missing_days_count": 364,
+      "sparse_days_count": 1,
+      "missing_months_count": 11,
+      "largest_missing_window_days": 333,
+      "requested_range_source": "cli",
+      "calendar_coverage_summary": {
+        "coverage_quality_label": "missing_sections",
+        "coverage_ratio": 0.000685,
+        "expected_bar_count": 105120,
+        "actual_unique_timestamp_count": 72,
+        "missing_bar_estimate": 105048,
+        "extra_out_of_range_count": 0,
+        "missing_days_count": 364,
+        "sparse_days_count": 1,
+        "missing_months_count": 11,
+        "largest_missing_window_days": 333,
+        "requested_range_source": "cli",
+        "expected_start_date": "2025-01-01",
+        "expected_end_date": "2025-12-31"
+      },
+      "gap_count": 0,
+      "duplicate_timestamp_count": 0,
+      "irregular_interval_count": 0,
+      "inferred_interval_label": "5m",
+      "matches_expected_timeframe": true,
+      "largest_gap_label": null,
+      "indicator_family_summary": {
+        "momentum_label": "strong_positive_momentum",
+        "range_position_label": "near_recent_high",
+        "drawdown_recovery_label": "at_or_near_peak",
+        "volume_context_label": "elevated_volume",
+        "realized_volatility_label": "normal_volatility_context",
+        "candle_structure_label": "wick_dominant",
+        "trend_consistency_label": "consistent_up_context",
+        "trend_consistency_score": 100.0
+      },
+      "research_notes": [
+        "BTC/USDT 5m has 72 accepted rows ending at 2025-02-01T05:55:00Z.",
+        "Trend observation label is mixed_or_rangebound and volume regime is normal_volume.",
+        "Compare this deterministic summary with raw candles before forming a research hypothesis."
+      ],
+      "validation_summary": {
+        "input_rows": 72,
+        "accepted_rows": 72,
+        "rejected_rows": 0,
+        "warnings": []
+      }
+    },
+    {
+      "symbol": "ETH/USDT",
+      "timeframe": "5m",
+      "csv": "samples/sample_eth_5m.csv",
+      "row_count": 72,
+      "accepted_rows": 72,
+      "rejected_rows": 0,
+      "warning_count": 0,
+      "first_timestamp": "2025-02-01T00:00:00Z",
+      "last_timestamp": "2025-02-01T05:55:00Z",
+      "last_close": 2956.16,
+      "total_return_pct": -4.64,
+      "recent_return_pct": -1.8373,
+      "volatility_level": "low",
+      "rolling_volatility_latest": 0.000942,
+      "atr_like_latest": 10.814,
+      "max_drawdown_pct": -4.8879,
+      "trend_label": "downward_bias",
+      "volume_regime": "normal_volume",
+      "data_quality_label": "complete_for_supplied_file",
+      "timestamp_quality_label": "clean",
+      "coverage_quality_label": "missing_sections",
+      "coverage_ratio": 0.000685,
+      "missing_bar_estimate": 105048,
+      "missing_days_count": 364,
+      "sparse_days_count": 1,
+      "missing_months_count": 11,
+      "largest_missing_window_days": 333,
+      "requested_range_source": "cli",
+      "calendar_coverage_summary": {
+        "coverage_quality_label": "missing_sections",
+        "coverage_ratio": 0.000685,
+        "expected_bar_count": 105120,
+        "actual_unique_timestamp_count": 72,
+        "missing_bar_estimate": 105048,
+        "extra_out_of_range_count": 0,
+        "missing_days_count": 364,
+        "sparse_days_count": 1,
+        "missing_months_count": 11,
+        "largest_missing_window_days": 333,
+        "requested_range_source": "cli",
+        "expected_start_date": "2025-01-01",
+        "expected_end_date": "2025-12-31"
+      },
+      "gap_count": 0,
+      "duplicate_timestamp_count": 0,
+      "irregular_interval_count": 0,
+      "inferred_interval_label": "5m",
+      "matches_expected_timeframe": true,
+      "largest_gap_label": null,
+      "indicator_family_summary": {
+        "momentum_label": "strong_negative_momentum",
+        "range_position_label": "near_recent_low",
+        "drawdown_recovery_label": "in_drawdown",
+        "volume_context_label": "elevated_volume",
+        "realized_volatility_label": "normal_volatility_context",
+        "candle_structure_label": "wick_dominant",
+        "trend_consistency_label": "consistent_down_context",
+        "trend_consistency_score": 6.6667
+      },
+      "research_notes": [
+        "ETH/USDT 5m has 72 accepted rows ending at 2025-02-01T05:55:00Z.",
+        "Trend observation label is downward_bias and volume regime is normal_volume.",
+        "Compare this deterministic summary with raw candles before forming a research hypothesis."
+      ],
+      "validation_summary": {
+        "input_rows": 72,
+        "accepted_rows": 72,
+        "rejected_rows": 0,
+        "warnings": []
+      }
+    },
+    {
+      "symbol": "BTC/USDT",
+      "timeframe": "1h",
+      "csv": "samples/sample_btc_1h.csv",
+      "row_count": 72,
+      "accepted_rows": 72,
+      "rejected_rows": 0,
+      "warning_count": 0,
+      "first_timestamp": "2025-02-01T00:00:00Z",
+      "last_timestamp": "2025-02-03T23:00:00Z",
+      "last_close": 44160.26,
+      "total_return_pct": 5.6466,
+      "recent_return_pct": 1.2605,
+      "volatility_level": "low",
+      "rolling_volatility_latest": 0.000501,
+      "atr_like_latest": 63.612,
+      "max_drawdown_pct": 0.0,
+      "trend_label": "upward_bias",
+      "volume_regime": "normal_volume",
+      "data_quality_label": "complete_for_supplied_file",
+      "timestamp_quality_label": "clean",
+      "coverage_quality_label": "missing_sections",
+      "coverage_ratio": 0.008219,
+      "missing_bar_estimate": 8688,
+      "missing_days_count": 362,
+      "sparse_days_count": 0,
+      "missing_months_count": 11,
+      "largest_missing_window_days": 331,
+      "requested_range_source": "cli",
+      "calendar_coverage_summary": {
+        "coverage_quality_label": "missing_sections",
+        "coverage_ratio": 0.008219,
+        "expected_bar_count": 8760,
+        "actual_unique_timestamp_count": 72,
+        "missing_bar_estimate": 8688,
+        "extra_out_of_range_count": 0,
+        "missing_days_count": 362,
+        "sparse_days_count": 0,
+        "missing_months_count": 11,
+        "largest_missing_window_days": 331,
+        "requested_range_source": "cli",
+        "expected_start_date": "2025-01-01",
+        "expected_end_date": "2025-12-31"
+      },
+      "gap_count": 0,
+      "duplicate_timestamp_count": 0,
+      "irregular_interval_count": 0,
+      "inferred_interval_label": "1h",
+      "matches_expected_timeframe": true,
+      "largest_gap_label": null,
+      "indicator_family_summary": {
+        "momentum_label": "strong_positive_momentum",
+        "range_position_label": "near_recent_high",
+        "drawdown_recovery_label": "at_or_near_peak",
+        "volume_context_label": "elevated_volume",
+        "realized_volatility_label": "low_volatility_context",
+        "candle_structure_label": "wick_dominant",
+        "trend_consistency_label": "consistent_up_context",
+        "trend_consistency_score": 100.0
+      },
+      "research_notes": [
+        "BTC/USDT 1h has 72 accepted rows ending at 2025-02-03T23:00:00Z.",
+        "Trend observation label is upward_bias and volume regime is normal_volume.",
+        "Compare this deterministic summary with raw candles before forming a research hypothesis."
+      ],
+      "validation_summary": {
+        "input_rows": 72,
+        "accepted_rows": 72,
+        "rejected_rows": 0,
+        "warnings": []
+      }
+    }
+  ],
+  "data_quality_comparison": {
+    "comparison_type": "data quality comparison",
+    "label_counts": {
+      "complete_for_supplied_file": 3
+    },
+    "data_completeness_ranking": [
+      {
+        "position": 1,
+        "symbol": "BTC/USDT",
+        "timeframe": "5m",
+        "accepted_rows": 72
+      },
+      {
+        "position": 2,
+        "symbol": "ETH/USDT",
+        "timeframe": "5m",
+        "accepted_rows": 72
+      },
+      {
+        "position": 3,
+        "symbol": "BTC/USDT",
+        "timeframe": "1h",
+        "accepted_rows": 72
+      }
+    ],
+    "notes": [
+      "This compares completeness and validation results inside the supplied local CSV files.",
+      "A stronger completeness label does not imply a market outcome."
+    ]
+  },
+  "timestamp_quality_comparison": {
+    "comparison_type": "timestamp quality comparison",
+    "timestamp_quality_label_counts": {
+      "clean": 3
+    },
+    "items_with_gaps": [],
+    "items_with_duplicates": [],
+    "items_with_irregular_intervals": [],
+    "items_with_timeframe_mismatch": [],
+    "notes": [
+      "Timestamp quality comparison is limited to local CSV input structure.",
+      "Timestamp labels are data quality observations, not outcome rankings."
+    ]
+  },
+  "calendar_coverage_comparison": {
+    "comparison_type": "calendar coverage comparison",
+    "coverage_quality_label_counts": {
+      "missing_sections": 3
+    },
+    "items_with_partial_coverage": [],
+    "items_with_sparse_coverage": [
+      {
+        "symbol": "BTC/USDT",
+        "timeframe": "5m",
+        "coverage_quality_label": "missing_sections",
+        "coverage_ratio": 0.000685,
+        "missing_bar_estimate": 105048,
+        "missing_days_count": 364,
+        "sparse_days_count": 1,
+        "missing_months_count": 11,
+        "largest_missing_window_days": 333,
+        "requested_range_source": "cli"
+      },
+      {
+        "symbol": "ETH/USDT",
+        "timeframe": "5m",
+        "coverage_quality_label": "missing_sections",
+        "coverage_ratio": 0.000685,
+        "missing_bar_estimate": 105048,
+        "missing_days_count": 364,
+        "sparse_days_count": 1,
+        "missing_months_count": 11,
+        "largest_missing_window_days": 333,
+        "requested_range_source": "cli"
+      }
+    ],
+    "items_with_missing_sections": [
+      {
+        "symbol": "BTC/USDT",
+        "timeframe": "5m",
+        "coverage_quality_label": "missing_sections",
+        "coverage_ratio": 0.000685,
+        "missing_bar_estimate": 105048,
+        "missing_days_count": 364,
+        "sparse_days_count": 1,
+        "missing_months_count": 11,
+        "largest_missing_window_days": 333,
+        "requested_range_source": "cli"
+      },
+      {
+        "symbol": "ETH/USDT",
+        "timeframe": "5m",
+        "coverage_quality_label": "missing_sections",
+        "coverage_ratio": 0.000685,
+        "missing_bar_estimate": 105048,
+        "missing_days_count": 364,
+        "sparse_days_count": 1,
+        "missing_months_count": 11,
+        "largest_missing_window_days": 333,
+        "requested_range_source": "cli"
+      },
+      {
+        "symbol": "BTC/USDT",
+        "timeframe": "1h",
+        "coverage_quality_label": "missing_sections",
+        "coverage_ratio": 0.008219,
+        "missing_bar_estimate": 8688,
+        "missing_days_count": 362,
+        "sparse_days_count": 0,
+        "missing_months_count": 11,
+        "largest_missing_window_days": 331,
+        "requested_range_source": "cli"
+      }
+    ],
+    "items_with_out_of_range_rows": [],
+    "by_item": [
+      {
+        "symbol": "BTC/USDT",
+        "timeframe": "5m",
+        "coverage_quality_label": "missing_sections",
+        "coverage_ratio": 0.000685,
+        "missing_bar_estimate": 105048,
+        "missing_days_count": 364,
+        "sparse_days_count": 1,
+        "missing_months_count": 11,
+        "largest_missing_window_days": 333,
+        "requested_range_source": "cli"
+      },
+      {
+        "symbol": "ETH/USDT",
+        "timeframe": "5m",
+        "coverage_quality_label": "missing_sections",
+        "coverage_ratio": 0.000685,
+        "missing_bar_estimate": 105048,
+        "missing_days_count": 364,
+        "sparse_days_count": 1,
+        "missing_months_count": 11,
+        "largest_missing_window_days": 333,
+        "requested_range_source": "cli"
+      },
+      {
+        "symbol": "BTC/USDT",
+        "timeframe": "1h",
+        "coverage_quality_label": "missing_sections",
+        "coverage_ratio": 0.008219,
+        "missing_bar_estimate": 8688,
+        "missing_days_count": 362,
+        "sparse_days_count": 0,
+        "missing_months_count": 11,
+        "largest_missing_window_days": 331,
+        "requested_range_source": "cli"
+      }
+    ],
+    "notes": [
+      "Calendar coverage comparison is limited to local CSV input date coverage.",
+      "Coverage labels describe data quality and period balance only."
+    ]
+  },
+  "items_with_partial_coverage": [],
+  "items_with_sparse_coverage": [
+    {
+      "symbol": "BTC/USDT",
+      "timeframe": "5m",
+      "coverage_quality_label": "missing_sections",
+      "coverage_ratio": 0.000685,
+      "missing_bar_estimate": 105048,
+      "missing_days_count": 364,
+      "sparse_days_count": 1,
+      "missing_months_count": 11,
+      "largest_missing_window_days": 333,
+      "requested_range_source": "cli"
+    },
+    {
+      "symbol": "ETH/USDT",
+      "timeframe": "5m",
+      "coverage_quality_label": "missing_sections",
+      "coverage_ratio": 0.000685,
+      "missing_bar_estimate": 105048,
+      "missing_days_count": 364,
+      "sparse_days_count": 1,
+      "missing_months_count": 11,
+      "largest_missing_window_days": 333,
+      "requested_range_source": "cli"
+    }
+  ],
+  "items_with_missing_sections": [
+    {
+      "symbol": "BTC/USDT",
+      "timeframe": "5m",
+      "coverage_quality_label": "missing_sections",
+      "coverage_ratio": 0.000685,
+      "missing_bar_estimate": 105048,
+      "missing_days_count": 364,
+      "sparse_days_count": 1,
+      "missing_months_count": 11,
+      "largest_missing_window_days": 333,
+      "requested_range_source": "cli"
+    },
+    {
+      "symbol": "ETH/USDT",
+      "timeframe": "5m",
+      "coverage_quality_label": "missing_sections",
+      "coverage_ratio": 0.000685,
+      "missing_bar_estimate": 105048,
+      "missing_days_count": 364,
+      "sparse_days_count": 1,
+      "missing_months_count": 11,
+      "largest_missing_window_days": 333,
+      "requested_range_source": "cli"
+    },
+    {
+      "symbol": "BTC/USDT",
+      "timeframe": "1h",
+      "coverage_quality_label": "missing_sections",
+      "coverage_ratio": 0.008219,
+      "missing_bar_estimate": 8688,
+      "missing_days_count": 362,
+      "sparse_days_count": 0,
+      "missing_months_count": 11,
+      "largest_missing_window_days": 331,
+      "requested_range_source": "cli"
+    }
+  ],
+  "items_with_out_of_range_rows": [],
+  "trend_context_comparison": {
+    "comparison_type": "trend context comparison",
+    "trend_label_counts": {
+      "mixed_or_rangebound": 1,
+      "downward_bias": 1,
+      "upward_bias": 1
+    },
+    "by_item": [
+      {
+        "symbol": "BTC/USDT",
+        "timeframe": "5m",
+        "trend_label": "mixed_or_rangebound",
+        "recent_return_pct": 0.7011
+      },
+      {
+        "symbol": "ETH/USDT",
+        "timeframe": "5m",
+        "trend_label": "downward_bias",
+        "recent_return_pct": -1.8373
+      },
+      {
+        "symbol": "BTC/USDT",
+        "timeframe": "1h",
+        "trend_label": "upward_bias",
+        "recent_return_pct": 1.2605
+      }
+    ],
+    "notes": [
+      "Trend labels come from deterministic moving-average and recent-return inputs.",
+      "Mixed labels are prompts for chart inspection, not instructions."
+    ]
+  },
+  "volatility_context_comparison": {
+    "comparison_type": "volatility context comparison",
+    "volatility_level_counts": {
+      "low": 3
+    },
+    "risk_context_ranking": [
+      {
+        "position": 1,
+        "symbol": "ETH/USDT",
+        "timeframe": "5m",
+        "rolling_volatility_latest": 0.000942
+      },
+      {
+        "position": 2,
+        "symbol": "BTC/USDT",
+        "timeframe": "1h",
+        "rolling_volatility_latest": 0.000501
+      },
+      {
+        "position": 3,
+        "symbol": "BTC/USDT",
+        "timeframe": "5m",
+        "rolling_volatility_latest": 0.000201
+      }
+    ],
+    "notes": [
+      "Rolling volatility is calculated from recent close-to-close returns.",
+      "Higher volatility is a context flag for research review only."
+    ]
+  },
+  "drawdown_context_comparison": {
+    "comparison_type": "drawdown context comparison",
+    "risk_context_ranking": [
+      {
+        "position": 1,
+        "symbol": "ETH/USDT",
+        "timeframe": "5m",
+        "max_drawdown_pct": -4.8879
+      },
+      {
+        "position": 2,
+        "symbol": "BTC/USDT",
+        "timeframe": "5m",
+        "max_drawdown_pct": 0.0
+      },
+      {
+        "position": 3,
+        "symbol": "BTC/USDT",
+        "timeframe": "1h",
+        "max_drawdown_pct": 0.0
+      }
+    ],
+    "notes": [
+      "Drawdown uses close-only history from each supplied CSV window.",
+      "The ranking highlights observation context and does not rank assets for allocation."
+    ]
+  },
+  "indicator_context_comparison": {
+    "comparison_type": "indicator context comparison",
+    "item_labels_matrix": [
+      {
+        "symbol": "BTC/USDT",
+        "timeframe": "5m",
+        "momentum_label": "strong_positive_momentum",
+        "range_position_label": "near_recent_high",
+        "drawdown_recovery_label": "at_or_near_peak",
+        "volume_context_label": "elevated_volume",
+        "realized_volatility_label": "normal_volatility_context",
+        "candle_structure_label": "wick_dominant",
+        "trend_consistency_label": "consistent_up_context",
+        "trend_consistency_score": 100.0
+      },
+      {
+        "symbol": "ETH/USDT",
+        "timeframe": "5m",
+        "momentum_label": "strong_negative_momentum",
+        "range_position_label": "near_recent_low",
+        "drawdown_recovery_label": "in_drawdown",
+        "volume_context_label": "elevated_volume",
+        "realized_volatility_label": "normal_volatility_context",
+        "candle_structure_label": "wick_dominant",
+        "trend_consistency_label": "consistent_down_context",
+        "trend_consistency_score": 6.6667
+      },
+      {
+        "symbol": "BTC/USDT",
+        "timeframe": "1h",
+        "momentum_label": "strong_positive_momentum",
+        "range_position_label": "near_recent_high",
+        "drawdown_recovery_label": "at_or_near_peak",
+        "volume_context_label": "elevated_volume",
+        "realized_volatility_label": "low_volatility_context",
+        "candle_structure_label": "wick_dominant",
+        "trend_consistency_label": "consistent_up_context",
+        "trend_consistency_score": 100.0
+      }
+    ],
+    "items_with_high_volatility_context": [],
+    "items_with_unusually_high_volume": [],
+    "items_near_recent_high": [
+      {
+        "symbol": "BTC/USDT",
+        "timeframe": "5m",
+        "indicator_family_summary": {
+          "momentum_label": "strong_positive_momentum",
+          "range_position_label": "near_recent_high",
+          "drawdown_recovery_label": "at_or_near_peak",
+          "volume_context_label": "elevated_volume",
+          "realized_volatility_label": "normal_volatility_context",
+          "candle_structure_label": "wick_dominant",
+          "trend_consistency_label": "consistent_up_context",
+          "trend_consistency_score": 100.0
+        }
+      },
+      {
+        "symbol": "BTC/USDT",
+        "timeframe": "1h",
+        "indicator_family_summary": {
+          "momentum_label": "strong_positive_momentum",
+          "range_position_label": "near_recent_high",
+          "drawdown_recovery_label": "at_or_near_peak",
+          "volume_context_label": "elevated_volume",
+          "realized_volatility_label": "low_volatility_context",
+          "candle_structure_label": "wick_dominant",
+          "trend_consistency_label": "consistent_up_context",
+          "trend_consistency_score": 100.0
+        }
+      }
+    ],
+    "items_near_recent_low": [
+      {
+        "symbol": "ETH/USDT",
+        "timeframe": "5m",
+        "indicator_family_summary": {
+          "momentum_label": "strong_negative_momentum",
+          "range_position_label": "near_recent_low",
+          "drawdown_recovery_label": "in_drawdown",
+          "volume_context_label": "elevated_volume",
+          "realized_volatility_label": "normal_volatility_context",
+          "candle_structure_label": "wick_dominant",
+          "trend_consistency_label": "consistent_down_context",
+          "trend_consistency_score": 6.6667
+        }
+      }
+    ],
+    "items_with_mixed_context": [],
+    "limitations": [
+      "Indicator context comparison uses local CSV-derived labels only.",
+      "The comparison highlights observation differences and does not order items by expected outcome.",
+      "Context labels can be sensitive to deterministic period choices and sparse input history."
+    ],
+    "research_questions": [
+      "Which raw candles explain differences in indicator labels across compared items?",
+      "Do range, volatility, volume, and trend consistency contexts agree for each item?",
+      "Are any label differences caused by missing coverage or timestamp quality issues?"
+    ]
+  },
+  "observation_ranking": [
+    {
+      "ranking_type": "observation ranking",
+      "dimension": "highest_total_return_pct_in_input_window",
+      "items": [
+        {
+          "position": 1,
+          "symbol": "BTC/USDT",
+          "timeframe": "1h",
+          "total_return_pct": 5.6466
+        },
+        {
+          "position": 2,
+          "symbol": "BTC/USDT",
+          "timeframe": "5m",
+          "total_return_pct": 2.9262
+        },
+        {
+          "position": 3,
+          "symbol": "ETH/USDT",
+          "timeframe": "5m",
+          "total_return_pct": -4.64
+        }
+      ],
+      "interpretation": "Historical return inside the supplied CSV window only."
+    },
+    {
+      "ranking_type": "risk context ranking",
+      "dimension": "largest_close_only_drawdown_magnitude",
+      "items": [
+        {
+          "position": 1,
+          "symbol": "ETH/USDT",
+          "timeframe": "5m",
+          "max_drawdown_pct": -4.8879
+        },
+        {
+          "position": 2,
+          "symbol": "BTC/USDT",
+          "timeframe": "5m",
+          "max_drawdown_pct": 0.0
+        },
+        {
+          "position": 3,
+          "symbol": "BTC/USDT",
+          "timeframe": "1h",
+          "max_drawdown_pct": 0.0
+        }
+      ],
+      "interpretation": "Larger magnitude marks a risk context to inspect."
+    },
+    {
+      "ranking_type": "data completeness ranking",
+      "dimension": "accepted_rows_after_validation",
+      "items": [
+        {
+          "position": 1,
+          "symbol": "BTC/USDT",
+          "timeframe": "5m",
+          "accepted_rows": 72
+        },
+        {
+          "position": 2,
+          "symbol": "ETH/USDT",
+          "timeframe": "5m",
+          "accepted_rows": 72
+        },
+        {
+          "position": 3,
+          "symbol": "BTC/USDT",
+          "timeframe": "1h",
+          "accepted_rows": 72
+        }
+      ],
+      "interpretation": "More accepted rows support a broader deterministic sample."
+    }
+  ],
+  "cross_symbol_questions": [
+    "Do trend labels stay similar when the same symbol is checked on another timeframe?",
+    "Are volatility differences caused by one large candle or by persistent variation?",
+    "Do rejected rows or warnings cluster around one symbol or one timeframe?",
+    "Does volume regime context agree or conflict across the compared files?",
+    "Which raw candles would a human researcher inspect before forming a hypothesis?"
+  ],
+  "limitations": [
+    "This comparison uses historical OHLCV rows from local CSV files only.",
+    "It cannot forecast future market behavior.",
+    "It does not evaluate fees, slippage, liquidity, funding, news, or portfolio constraints.",
+    "Ranking sections are observation, risk context, or data completeness rankings only.",
+    "It is designed for research review, not execution decisions."
+  ],
+  "no_advice_disclaimer": {
+    "labels": [
+      "RESEARCH ONLY",
+      "NO FINANCIAL ADVICE",
+      "NO ORDER EXECUTION",
+      "LOCAL CSV ONLY",
+      "NOT A PROFIT GUARANTEE"
+    ],
+    "text": "This comparison is research only. It is not financial advice. It uses local CSV data only, performs no order execution, and is not a profit guarantee."
+  },
+  "deterministic_summary": {
+    "schema_version": "lwf_ai_trading_prompt_lab.summary.v1",
+    "summary_scope": "embedded_safe_digest",
+    "detected_report_type": "comparison_report",
+    "input_schema_version": "lwf_ai_trading_prompt_lab.comparison_report.v1",
+    "headline": "Local deterministic summary for a CSV comparison report.",
+    "source_digest": {
+      "detected_report_type": "comparison_report",
+      "schema_version": "lwf_ai_trading_prompt_lab.comparison_report.v1",
+      "item_count": 3,
+      "timestamp_quality_label_counts": {
+        "clean": 3
+      },
+      "coverage_quality_label_counts": {
+        "missing_sections": 3
+      },
+      "items_with_warnings_count": 0,
+      "items_with_errors_count": 0,
+      "items_with_partial_coverage_count": 0,
+      "items_with_sparse_coverage_count": 2,
+      "items_with_missing_sections_count": 3,
+      "items_with_out_of_range_rows_count": 0,
+      "timestamp_quality_label": "clean",
+      "coverage_quality_label": "missing_sections",
+      "coverage_ratio": "not_available",
+      "missing_days_count": "not_available",
+      "sparse_days_count": "not_available",
+      "indicator_context_present": true
+    },
+    "safety_labels": [
+      "RESEARCH ONLY",
+      "NO FINANCIAL ADVICE",
+      "NO ORDER EXECUTION",
+      "LOCAL CSV ONLY",
+      "NOT A PROFIT GUARANTEE"
+    ],
+    "template_policy": "deterministic_local_templates_only"
+  }
+}

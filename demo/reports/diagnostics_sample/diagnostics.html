@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LoneWolf Fang AI Trading Prompt Lab Timestamp Diagnostics</title>
+<style>
+body{font-family:Arial,sans-serif;line-height:1.55;margin:0;color:#1e2933;background:#f7f9fb;}
+main{max-width:1060px;margin:0 auto;padding:30px 18px 48px;}
+h1,h2{line-height:1.2;}
+.banner{background:#101820;color:#fff;padding:18px 20px;margin:0 0 18px 0;}
+.labels{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;}
+.label{border:1px solid #adc0d1;padding:5px 8px;font-size:12px;font-weight:700;}
+.notice{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:8px;margin:14px 0;}
+.notice strong{background:#fff;border:2px solid #101820;padding:10px;text-align:center;}
+.metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px;margin:14px 0;}
+.metric{background:#fff;border:1px solid #d8e0e8;padding:12px;}
+.metric span{display:block;font-size:12px;font-weight:700;color:#546575;text-transform:uppercase;}
+section{border-top:1px solid #d8e0e8;padding:22px 0;}
+pre{white-space:pre-wrap;background:#fff;border:1px solid #d8e0e8;padding:12px;overflow:auto;}
+</style>
+</head>
+<body>
+<main>
+<h1>LoneWolf Fang AI Trading Prompt Lab Timestamp Diagnostics</h1>
+<div class="banner"><strong>Research Safety Boundary</strong><div class="labels"><span class="label">RESEARCH ONLY</span><span class="label">NO FINANCIAL ADVICE</span><span class="label">NO ORDER EXECUTION</span><span class="label">LOCAL CSV ONLY</span><span class="label">NOT A PROFIT GUARANTEE</span></div></div>
+<div class="notice"><strong>NO FINANCIAL ADVICE</strong><strong>NO ORDER EXECUTION</strong></div>
+<p>This report is limited to input data quality, timestamp gaps, duplicates, interval variation, calendar coverage, and verification questions.</p>
+<section><h2>Input</h2><pre>{
+  &quot;input_csv&quot;: &quot;C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/samples/sample_ohlcv.csv&quot;,
+  &quot;symbol&quot;: &quot;BTC/USDT&quot;,
+  &quot;timeframe&quot;: &quot;5m&quot;
+}</pre></section>
+<section><h2>Timestamp Quality</h2><div class="metrics"><div class="metric"><span>Timestamp Unit</span><strong>unknown</strong></div><div class="metric"><span>First Iso</span><strong>2025-01-01T00:00:00+00:00</strong></div><div class="metric"><span>Last Iso</span><strong>2025-05-10T00:00:00+00:00</strong></div><div class="metric"><span>Inferred Interval</span><strong>1d</strong></div><div class="metric"><span>Duplicates</span><strong>0</strong></div><div class="metric"><span>Gaps</span><strong>0</strong></div><div class="metric"><span>Irregular</span><strong>0</strong></div><div class="metric"><span>Quality Label</span><strong>minor_warnings</strong></div></div></section>
+<section><h2>Normalization Summary</h2><pre>{
+  &quot;raw_first_timestamp&quot;: &quot;2025-01-01&quot;,
+  &quot;raw_last_timestamp&quot;: &quot;2025-05-10&quot;,
+  &quot;normalized_first_timestamp&quot;: 1735689600000,
+  &quot;normalized_last_timestamp&quot;: 1746835200000,
+  &quot;normalized_first_iso&quot;: &quot;2025-01-01T00:00:00+00:00&quot;,
+  &quot;normalized_last_iso&quot;: &quot;2025-05-10T00:00:00+00:00&quot;,
+  &quot;timestamp_unit&quot;: &quot;unknown&quot;,
+  &quot;rows_seen&quot;: 130,
+  &quot;rows_with_invalid_timestamp&quot;: 0,
+  &quot;rows_with_non_positive_timestamp&quot;: 0
+}</pre></section>
+<section><h2>Ordering Diagnostics</h2><pre>{
+  &quot;original_out_of_order_count&quot;: 0,
+  &quot;original_out_of_order_examples&quot;: [],
+  &quot;sorted_applied&quot;: false,
+  &quot;duplicate_timestamp_count&quot;: 0,
+  &quot;duplicate_timestamp_examples&quot;: [],
+  &quot;duplicate_policy&quot;: &quot;duplicate timestamps are retained in sorted rows; diagnostics report repeated timestamp rows.&quot;
+}</pre></section>
+<section><h2>Interval Diagnostics</h2><pre>{
+  &quot;inferred_interval_ms&quot;: 86400000,
+  &quot;inferred_interval_label&quot;: &quot;1d&quot;,
+  &quot;interval_inference_method&quot;: &quot;mode_of_positive_intervals&quot;,
+  &quot;interval_counts_top&quot;: [
+    {
+      &quot;interval_ms&quot;: 86400000,
+      &quot;interval_label&quot;: &quot;1d&quot;,
+      &quot;count&quot;: 129
+    }
+  ],
+  &quot;gap_count&quot;: 0,
+  &quot;gap_examples&quot;: [],
+  &quot;largest_gap_ms&quot;: null,
+  &quot;largest_gap_label&quot;: null,
+  &quot;largest_gap_start_ts&quot;: null,
+  &quot;largest_gap_end_ts&quot;: null,
+  &quot;largest_gap_start_iso&quot;: null,
+  &quot;largest_gap_end_iso&quot;: null,
+  &quot;irregular_interval_count&quot;: 0,
+  &quot;irregular_interval_examples&quot;: [],
+  &quot;short_interval_count&quot;: 0,
+  &quot;long_interval_count&quot;: 0
+}</pre></section>
+<section><h2>Timeframe Consistency</h2><pre>{
+  &quot;expected_timeframe&quot;: &quot;5m&quot;,
+  &quot;expected_interval_ms&quot;: 300000,
+  &quot;matches_expected_timeframe&quot;: false,
+  &quot;expected_interval_mismatch_count&quot;: 129,
+  &quot;expected_interval_mismatch_examples&quot;: [
+    {
+      &quot;start_ts&quot;: 1735689600000,
+      &quot;end_ts&quot;: 1735776000000,
+      &quot;start_iso&quot;: &quot;2025-01-01T00:00:00+00:00&quot;,
+      &quot;end_iso&quot;: &quot;2025-01-02T00:00:00+00:00&quot;,
+      &quot;interval_ms&quot;: 86400000,
+      &quot;interval_label&quot;: &quot;1d&quot;
+    },
+    {
+      &quot;start_ts&quot;: 1735776000000,
+      &quot;end_ts&quot;: 1735862400000,
+      &quot;start_iso&quot;: &quot;2025-01-02T00:00:00+00:00&quot;,
+      &quot;end_iso&quot;: &quot;2025-01-03T00:00:00+00:00&quot;,
+      &quot;interval_ms&quot;: 86400000,
+      &quot;interval_label&quot;: &quot;1d&quot;
+    },
+    {
+      &quot;start_ts&quot;: 1735862400000,
+      &quot;end_ts&quot;: 1735948800000,
+      &quot;start_iso&quot;: &quot;2025-01-03T00:00:00+00:00&quot;,
+      &quot;end_iso&quot;: &quot;2025-01-04T00:00:00+00:00&quot;,
+      &quot;interval_ms&quot;: 86400000,
+      &quot;interval_label&quot;: &quot;1d&quot;
+    },
+    {
+      &quot;start_ts&quot;: 1735948800000,
+      &quot;end_ts&quot;: 1736035200000,
+      &quot;start_iso&quot;: &quot;2025-01-04T00:00:00+00:00&quot;,
+      &quot;end_iso&quot;: &quot;2025-01-05T00:00:00+00:00&quot;,
+      &quot;interval_ms&quot;: 86400000,
+      &quot;interval_label&quot;: &quot;1d&quot;
+    },
+    {
+      &quot;start_ts&quot;: 1736035200000,
+      &quot;end_ts&quot;: 1736121600000,
+      &quot;start_iso&quot;: &quot;2025-01-05T00:00:00+00:00&quot;,
+      &quot;end_iso&quot;: &quot;2025-01-06T00:00:00+00:00&quot;,
+      &quot;interval_ms&quot;: 86400000,
+      &quot;interval_label&quot;: &quot;1d&quot;
+    }
+  ],
+  &quot;timeframe_warning&quot;: &quot;Observed timestamp spacing differs from the supplied timeframe.&quot;
+}</pre></section>
+<section><h2>Calendar Coverage</h2><div class="metrics"><div class="metric"><span>Quality Label</span><strong>missing_sections</strong></div><div class="metric"><span>Expected Start</span><strong>2025-01-01</strong></div><div class="metric"><span>Expected End</span><strong>2025-12-31</strong></div><div class="metric"><span>Actual First</span><strong>2025-01-01T00:00:00+00:00</strong></div><div class="metric"><span>Actual Last</span><strong>2025-05-10T00:00:00+00:00</strong></div><div class="metric"><span>Coverage Ratio</span><strong>0.001237</strong></div><div class="metric"><span>Expected Bars</span><strong>105120</strong></div><div class="metric"><span>Actual Unique</span><strong>130</strong></div><div class="metric"><span>Missing Estimate</span><strong>104990</strong></div><div class="metric"><span>Missing Days</span><strong>235</strong></div><div class="metric"><span>Sparse Days</span><strong>130</strong></div><div class="metric"><span>Missing Months</span><strong>7</strong></div><div class="metric"><span>Longest Missing Days</span><strong>235</strong></div><div class="metric"><span>Range Source</span><strong>cli</strong></div></div><pre>{
+  &quot;monthly_coverage&quot;: [
+    {
+      &quot;month&quot;: &quot;2025-01&quot;,
+      &quot;expected_bars&quot;: 8928,
+      &quot;actual_bars&quot;: 31,
+      &quot;coverage_ratio&quot;: 0.003472,
+      &quot;status&quot;: &quot;sparse&quot;
+    },
+    {
+      &quot;month&quot;: &quot;2025-02&quot;,
+      &quot;expected_bars&quot;: 8064,
+      &quot;actual_bars&quot;: 28,
+      &quot;coverage_ratio&quot;: 0.003472,
+      &quot;status&quot;: &quot;sparse&quot;
+    },
+    {
+      &quot;month&quot;: &quot;2025-03&quot;,
+      &quot;expected_bars&quot;: 8928,
+      &quot;actual_bars&quot;: 31,
+      &quot;coverage_ratio&quot;: 0.003472,
+      &quot;status&quot;: &quot;sparse&quot;
+    },
+    {
+      &quot;month&quot;: &quot;2025-04&quot;,
+      &quot;expected_bars&quot;: 8640,
+      &quot;actual_bars&quot;: 30,
+      &quot;coverage_ratio&quot;: 0.003472,
+      &quot;status&quot;: &quot;sparse&quot;
+    },
+    {
+      &quot;month&quot;: &quot;2025-05&quot;,
+      &quot;expected_bars&quot;: 8928,
+      &quot;actual_bars&quot;: 10,
+      &quot;coverage_ratio&quot;: 0.00112,
+      &quot;status&quot;: &quot;sparse&quot;
+    },
+    {
+      &quot;month&quot;: &quot;2025-06&quot;,
+      &quot;expected_bars&quot;: 8640,
+      &quot;actual_bars&quot;: 0,
+      &quot;coverage_ratio&quot;: 0.0,
+      &quot;status&quot;: &quot;missing&quot;
+    },
+    {
+      &quot;month&quot;: &quot;2025-07&quot;,
+      &quot;expected_bars&quot;: 8928,
+      &quot;actual_bars&quot;: 0,
+      &quot;coverage_ratio&quot;: 0.0,
+      &quot;status&quot;: &quot;missing&quot;
+    },
+    {
+      &quot;month&quot;: &quot;2025-08&quot;,
+      &quot;expected_bars&quot;: 8928,
+      &quot;actual_bars&quot;: 0,
+      &quot;coverage_ratio&quot;: 0.0,
+      &quot;status&quot;: &quot;missing&quot;
+    },
+    {
+      &quot;month&quot;: &quot;2025-09&quot;,
+      &quot;expected_bars&quot;: 8640,
+      &quot;actual_bars&quot;: 0,
+      &quot;coverage_ratio&quot;: 0.0,
+      &quot;status&quot;: &quot;missing&quot;
+    },
+    {
+      &quot;month&quot;: &quot;2025-10&quot;,
+      &quot;expected_bars&quot;: 8928,
+      &quot;actual_bars&quot;: 0,
+      &quot;coverage_ratio&quot;: 0.0,
+      &quot;status&quot;: &quot;missing&quot;
+    },
+    {
+      &quot;month&quot;: &quot;2025-11&quot;,
+      &quot;expected_bars&quot;: 8640,
+      &quot;actual_bars&quot;: 0,
+      &quot;coverage_ratio&quot;: 0.0,
+      &quot;status&quot;: &quot;missing&quot;
+    },
+    {
+      &quot;month&quot;: &quot;2025-12&quot;,
+      &quot;expected_bars&quot;: 8928,
+      &quot;actual_bars&quot;: 0,
+      &quot;coverage_ratio&quot;: 0.0,
+      &quot;status&quot;: &quot;missing&quot;
+    }
+  ],
+  &quot;longest_missing_calendar_window&quot;: {
+    &quot;longest_missing_window_start_date&quot;: &quot;2025-05-11&quot;,
+    &quot;longest_missing_window_end_date&quot;: &quot;2025-12-31&quot;,
+    &quot;longest_missing_window_days&quot;: 235,
+    &quot;missing_windows&quot;: [
+      {
+        &quot;start_date&quot;: &quot;2025-05-11&quot;,
+        &quot;end_date&quot;: &quot;2025-12-31&quot;,
+        &quot;days&quot;: 235
+      }
+    ]
+  },
+  &quot;research_notes&quot;: [
+    &quot;Calendar coverage diagnostics are input data quality observations for local CSV review only.&quot;,
+    &quot;Low calendar coverage can make deterministic analysis sensitive to the supplied date subset.&quot;,
+    &quot;Missing daily or monthly sections can create period imbalance in local CSV analysis.&quot;,
+    &quot;Sparse daily coverage means some dates have very few bars compared with the expected interval.&quot;,
+    &quot;These diagnostics do not rank symbols, timeframes, reports, or expected market outcomes.&quot;
+  ]
+}</pre></section>
+<section><h2>Research Notes</h2><ul><li>Timestamp diagnostics are input data quality observations for local CSV review only.</li><li>Observed timestamp spacing differs from the supplied timeframe.</li><li>These diagnostics do not rank symbols, timeframes, reports, or expected market outcomes.</li></ul></section>
+<section><h2>Limitations</h2><ul><li>This diagnostics report inspects timestamp quality in a local CSV file only.</li><li>It does not evaluate future market behavior.</li><li>It does not decide which symbol, timeframe, or report is better.</li><li>It is limited to input data quality, timestamp gaps, duplicates, interval variation, calendar coverage, and verification questions.</li></ul></section>
+<section><h2>No Advice Disclaimer</h2><pre>{
+  &quot;labels&quot;: [
+    &quot;RESEARCH ONLY&quot;,
+    &quot;NO FINANCIAL ADVICE&quot;,
+    &quot;NO ORDER EXECUTION&quot;,
+    &quot;LOCAL CSV ONLY&quot;,
+    &quot;NOT A PROFIT GUARANTEE&quot;
+  ],
+  &quot;text&quot;: &quot;This diagnostics report is research only. It is not financial advice. It uses local CSV data only, performs no order execution, and is not a profit guarantee.&quot;
+}</pre></section>
+</main>
+</body>
+</html>

@@ -1,0 +1,112 @@
+{
+  "schema_version": "lwf_ai_trading_prompt_lab.summary.v1",
+  "metadata": {
+    "generated_at": "2026-05-12T00:00:00+00:00",
+    "input_path": "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/dashboard/dashboard_index.json",
+    "detected_report_type": "dashboard_index",
+    "input_schema_version": "lwf_ai_trading_prompt_lab.dashboard_index.v1",
+    "style": "operator_brief",
+    "max_bullets": 8
+  },
+  "safety_boundary": {
+    "labels": [
+      "RESEARCH ONLY",
+      "NO FINANCIAL ADVICE",
+      "NO ORDER EXECUTION",
+      "LOCAL CSV ONLY",
+      "NOT A PROFIT GUARANTEE"
+    ],
+    "scope": [
+      "Local JSON report summarization only.",
+      "Deterministic template text only.",
+      "No order execution is included.",
+      "No remote model call is included."
+    ]
+  },
+  "summary": {
+    "headline": "Local deterministic summary for a static dashboard index.",
+    "brief_bullets": [
+      "Detected report type is dashboard_index.",
+      "Input schema version is lwf_ai_trading_prompt_lab.dashboard_index.v1.",
+      "Data quality context is mixed.",
+      "Schema status context is lwf_ai_trading_prompt_lab.dashboard_index.v1.",
+      "Required safety labels are present in this summary.",
+      "Summary export includes JSON, Markdown, and static HTML files.",
+      "Dashboard context is report count 4."
+    ],
+    "data_quality_notes": [
+      "Dashboard report count is 4; skipped file count is 0."
+    ],
+    "schema_status_notes": [
+      "Detected source type is dashboard_index.",
+      "Input schema version is lwf_ai_trading_prompt_lab.dashboard_index.v1.",
+      "Schema status label is lwf_ai_trading_prompt_lab.dashboard_index.v1."
+    ],
+    "safety_status_notes": [
+      "Safety labels are included: RESEARCH ONLY, NO FINANCIAL ADVICE, NO ORDER EXECUTION, LOCAL CSV ONLY, NOT A PROFIT GUARANTEE.",
+      "No order execution is included.",
+      "The summary uses local JSON report fields only."
+    ],
+    "indicator_context_notes": [
+      "The source includes local-only indicator context."
+    ],
+    "coverage_notes": [
+      "Calendar coverage label is mixed; coverage ratio is not_available.",
+      "Coverage counts show missing days not_available and sparse days not_available."
+    ],
+    "drift_notes": [
+      "Coverage drift severity is not_available; indicator drift severity is not_available."
+    ],
+    "artifact_notes": [],
+    "research_questions": [],
+    "limitations": [
+      "This summary only restates safe structured fields from a local JSON report.",
+      "It does not forecast future market behavior.",
+      "It does not rank symbols, reports, timeframes, or expected outcomes.",
+      "Free-form source text is not copied into the summary."
+    ]
+  },
+  "safety_review": {
+    "allowed_template_only": true,
+    "required_disclaimers_present": true,
+    "forbidden_phrase_hits": [],
+    "advice_like_wording_hits": [],
+    "status": "passed"
+  },
+  "source_digest": {
+    "detected_report_type": "dashboard_index",
+    "schema_version": "lwf_ai_trading_prompt_lab.dashboard_index.v1",
+    "report_count": 4,
+    "skipped_count": 0,
+    "count_by_report_type": {
+      "comparison_report": 1,
+      "diagnostics_report": 1,
+      "diff_report": 1,
+      "single_report": 1
+    },
+    "count_by_schema_status": {
+      "compatible": 4
+    },
+    "count_by_safety_status": {
+      "passed": 4
+    },
+    "reports_with_warnings": 0,
+    "reports_with_errors": 0,
+    "coverage_quality_label": "mixed",
+    "timestamp_quality_label": "mixed",
+    "coverage_ratio": "not_available",
+    "missing_days_count": "not_available",
+    "sparse_days_count": "not_available",
+    "indicator_context_present": true
+  },
+  "no_advice_disclaimer": {
+    "labels": [
+      "RESEARCH ONLY",
+      "NO FINANCIAL ADVICE",
+      "NO ORDER EXECUTION",
+      "LOCAL CSV ONLY",
+      "NOT A PROFIT GUARANTEE"
+    ],
+    "text": "This summary is research only. It is not financial advice. It uses local CSV report files only, performs no order execution, and is not a profit guarantee."
+  }
+}

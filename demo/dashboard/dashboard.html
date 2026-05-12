@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LoneWolf Fang AI Trading Prompt Lab Dashboard</title>
+<style>
+body{font-family:Arial,sans-serif;line-height:1.55;margin:0;color:#1f2933;background:#f5f7fa;}
+main{max-width:1180px;margin:0 auto;padding:30px 18px 48px;}
+h1,h2,h3{line-height:1.2;letter-spacing:0;}
+.banner{background:#101820;color:#fff;padding:18px 20px;margin:0 0 18px 0;}
+.labels{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;}
+.label{border:1px solid #adc0d1;padding:5px 8px;font-size:12px;font-weight:700;}
+.notice{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:8px;margin:14px 0;}
+.notice strong{background:#fff;border:2px solid #101820;padding:10px;text-align:center;}
+.meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin:18px 0;}
+.metric{background:#fff;border:1px solid #d8e0e8;padding:12px;min-height:72px;}
+.metric span{display:block;font-size:12px;font-weight:700;color:#546575;text-transform:uppercase;}
+.metric strong{font-size:20px;}
+.summary-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;}
+.summary-card{background:#fff;border:1px solid #d8e0e8;padding:12px;}
+.summary-card h3{font-size:15px;margin:0 0 8px;}
+.report-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:16px 0;}
+.report-card{background:#fff;border:1px solid #d8e0e8;padding:12px;}
+.report-card h3{font-size:15px;margin:0 0 8px;word-break:break-word;}
+.badges{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0;}
+.badge{border:1px solid #9fb0c0;background:#f8fafc;padding:3px 7px;font-size:12px;font-weight:700;}
+.badge.ok{border-color:#287a4b;color:#145a32;background:#eef8f1;}
+.badge.warn{border-color:#a66a00;color:#6f4600;background:#fff7e6;}
+.badge.fail{border-color:#b42318;color:#7a1b13;background:#fff0ed;}
+.table-wrap{overflow:auto;background:#fff;border:1px solid #d8e0e8;margin-top:12px;}
+table{border-collapse:collapse;width:100%;min-width:980px;}
+th,td{border-bottom:1px solid #e4e9ee;padding:9px 10px;text-align:left;vertical-align:top;font-size:13px;}
+th{background:#edf2f7;font-weight:700;}
+a{color:#0f5f8d;text-decoration:underline;}
+section{border-top:1px solid #d8e0e8;padding:22px 0;}
+ul{padding-left:22px;}
+</style>
+</head>
+<body>
+<main>
+<h1>LoneWolf Fang AI Trading Prompt Lab Dashboard</h1>
+<div class="banner"><strong>Research Safety Boundary</strong><div class="labels"><span class="label">RESEARCH ONLY</span><span class="label">NO FINANCIAL ADVICE</span><span class="label">NO ORDER EXECUTION</span><span class="label">LOCAL CSV ONLY</span><span class="label">NOT A PROFIT GUARANTEE</span></div></div>
+<div class="notice"><strong>NO FINANCIAL ADVICE</strong><strong>NO ORDER EXECUTION</strong></div>
+<p>This dashboard is limited to report inventory, schema status, data quality summary, safety status, and local file links.</p>
+<div class="meta"><div class="metric"><span>Input Dir</span><strong>C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/exports/public_demo_repo_seed/reports</strong></div><div class="metric"><span>Generated At</span><strong>2026-05-12T00:00:00+00:00</strong></div><div class="metric"><span>Reports</span><strong>4</strong></div><div class="metric"><span>Skipped</span><strong>0</strong></div><div class="metric"><span>Max Files</span><strong>100</strong></div><div class="metric"><span>Recursive</span><strong>true</strong></div></div>
+<section><h2>Summary Counts</h2><div class="summary-grid"><div class="summary-card"><h3>Count By Report Type</h3><ul><li><strong>Comparison Report</strong>: 1</li><li><strong>Diagnostics Report</strong>: 1</li><li><strong>Diff Report</strong>: 1</li><li><strong>Single Report</strong>: 1</li></ul></div><div class="summary-card"><h3>Count By Schema Status</h3><ul><li><strong>Compatible</strong>: 4</li></ul></div><div class="summary-card"><h3>Count By Safety Status</h3><ul><li><strong>Passed</strong>: 4</li></ul></div><div class="summary-card"><h3>Count By Coverage Quality Label</h3><ul><li><strong>Missing Sections</strong>: 3</li><li><strong>Unknown</strong>: 1</li></ul></div><div class="summary-card"><h3>Count By Timestamp Quality Label</h3><ul><li><strong>Clean</strong>: 1</li><li><strong>Minor Warnings</strong>: 2</li><li><strong>Unknown</strong>: 1</li></ul></div><div class="summary-card"><h3>Count By Indicator Context Presence</h3><ul><li><strong>Absent</strong>: 1</li><li><strong>Present</strong>: 3</li></ul></div><div class="summary-card"><h3>Reports With Warnings</h3><p>0</p></div><div class="summary-card"><h3>Reports With Errors</h3><p>0</p></div></div></section>
+<section><h2>Report Cards</h2><div class="report-cards"><article class="report-card"><h3>analyze_sample/report.json</h3><div class="badges"><span class="badge">single_report</span><span class="badge ok">compatible</span><span class="badge ok">passed</span><span class="badge">indicator_present</span></div><ul><li><strong>Coverage</strong>: missing_sections</li><li><strong>Timestamp</strong>: minor_warnings</li><li><strong>Coverage Drift</strong>: unknown</li><li><strong>Indicator Drift</strong>: unknown</li></ul><p><a href="../reports/analyze_sample/report.json">json</a> <a href="../reports/analyze_sample/report.md">md</a> <a href="../reports/analyze_sample/report.html">html</a></p></article><article class="report-card"><h3>compare_sample/comparison.json</h3><div class="badges"><span class="badge">comparison_report</span><span class="badge ok">compatible</span><span class="badge ok">passed</span><span class="badge">indicator_present</span></div><ul><li><strong>Coverage</strong>: missing_sections</li><li><strong>Timestamp</strong>: clean</li><li><strong>Coverage Drift</strong>: unknown</li><li><strong>Indicator Drift</strong>: unknown</li></ul><p><a href="../reports/compare_sample/comparison.json">json</a> <a href="../reports/compare_sample/comparison.md">md</a> <a href="../reports/compare_sample/comparison.html">html</a></p></article><article class="report-card"><h3>diff_sample/diff.json</h3><div class="badges"><span class="badge">diff_report</span><span class="badge ok">compatible</span><span class="badge ok">passed</span><span class="badge">indicator_present</span></div><ul><li><strong>Coverage</strong>: unknown</li><li><strong>Timestamp</strong>: unknown</li><li><strong>Coverage Drift</strong>: none</li><li><strong>Indicator Drift</strong>: none</li></ul><p><a href="../reports/diff_sample/diff.json">json</a> <a href="../reports/diff_sample/diff.md">md</a> <a href="../reports/diff_sample/diff.html">html</a></p></article><article class="report-card"><h3>diagnostics_sample/diagnostics.json</h3><div class="badges"><span class="badge">diagnostics_report</span><span class="badge ok">compatible</span><span class="badge ok">passed</span><span class="badge">indicator_absent</span></div><ul><li><strong>Coverage</strong>: missing_sections</li><li><strong>Timestamp</strong>: minor_warnings</li><li><strong>Coverage Drift</strong>: unknown</li><li><strong>Indicator Drift</strong>: unknown</li></ul><p><a href="../reports/diagnostics_sample/diagnostics.json">json</a> <a href="../reports/diagnostics_sample/diagnostics.md">md</a> <a href="../reports/diagnostics_sample/diagnostics.html">html</a></p></article></div></section>
+<section><h2>Report Inventory</h2><div class="table-wrap"><table><thead><tr><th>Relative Path</th><th>Report Type</th><th>Schema Status</th><th>Safety Status</th><th>Generated At</th><th>Symbol</th><th>Timeframe</th><th>Row Count</th><th>Coverage Quality Label</th><th>Timestamp Quality Label</th><th>Coverage Drift Severity</th><th>Indicator Drift Severity</th><th>Indicator Family Present</th><th>Links</th></tr></thead><tbody><tr><td>analyze_sample/report.json</td><td>single_report</td><td>compatible</td><td>passed</td><td>2026-05-12T00:00:00+00:00</td><td>BTC/USDT</td><td>n/a</td><td>130</td><td>missing_sections</td><td>minor_warnings</td><td>n/a</td><td>n/a</td><td>true</td><td><a href="../reports/analyze_sample/report.json">json</a> <a href="../reports/analyze_sample/report.md">md</a> <a href="../reports/analyze_sample/report.html">html</a></td></tr><tr><td>compare_sample/comparison.json</td><td>comparison_report</td><td>compatible</td><td>passed</td><td>2026-05-12T00:00:00+00:00</td><td>n/a</td><td>n/a</td><td>216</td><td>missing_sections</td><td>clean</td><td>n/a</td><td>n/a</td><td>true</td><td><a href="../reports/compare_sample/comparison.json">json</a> <a href="../reports/compare_sample/comparison.md">md</a> <a href="../reports/compare_sample/comparison.html">html</a></td></tr><tr><td>diff_sample/diff.json</td><td>diff_report</td><td>compatible</td><td>passed</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td><td>none</td><td>none</td><td>true</td><td><a href="../reports/diff_sample/diff.json">json</a> <a href="../reports/diff_sample/diff.md">md</a> <a href="../reports/diff_sample/diff.html">html</a></td></tr><tr><td>diagnostics_sample/diagnostics.json</td><td>diagnostics_report</td><td>compatible</td><td>passed</td><td>2026-05-12T00:00:00+00:00</td><td>BTC/USDT</td><td>5m</td><td>130</td><td>missing_sections</td><td>minor_warnings</td><td>n/a</td><td>n/a</td><td>false</td><td><a href="../reports/diagnostics_sample/diagnostics.json">json</a> <a href="../reports/diagnostics_sample/diagnostics.md">md</a> <a href="../reports/diagnostics_sample/diagnostics.html">html</a></td></tr></tbody></table></div></section>
+<section><h2>Warnings And Errors</h2><p>No warnings, errors, or skipped files.</p></section>
+<section><h2>Limitations</h2><ul><li>The dashboard scans local JSON files and summarizes known report shapes.</li><li>Unknown JSON files are listed with unknown schema status when they are valid objects.</li><li>Invalid JSON files and oversized JSON files are recorded under skipped files.</li><li>The dashboard does not rank symbols, reports, timeframes, or expected outcomes.</li><li>The dashboard is a static local export and does not run a local server.</li></ul></section>
+<section><h2>No Advice Disclaimer</h2><pre>{
+  &quot;labels&quot;: [
+    &quot;RESEARCH ONLY&quot;,
+    &quot;NO FINANCIAL ADVICE&quot;,
+    &quot;NO ORDER EXECUTION&quot;,
+    &quot;LOCAL CSV ONLY&quot;,
+    &quot;NOT A PROFIT GUARANTEE&quot;
+  ],
+  &quot;text&quot;: &quot;This dashboard is research only. It is not financial advice. It uses local CSV report files only, performs no order execution, and is not a profit guarantee.&quot;
+}</pre></section>
+</main>
+</body>
+</html>

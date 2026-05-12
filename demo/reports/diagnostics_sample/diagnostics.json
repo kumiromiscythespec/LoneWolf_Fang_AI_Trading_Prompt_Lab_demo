@@ -1,0 +1,3287 @@
+{
+  "schema_version": "lwf_ai_trading_prompt_lab.timestamp_diagnostics.v1",
+  "metadata": {
+    "tool_name": "LoneWolf Fang AI Trading Prompt Lab",
+    "report_type": "timestamp_diagnostics",
+    "generated_at_utc": "2026-05-12T00:00:00+00:00",
+    "safety_labels": [
+      "RESEARCH ONLY",
+      "NO FINANCIAL ADVICE",
+      "NO ORDER EXECUTION",
+      "LOCAL CSV ONLY",
+      "NOT A PROFIT GUARANTEE"
+    ]
+  },
+  "input_csv": "C:/LoneWolf_Fang_AI_Trading_Prompt_Lab/samples/sample_ohlcv.csv",
+  "symbol": "BTC/USDT",
+  "timeframe": "5m",
+  "timestamp_normalization_summary": {
+    "raw_first_timestamp": "2025-01-01",
+    "raw_last_timestamp": "2025-05-10",
+    "normalized_first_timestamp": 1735689600000,
+    "normalized_last_timestamp": 1746835200000,
+    "normalized_first_iso": "2025-01-01T00:00:00+00:00",
+    "normalized_last_iso": "2025-05-10T00:00:00+00:00",
+    "timestamp_unit": "unknown",
+    "rows_seen": 130,
+    "rows_with_invalid_timestamp": 0,
+    "rows_with_non_positive_timestamp": 0
+  },
+  "ordering_diagnostics": {
+    "original_out_of_order_count": 0,
+    "original_out_of_order_examples": [],
+    "sorted_applied": false,
+    "duplicate_timestamp_count": 0,
+    "duplicate_timestamp_examples": [],
+    "duplicate_policy": "duplicate timestamps are retained in sorted rows; diagnostics report repeated timestamp rows."
+  },
+  "interval_diagnostics": {
+    "inferred_interval_ms": 86400000,
+    "inferred_interval_label": "1d",
+    "interval_inference_method": "mode_of_positive_intervals",
+    "interval_counts_top": [
+      {
+        "interval_ms": 86400000,
+        "interval_label": "1d",
+        "count": 129
+      }
+    ],
+    "gap_count": 0,
+    "gap_examples": [],
+    "largest_gap_ms": null,
+    "largest_gap_label": null,
+    "largest_gap_start_ts": null,
+    "largest_gap_end_ts": null,
+    "largest_gap_start_iso": null,
+    "largest_gap_end_iso": null,
+    "irregular_interval_count": 0,
+    "irregular_interval_examples": [],
+    "short_interval_count": 0,
+    "long_interval_count": 0
+  },
+  "timeframe_consistency": {
+    "expected_timeframe": "5m",
+    "expected_interval_ms": 300000,
+    "matches_expected_timeframe": false,
+    "expected_interval_mismatch_count": 129,
+    "expected_interval_mismatch_examples": [
+      {
+        "start_ts": 1735689600000,
+        "end_ts": 1735776000000,
+        "start_iso": "2025-01-01T00:00:00+00:00",
+        "end_iso": "2025-01-02T00:00:00+00:00",
+        "interval_ms": 86400000,
+        "interval_label": "1d"
+      },
+      {
+        "start_ts": 1735776000000,
+        "end_ts": 1735862400000,
+        "start_iso": "2025-01-02T00:00:00+00:00",
+        "end_iso": "2025-01-03T00:00:00+00:00",
+        "interval_ms": 86400000,
+        "interval_label": "1d"
+      },
+      {
+        "start_ts": 1735862400000,
+        "end_ts": 1735948800000,
+        "start_iso": "2025-01-03T00:00:00+00:00",
+        "end_iso": "2025-01-04T00:00:00+00:00",
+        "interval_ms": 86400000,
+        "interval_label": "1d"
+      },
+      {
+        "start_ts": 1735948800000,
+        "end_ts": 1736035200000,
+        "start_iso": "2025-01-04T00:00:00+00:00",
+        "end_iso": "2025-01-05T00:00:00+00:00",
+        "interval_ms": 86400000,
+        "interval_label": "1d"
+      },
+      {
+        "start_ts": 1736035200000,
+        "end_ts": 1736121600000,
+        "start_iso": "2025-01-05T00:00:00+00:00",
+        "end_iso": "2025-01-06T00:00:00+00:00",
+        "interval_ms": 86400000,
+        "interval_label": "1d"
+      }
+    ],
+    "timeframe_warning": "Observed timestamp spacing differs from the supplied timeframe."
+  },
+  "timestamp_quality_label": "minor_warnings",
+  "calendar_coverage_summary": {
+    "coverage_quality_label": "missing_sections",
+    "coverage_ratio": 0.001237,
+    "missing_bar_estimate": 104990,
+    "missing_days_count": 235,
+    "sparse_days_count": 130,
+    "missing_months_count": 7,
+    "largest_missing_window_days": 235
+  },
+  "research_notes": [
+    "Timestamp diagnostics are input data quality observations for local CSV review only.",
+    "Observed timestamp spacing differs from the supplied timeframe.",
+    "These diagnostics do not rank symbols, timeframes, reports, or expected market outcomes."
+  ],
+  "calendar_coverage": {
+    "coverage_range_summary": {
+      "coverage_timezone": "UTC",
+      "expected_start_date": "2025-01-01",
+      "expected_end_date": "2025-12-31",
+      "expected_start_ts": 1735689600000,
+      "expected_end_ts": 1767225600000,
+      "expected_start_iso": "2025-01-01T00:00:00+00:00",
+      "expected_end_exclusive_iso": "2026-01-01T00:00:00+00:00",
+      "expected_end_policy": "inclusive date converted to next-day exclusive UTC boundary",
+      "actual_first_ts": 1735689600000,
+      "actual_last_ts": 1746835200000,
+      "actual_first_iso": "2025-01-01T00:00:00+00:00",
+      "actual_last_iso": "2025-05-10T00:00:00+00:00",
+      "requested_range_source": "cli"
+    },
+    "expected_vs_actual_bar_count": {
+      "expected_interval_ms": 300000,
+      "expected_interval_label": "5m",
+      "expected_interval_source": "timeframe",
+      "expected_bar_count": 105120,
+      "actual_unique_timestamp_count": 130,
+      "coverage_ratio": 0.001237,
+      "missing_bar_estimate": 104990,
+      "extra_out_of_range_count": 0,
+      "before_expected_count": 0,
+      "after_expected_count": 0
+    },
+    "daily_coverage_summary": {
+      "daily_expected_bar_count": 288,
+      "daily_coverage": [
+        {
+          "date": "2025-01-01",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-01-02",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-01-03",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-01-04",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-01-05",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-01-06",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-01-07",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-01-08",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-01-09",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-01-10",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-01-11",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-01-12",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-01-13",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-01-14",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-01-15",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-01-16",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-01-17",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-01-18",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-01-19",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-01-20",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-01-21",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-01-22",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-01-23",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-01-24",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-01-25",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-01-26",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-01-27",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-01-28",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-01-29",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-01-30",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-01-31",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-02-01",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-02-02",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-02-03",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-02-04",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-02-05",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-02-06",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-02-07",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-02-08",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-02-09",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-02-10",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-02-11",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-02-12",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-02-13",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-02-14",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-02-15",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-02-16",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-02-17",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-02-18",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-02-19",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-02-20",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-02-21",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-02-22",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-02-23",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-02-24",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-02-25",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-02-26",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-02-27",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-02-28",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-03-01",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-03-02",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-03-03",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-03-04",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-03-05",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-03-06",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-03-07",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-03-08",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-03-09",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-03-10",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-03-11",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-03-12",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-03-13",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-03-14",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-03-15",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-03-16",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-03-17",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-03-18",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-03-19",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-03-20",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-03-21",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-03-22",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-03-23",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-03-24",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-03-25",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-03-26",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-03-27",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-03-28",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-03-29",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-03-30",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-03-31",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-04-01",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-04-02",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-04-03",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-04-04",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-04-05",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-04-06",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-04-07",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-04-08",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-04-09",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-04-10",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-04-11",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-04-12",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-04-13",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-04-14",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-04-15",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-04-16",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-04-17",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-04-18",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-04-19",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-04-20",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-04-21",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-04-22",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-04-23",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-04-24",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-04-25",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-04-26",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-04-27",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-04-28",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-04-29",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-04-30",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-05-01",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-05-02",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-05-03",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-05-04",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-05-05",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-05-06",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-05-07",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-05-08",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-05-09",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-05-10",
+          "expected_bars": 288,
+          "actual_bars": 1,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "date": "2025-05-11",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-05-12",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-05-13",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-05-14",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-05-15",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-05-16",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-05-17",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-05-18",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-05-19",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-05-20",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-05-21",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-05-22",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-05-23",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-05-24",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-05-25",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-05-26",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-05-27",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-05-28",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-05-29",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-05-30",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-05-31",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-06-01",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-06-02",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-06-03",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-06-04",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-06-05",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-06-06",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-06-07",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-06-08",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-06-09",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-06-10",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-06-11",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-06-12",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-06-13",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-06-14",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-06-15",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-06-16",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-06-17",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-06-18",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-06-19",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-06-20",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-06-21",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-06-22",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-06-23",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-06-24",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-06-25",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-06-26",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-06-27",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-06-28",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-06-29",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-06-30",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-07-01",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-07-02",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-07-03",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-07-04",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-07-05",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-07-06",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-07-07",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-07-08",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-07-09",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-07-10",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-07-11",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-07-12",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-07-13",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-07-14",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-07-15",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-07-16",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-07-17",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-07-18",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-07-19",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-07-20",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-07-21",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-07-22",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-07-23",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-07-24",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-07-25",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-07-26",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-07-27",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-07-28",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-07-29",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-07-30",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-07-31",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-08-01",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-08-02",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-08-03",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-08-04",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-08-05",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-08-06",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-08-07",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-08-08",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-08-09",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-08-10",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-08-11",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-08-12",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-08-13",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-08-14",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-08-15",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-08-16",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-08-17",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-08-18",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-08-19",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-08-20",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-08-21",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-08-22",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-08-23",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-08-24",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-08-25",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-08-26",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-08-27",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-08-28",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-08-29",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-08-30",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-08-31",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-09-01",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-09-02",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-09-03",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-09-04",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-09-05",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-09-06",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-09-07",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-09-08",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-09-09",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-09-10",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-09-11",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-09-12",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-09-13",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-09-14",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-09-15",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-09-16",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-09-17",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-09-18",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-09-19",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-09-20",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-09-21",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-09-22",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-09-23",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-09-24",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-09-25",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-09-26",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-09-27",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-09-28",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-09-29",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-09-30",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-10-01",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-10-02",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-10-03",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-10-04",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-10-05",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-10-06",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-10-07",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-10-08",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-10-09",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-10-10",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-10-11",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-10-12",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-10-13",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-10-14",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-10-15",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-10-16",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-10-17",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-10-18",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-10-19",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-10-20",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-10-21",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-10-22",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-10-23",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-10-24",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-10-25",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-10-26",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-10-27",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-10-28",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-10-29",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-10-30",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-10-31",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-11-01",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-11-02",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-11-03",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-11-04",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-11-05",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-11-06",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-11-07",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-11-08",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-11-09",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-11-10",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-11-11",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-11-12",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-11-13",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-11-14",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-11-15",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-11-16",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-11-17",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-11-18",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-11-19",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-11-20",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-11-21",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-11-22",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-11-23",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-11-24",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-11-25",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-11-26",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-11-27",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-11-28",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-11-29",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-11-30",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-12-01",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-12-02",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-12-03",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-12-04",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-12-05",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-12-06",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-12-07",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-12-08",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-12-09",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-12-10",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-12-11",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-12-12",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-12-13",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-12-14",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-12-15",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-12-16",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-12-17",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-12-18",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-12-19",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-12-20",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-12-21",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-12-22",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-12-23",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-12-24",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-12-25",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-12-26",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-12-27",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-12-28",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-12-29",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-12-30",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "date": "2025-12-31",
+          "expected_bars": 288,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        }
+      ],
+      "missing_days": [
+        "2025-05-11",
+        "2025-05-12",
+        "2025-05-13",
+        "2025-05-14",
+        "2025-05-15",
+        "2025-05-16",
+        "2025-05-17",
+        "2025-05-18",
+        "2025-05-19",
+        "2025-05-20",
+        "2025-05-21",
+        "2025-05-22",
+        "2025-05-23",
+        "2025-05-24",
+        "2025-05-25",
+        "2025-05-26",
+        "2025-05-27",
+        "2025-05-28",
+        "2025-05-29",
+        "2025-05-30",
+        "2025-05-31",
+        "2025-06-01",
+        "2025-06-02",
+        "2025-06-03",
+        "2025-06-04",
+        "2025-06-05",
+        "2025-06-06",
+        "2025-06-07",
+        "2025-06-08",
+        "2025-06-09",
+        "2025-06-10",
+        "2025-06-11",
+        "2025-06-12",
+        "2025-06-13",
+        "2025-06-14",
+        "2025-06-15",
+        "2025-06-16",
+        "2025-06-17",
+        "2025-06-18",
+        "2025-06-19",
+        "2025-06-20",
+        "2025-06-21",
+        "2025-06-22",
+        "2025-06-23",
+        "2025-06-24",
+        "2025-06-25",
+        "2025-06-26",
+        "2025-06-27",
+        "2025-06-28",
+        "2025-06-29",
+        "2025-06-30",
+        "2025-07-01",
+        "2025-07-02",
+        "2025-07-03",
+        "2025-07-04",
+        "2025-07-05",
+        "2025-07-06",
+        "2025-07-07",
+        "2025-07-08",
+        "2025-07-09",
+        "2025-07-10",
+        "2025-07-11",
+        "2025-07-12",
+        "2025-07-13",
+        "2025-07-14",
+        "2025-07-15",
+        "2025-07-16",
+        "2025-07-17",
+        "2025-07-18",
+        "2025-07-19",
+        "2025-07-20",
+        "2025-07-21",
+        "2025-07-22",
+        "2025-07-23",
+        "2025-07-24",
+        "2025-07-25",
+        "2025-07-26",
+        "2025-07-27",
+        "2025-07-28",
+        "2025-07-29",
+        "2025-07-30",
+        "2025-07-31",
+        "2025-08-01",
+        "2025-08-02",
+        "2025-08-03",
+        "2025-08-04",
+        "2025-08-05",
+        "2025-08-06",
+        "2025-08-07",
+        "2025-08-08",
+        "2025-08-09",
+        "2025-08-10",
+        "2025-08-11",
+        "2025-08-12",
+        "2025-08-13",
+        "2025-08-14",
+        "2025-08-15",
+        "2025-08-16",
+        "2025-08-17",
+        "2025-08-18",
+        "2025-08-19",
+        "2025-08-20",
+        "2025-08-21",
+        "2025-08-22",
+        "2025-08-23",
+        "2025-08-24",
+        "2025-08-25",
+        "2025-08-26",
+        "2025-08-27",
+        "2025-08-28",
+        "2025-08-29",
+        "2025-08-30",
+        "2025-08-31",
+        "2025-09-01",
+        "2025-09-02",
+        "2025-09-03",
+        "2025-09-04",
+        "2025-09-05",
+        "2025-09-06",
+        "2025-09-07",
+        "2025-09-08",
+        "2025-09-09",
+        "2025-09-10",
+        "2025-09-11",
+        "2025-09-12",
+        "2025-09-13",
+        "2025-09-14",
+        "2025-09-15",
+        "2025-09-16",
+        "2025-09-17",
+        "2025-09-18",
+        "2025-09-19",
+        "2025-09-20",
+        "2025-09-21",
+        "2025-09-22",
+        "2025-09-23",
+        "2025-09-24",
+        "2025-09-25",
+        "2025-09-26",
+        "2025-09-27",
+        "2025-09-28",
+        "2025-09-29",
+        "2025-09-30",
+        "2025-10-01",
+        "2025-10-02",
+        "2025-10-03",
+        "2025-10-04",
+        "2025-10-05",
+        "2025-10-06",
+        "2025-10-07",
+        "2025-10-08",
+        "2025-10-09",
+        "2025-10-10",
+        "2025-10-11",
+        "2025-10-12",
+        "2025-10-13",
+        "2025-10-14",
+        "2025-10-15",
+        "2025-10-16",
+        "2025-10-17",
+        "2025-10-18",
+        "2025-10-19",
+        "2025-10-20",
+        "2025-10-21",
+        "2025-10-22",
+        "2025-10-23",
+        "2025-10-24",
+        "2025-10-25",
+        "2025-10-26",
+        "2025-10-27",
+        "2025-10-28",
+        "2025-10-29",
+        "2025-10-30",
+        "2025-10-31",
+        "2025-11-01",
+        "2025-11-02",
+        "2025-11-03",
+        "2025-11-04",
+        "2025-11-05",
+        "2025-11-06",
+        "2025-11-07",
+        "2025-11-08",
+        "2025-11-09",
+        "2025-11-10",
+        "2025-11-11",
+        "2025-11-12",
+        "2025-11-13",
+        "2025-11-14",
+        "2025-11-15",
+        "2025-11-16",
+        "2025-11-17",
+        "2025-11-18",
+        "2025-11-19",
+        "2025-11-20",
+        "2025-11-21",
+        "2025-11-22",
+        "2025-11-23",
+        "2025-11-24",
+        "2025-11-25",
+        "2025-11-26",
+        "2025-11-27",
+        "2025-11-28",
+        "2025-11-29",
+        "2025-11-30",
+        "2025-12-01",
+        "2025-12-02",
+        "2025-12-03",
+        "2025-12-04",
+        "2025-12-05",
+        "2025-12-06",
+        "2025-12-07",
+        "2025-12-08",
+        "2025-12-09",
+        "2025-12-10",
+        "2025-12-11",
+        "2025-12-12",
+        "2025-12-13",
+        "2025-12-14",
+        "2025-12-15",
+        "2025-12-16",
+        "2025-12-17",
+        "2025-12-18",
+        "2025-12-19",
+        "2025-12-20",
+        "2025-12-21",
+        "2025-12-22",
+        "2025-12-23",
+        "2025-12-24",
+        "2025-12-25",
+        "2025-12-26",
+        "2025-12-27",
+        "2025-12-28",
+        "2025-12-29",
+        "2025-12-30",
+        "2025-12-31"
+      ],
+      "sparse_days": [
+        "2025-01-01",
+        "2025-01-02",
+        "2025-01-03",
+        "2025-01-04",
+        "2025-01-05",
+        "2025-01-06",
+        "2025-01-07",
+        "2025-01-08",
+        "2025-01-09",
+        "2025-01-10",
+        "2025-01-11",
+        "2025-01-12",
+        "2025-01-13",
+        "2025-01-14",
+        "2025-01-15",
+        "2025-01-16",
+        "2025-01-17",
+        "2025-01-18",
+        "2025-01-19",
+        "2025-01-20",
+        "2025-01-21",
+        "2025-01-22",
+        "2025-01-23",
+        "2025-01-24",
+        "2025-01-25",
+        "2025-01-26",
+        "2025-01-27",
+        "2025-01-28",
+        "2025-01-29",
+        "2025-01-30",
+        "2025-01-31",
+        "2025-02-01",
+        "2025-02-02",
+        "2025-02-03",
+        "2025-02-04",
+        "2025-02-05",
+        "2025-02-06",
+        "2025-02-07",
+        "2025-02-08",
+        "2025-02-09",
+        "2025-02-10",
+        "2025-02-11",
+        "2025-02-12",
+        "2025-02-13",
+        "2025-02-14",
+        "2025-02-15",
+        "2025-02-16",
+        "2025-02-17",
+        "2025-02-18",
+        "2025-02-19",
+        "2025-02-20",
+        "2025-02-21",
+        "2025-02-22",
+        "2025-02-23",
+        "2025-02-24",
+        "2025-02-25",
+        "2025-02-26",
+        "2025-02-27",
+        "2025-02-28",
+        "2025-03-01",
+        "2025-03-02",
+        "2025-03-03",
+        "2025-03-04",
+        "2025-03-05",
+        "2025-03-06",
+        "2025-03-07",
+        "2025-03-08",
+        "2025-03-09",
+        "2025-03-10",
+        "2025-03-11",
+        "2025-03-12",
+        "2025-03-13",
+        "2025-03-14",
+        "2025-03-15",
+        "2025-03-16",
+        "2025-03-17",
+        "2025-03-18",
+        "2025-03-19",
+        "2025-03-20",
+        "2025-03-21",
+        "2025-03-22",
+        "2025-03-23",
+        "2025-03-24",
+        "2025-03-25",
+        "2025-03-26",
+        "2025-03-27",
+        "2025-03-28",
+        "2025-03-29",
+        "2025-03-30",
+        "2025-03-31",
+        "2025-04-01",
+        "2025-04-02",
+        "2025-04-03",
+        "2025-04-04",
+        "2025-04-05",
+        "2025-04-06",
+        "2025-04-07",
+        "2025-04-08",
+        "2025-04-09",
+        "2025-04-10",
+        "2025-04-11",
+        "2025-04-12",
+        "2025-04-13",
+        "2025-04-14",
+        "2025-04-15",
+        "2025-04-16",
+        "2025-04-17",
+        "2025-04-18",
+        "2025-04-19",
+        "2025-04-20",
+        "2025-04-21",
+        "2025-04-22",
+        "2025-04-23",
+        "2025-04-24",
+        "2025-04-25",
+        "2025-04-26",
+        "2025-04-27",
+        "2025-04-28",
+        "2025-04-29",
+        "2025-04-30",
+        "2025-05-01",
+        "2025-05-02",
+        "2025-05-03",
+        "2025-05-04",
+        "2025-05-05",
+        "2025-05-06",
+        "2025-05-07",
+        "2025-05-08",
+        "2025-05-09",
+        "2025-05-10"
+      ],
+      "partial_days": [],
+      "full_days": [],
+      "missing_days_count": 235,
+      "sparse_days_count": 130,
+      "partial_days_count": 0,
+      "full_days_count": 0
+    },
+    "monthly_coverage_summary": {
+      "monthly_coverage": [
+        {
+          "month": "2025-01",
+          "expected_bars": 8928,
+          "actual_bars": 31,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "month": "2025-02",
+          "expected_bars": 8064,
+          "actual_bars": 28,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "month": "2025-03",
+          "expected_bars": 8928,
+          "actual_bars": 31,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "month": "2025-04",
+          "expected_bars": 8640,
+          "actual_bars": 30,
+          "coverage_ratio": 0.003472,
+          "status": "sparse"
+        },
+        {
+          "month": "2025-05",
+          "expected_bars": 8928,
+          "actual_bars": 10,
+          "coverage_ratio": 0.00112,
+          "status": "sparse"
+        },
+        {
+          "month": "2025-06",
+          "expected_bars": 8640,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "month": "2025-07",
+          "expected_bars": 8928,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "month": "2025-08",
+          "expected_bars": 8928,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "month": "2025-09",
+          "expected_bars": 8640,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "month": "2025-10",
+          "expected_bars": 8928,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "month": "2025-11",
+          "expected_bars": 8640,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        },
+        {
+          "month": "2025-12",
+          "expected_bars": 8928,
+          "actual_bars": 0,
+          "coverage_ratio": 0.0,
+          "status": "missing"
+        }
+      ],
+      "missing_months": [
+        "2025-06",
+        "2025-07",
+        "2025-08",
+        "2025-09",
+        "2025-10",
+        "2025-11",
+        "2025-12"
+      ],
+      "sparse_months": [
+        "2025-01",
+        "2025-02",
+        "2025-03",
+        "2025-04",
+        "2025-05"
+      ],
+      "partial_months": [],
+      "full_months": [],
+      "missing_months_count": 7,
+      "sparse_months_count": 5,
+      "partial_months_count": 0,
+      "full_months_count": 0
+    },
+    "longest_missing_calendar_window": {
+      "longest_missing_window_start_date": "2025-05-11",
+      "longest_missing_window_end_date": "2025-12-31",
+      "longest_missing_window_days": 235,
+      "missing_windows": [
+        {
+          "start_date": "2025-05-11",
+          "end_date": "2025-12-31",
+          "days": 235
+        }
+      ]
+    },
+    "coverage_quality_label": "missing_sections",
+    "warnings": [],
+    "threshold_policy": {
+      "day_or_month_status": {
+        "full": "coverage_ratio >= 0.98",
+        "partial": "coverage_ratio >= 0.8 and < 0.98",
+        "sparse": "coverage_ratio > 0 and < 0.8",
+        "missing": "coverage_ratio == 0"
+      },
+      "quality_label": {
+        "complete": "overall coverage_ratio >= 0.98 and no missing day/month and no out-of-range rows",
+        "mostly_complete": "overall coverage_ratio >= 0.95",
+        "partial": "overall coverage_ratio >= 0.8",
+        "sparse": "overall coverage_ratio > 0 and < 0.8",
+        "missing_sections": "one or more expected days or months have zero in-range bars",
+        "out_of_range": "one or more valid timestamps are outside the expected range",
+        "insufficient_data": "too few valid unique timestamps or no expected interval is available",
+        "unknown_expected_range": "neither explicit dates nor valid timestamps can define an expected range"
+      }
+    },
+    "research_notes": [
+      "Calendar coverage diagnostics are input data quality observations for local CSV review only.",
+      "Low calendar coverage can make deterministic analysis sensitive to the supplied date subset.",
+      "Missing daily or monthly sections can create period imbalance in local CSV analysis.",
+      "Sparse daily coverage means some dates have very few bars compared with the expected interval.",
+      "These diagnostics do not rank symbols, timeframes, reports, or expected market outcomes."
+    ]
+  },
+  "limitations": [
+    "This diagnostics report inspects timestamp quality in a local CSV file only.",
+    "It does not evaluate future market behavior.",
+    "It does not decide which symbol, timeframe, or report is better.",
+    "It is limited to input data quality, timestamp gaps, duplicates, interval variation, calendar coverage, and verification questions."
+  ],
+  "no_advice_disclaimer": {
+    "labels": [
+      "RESEARCH ONLY",
+      "NO FINANCIAL ADVICE",
+      "NO ORDER EXECUTION",
+      "LOCAL CSV ONLY",
+      "NOT A PROFIT GUARANTEE"
+    ],
+    "text": "This diagnostics report is research only. It is not financial advice. It uses local CSV data only, performs no order execution, and is not a profit guarantee."
+  },
+  "deterministic_summary": {
+    "schema_version": "lwf_ai_trading_prompt_lab.summary.v1",
+    "summary_scope": "embedded_safe_digest",
+    "detected_report_type": "diagnostics_report",
+    "input_schema_version": "lwf_ai_trading_prompt_lab.timestamp_diagnostics.v1",
+    "headline": "Local deterministic summary for timestamp diagnostics.",
+    "source_digest": {
+      "detected_report_type": "diagnostics_report",
+      "schema_version": "lwf_ai_trading_prompt_lab.timestamp_diagnostics.v1",
+      "symbol": "BTC/USDT",
+      "timeframe": "5m",
+      "rows_seen": 130,
+      "timestamp_quality_label": "minor_warnings",
+      "gap_count": 0,
+      "duplicate_timestamp_count": 0,
+      "irregular_interval_count": 0,
+      "coverage_quality_label": "missing_sections",
+      "coverage_ratio": 0.001237,
+      "missing_days_count": 235,
+      "sparse_days_count": 130,
+      "missing_months_count": 7,
+      "indicator_context_present": false
+    },
+    "safety_labels": [
+      "RESEARCH ONLY",
+      "NO FINANCIAL ADVICE",
+      "NO ORDER EXECUTION",
+      "LOCAL CSV ONLY",
+      "NOT A PROFIT GUARANTEE"
+    ],
+    "template_policy": "deterministic_local_templates_only"
+  }
+}
